@@ -1,0 +1,183 @@
+.row::after {
+    content: "";
+    width: 100%;
+    clear: both;
+    display: inline-block;
+  }
+  
+  [class*="col-"] {
+    float: left;
+    /* padding: 15px; */
+  }
+/* For desktop: */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+      width: 100%;
+    }
+}
+
+
+body{
+    margin: 0px;
+}
+.content{
+    width: 100%;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+    color: #545454;
+    padding-bottom: 40px;
+    background-image: url("../images/h-2-single-image-5.jpg");
+}
+.content a{
+    text-decoration: none;
+    color: #000;
+}
+.content a:focus{
+    text-decoration: none;
+}
+.content a:hover{
+    text-decoration: none;
+}
+.content p{
+    display: inline-block;
+}
+.content .state-order{
+    text-align: center;
+}
+.content .state-order ul{
+    padding: 0px;
+}
+.content .state-order ul li{
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    background-color: #E8E7E7;
+    width: 220px;
+    padding: 30px 0 10px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+.content .state-order img{
+    opacity: 0.5;
+}
+.content .state-order .select-state img{
+    opacity: 0.9;
+}
+.content .state-order .select-state p{
+    color: #000;
+}
+.content .row{
+    width: 100%;
+    display: inline-block;
+}
+/* .content .col-6{
+    margin: 0px;
+    width: 45%;
+    float: left;
+}
+.content .col-6:first-child{
+    margin-right: 2%;
+}
+.content .col-6:last-child{
+    margin-left: 2%;
+} */
+.content .shop_table{
+    width: 100%;
+}
+.content table tr,td,th {
+    text-align: left;
+    border-bottom: 1px solid #E8E7E7;
+    font-size: 18px;
+}
+
+.content .detail-order-success{
+    width: 85%;
+    padding: 70px 0 40px;
+    margin: 0 auto;
+}
+
+/*customer details*/
+.content .customer-details-item-title{
+    margin: 8px 0px 25px;
+    width: 100%;
+}
+
+/*bill details*/
+.content .bill-details{
+    margin-bottom: 75px;
+}
+/*table of order review*/
+.content .order-review table {
+    padding: 0;
+    margin: 0 15px 50px 15px;
+    font-size: 16px;
+    width: 100%;
+    border: none;
+}
+.content .order-review table tr {
+    border: 0;
+    border-bottom: 1px solid #ebebeb;
+}
+.content .order-review table th,td{
+    color: #545454;
+    padding: 14px 0;
+}
+/*end your order*/
+
+/*button back*/
+.content .checkout-payment{
+    margin: 10px 15px;
+}
+.content .checkout-payment .button-payment{
+    margin-left: 15px;
+    padding: 13px 37px;
+    color: #fff;
+    background-color: #1f1e1e;
+    border: 1px solid transparent;
+    cursor: pointer;
+    z-index: 3;
+}
+.content .checkout-payment .button-payment:hover {
+    color: #fff;
+    background-color: #bb9230;
+    transition: all 0.5s;
+}
+/*end button back*/
+/*end bill details*/
+
+/*Bill-information*/
+.content .bill-information{
+    position: relative;
+    /* width: 40%; */
+    top: -50px;
+    padding: 39px 0px;
+    background-color: rgba(0,0,0,0.02);
+    box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.2), 0 1px 0 rgba(0,0,0,0.07), inset 0 0 0 1px rgba(0,0,0,0.05);
+}
+.content .bill-information h4{
+    color: #7a9c59;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.content .bill-information ul li{
+    margin-bottom: 13px;
+}
+/*end Bill information*/
+
+/*end customer-details*/

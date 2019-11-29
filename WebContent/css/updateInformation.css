@@ -1,0 +1,113 @@
+.row::after {
+    content: "";
+    clear: both;
+    display: inline-block;
+  }
+  
+  [class*="col-"] {
+    float: left;
+  }
+  .content .col-6{
+  	padding-right: 25px;
+  }
+/* For desktop: */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 47%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+@media only screen and (max-width: 768px) {
+   	 [class*="col-"] {
+        float: left;
+/*         padding-right: 10px; */
+      }
+}
+
+.content{
+    width: 100%;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+    padding-bottom: 40px;
+}
+.content a{
+    text-decoration: none;
+    color: #000;
+}
+.content a:focus{
+    text-decoration: none;
+}
+ a:hover{
+    text-decoration: none;
+}
+.content .update-information{
+    width: 80%;
+    padding: 70px 0 40px;
+    margin: 0 auto;
+}
+
+.content .update-information .a-title{
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+.content .update-information label{
+    color: #757575;
+    min-width: 130px;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.content .update-information input,select{
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid #9e9e9e;
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 0px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+}
+.content .update-information input:focus,select:focus{
+    outline: none;
+}
+
+/* actions */
+.content .button{
+    margin: 40px 15px 0px 0px;
+    display: inline-block;
+    text-align: center;
+    width: 160px;
+    padding: 13px 0px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #1f1e1e;
+    border: 1px solid transparent;
+    cursor: pointer;
+    z-index: 3;
+}
+.content .actions .cancel{
+    background-color: #999999;
+    width: 120px;
+}
+.content .actions a:hover {
+    color: #fff;
+    background-color: #bb9230;
+    transition: all 0.5s;
+}
+/* end actions */

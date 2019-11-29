@@ -1,0 +1,256 @@
+/*chung cho cả footer*/
+/* body{ */
+/*     font-family: Muli,sans-serif; */
+/*     font-size: 16px; */
+/*     font-weight: 400; */
+/*     line-height: 27px; */
+/*     margin: 0px; */
+/* } */
+footer{
+	width: 100%;
+	
+}
+/*thiết lập cho css cho thẻ a*/
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    footer .col-3 {
+      width: 40%;
+      margin-right: 5%;
+      margin-left: 5%;
+    }
+    footer .col-6 {
+      width: 100%;
+      text-align: center;
+    }
+    footer .footer-bottom{
+    	text-align: center;
+    }
+    footer .widget-body .widget-item{
+    	width: 100%;
+    }
+    footer .footer-bottom .note{
+	    text-align: center !impotant;
+	    position: relative;
+	    top: 10px;
+	}
+	footer .footer-bottom .note{
+	    text-align: left;
+	}
+}
+footer a{
+    text-decoration: none;
+    color: #e0dcd0;
+}
+footer a:focus{
+    text-decoration: none;
+}
+footer a:hover{
+    text-decoration: none;
+}
+/*end thiết lập cho css cho thẻ a*/
+
+footer h1, h2, h3, h4, h5, h6 {
+    font-family: Cormorant,sans-serif;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: #000;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+footer h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+}
+footer h3 {
+    margin: 0px;
+    color: #fff;
+    
+}
+footer{
+    color: #ffffff;
+    display: inline-block;
+    background-color: #1d1c1c;
+    /*height: 410px;*/
+    width: 100%;
+}
+footer div{
+    display: block;
+}
+footer p{
+    margin: 10px 0;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+footer .row{
+    width: 100%;
+    display: inline-block;
+}
+/* footer .col-3{ */
+/*     margin: 0 1%; */
+/*     width: 23%; */
+/*     float: left; */
+/* } */
+/* footer .col-6{ */
+/*     margin: 0px; */
+/*     width: 50%; */
+/*     float: left; */
+/* } */
+/*end chung cho cả footer*/
+
+/*Footer-top*/
+footer .footer-top{
+    width: 80%;
+    padding: 80px 0px 40px;
+    margin: 0 auto;
+    
+}
+footer .footer-top .col-md-3{
+    /* width: 282px; */
+}
+footer .widget-title{
+    margin: 0px 0px 40px;
+}
+footer .textwidget{
+    color: #faf7ec;
+}
+footer .widget-item{
+    margin: 0px 0px 12px;
+}
+footer .widget-link{
+    font-family: Muli,sans-serif;
+    font-size: 11px;
+    color: #e0dcd0;
+    letter-spacing: 2px;
+    margin: 0 0 13px;
+}
+footer .widget-link svg{
+    color: #e0dcd0;
+    display: inline;
+}
+footer .widget-link svg .st0
+{
+    fill-rule: evenodd;
+    clip-rule: evenodd;
+    fill: #f5f1e5;
+}
+footer .widget-link span{
+    position: relative;
+    top: -3px;
+    left: 3px;
+}
+
+/* item1 */
+footer .item1 img{
+    margin-bottom: 10px;
+    width: 90%;
+    height: auto;
+}
+footer .item1 p{
+    width: 90%;
+}
+/* end item1 */
+
+/* item 3 */
+footer .item3 .widget-item{
+    display: inline-block;
+    margin-bottom: 15px;
+}
+footer .item3 img{
+    width: 70px;
+    height: 70px;
+    float: left;
+}
+footer .item3 img:hover{
+    opacity: 0.5;
+    transition: all 1s;
+}
+footer  .item3 .widget-item-right{
+    margin-left: 15px;
+    float: left;
+    position: relative;
+    top: -7px;
+}
+footer  .item3 .widget-item-right h5{
+    font-size: 15px;
+    color: #e0dcd0;
+    margin: 0px;
+}
+footer  .item3 .widget-item-right p{
+    font-size: 11px;
+    color: #e0dcd0;
+}
+footer  .item3 .widget-item-right p:hover{
+    color: #bb9230;
+}
+/* end item3 */
+
+/* item 4 */
+footer .item4 ul{
+    list-style: none;
+    padding: 0px;
+}
+footer .item4 ul li{
+    width: 25%;
+    list-style: none;
+    float: left;
+    /*margin: 0 0 10px;*/
+    /*padding: 0 5px;*/
+}
+footer .item4 img{
+    width: 53px;
+}
+footer .item4 img:hover{
+    opacity: 0.6;
+    transition: all 1s;
+}
+/* end item 4 */
+
+/*end footer top*/
+
+/* footer bottom */
+footer .footer-bottom{
+    width: 80%;
+    padding: 15px 0;
+    margin: 0 auto;
+    border-top: 1px solid #2e2d2d;
+}
+footer .footer-bottom ul{
+    list-style: none;
+    padding: 0px;
+}
+footer .footer-bottom ul li{
+    margin-right: 26px;
+    list-style: none;
+    float: left;
+}
+footer .footer-bottom li span{
+    font-size: 11px;
+    color: #918f89;
+}
+
+footer .footer-bottom li span{
+    margin-left: 3px;
+    position: relative;
+    top: -3px;
+}
+footer .note{
+    text-align: right;
+    position: relative;
+    top: 10px;
+}
+footer .footer-bottom .note span{
+    font-size: 12px;
+    font-style: italic;
+    color: #828181;
+}
+
+/* end footer bottom */
