@@ -121,25 +121,25 @@
                 <ul>
                     <li>
                         <div>
-                            <img src="images/check.png">
+                            <img src="assets/check.png">
                         </div>
                         <p>1. Received the order</p>
                     </li>
                     <li>
                         <div>
-                            <img src="images/packing.png">
+                            <img src="assets/packing.png">
                         </div>
                         <p>2. Packing the goods</p>
                     </li>
                     <li>
                         <div>
-                            <img src="images/transfer.png">
+                            <img src="assets/transfer.png">
                         </div>
                         <p>3. Freight</p>
                     </li>
                     <li class="select-state">
                         <div >
-                            <img src="images/receive.png" >
+                            <img src="assets/receive.png" >
                         </div>
                         <p>4. Delivered</p>
                     </li>

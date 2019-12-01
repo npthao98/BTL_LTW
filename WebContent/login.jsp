@@ -10,10 +10,15 @@
 	<title>Insert title here</title>
 </head>
 <body>
+<<<<<<< HEAD
 
 	<jsp:include page="header.jsp"/>
 		  
     <form action="/BTL_LTW/login" method="POST" class="margin-content login--form">
+=======
+	<jsp:include page="header.jsp"/>
+    <form action="/done" method="POST" class="margin-content login--form">
+>>>>>>> 5e4de9deb986994114578a7eacb2df41fad0e718
     	
         <h1 class="login_tittle">login</h1>
         <h3>Username :</h3>
