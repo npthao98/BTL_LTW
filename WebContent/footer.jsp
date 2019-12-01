@@ -19,7 +19,7 @@
                 <div class="row">
                     <div class="col-3 item1">
                         <a href="#">
-                            <img src="images/Panader-logo-footer.png">
+                            <img src="assets/Panader-logo-footer.png">
                         </a>
                         <p class="textwidget">Just like a perfectly baked pastry, we created Panadería 
                             with special love – and it shows.</p>
@@ -186,7 +186,7 @@
                         <div class="widget-body">
                             <div class="widget-item">
                                 <a href="#">
-                                    <img src="images/blog-img-10-150x150.jpg">
+                                    <img src="assets/blog-img-10-150x150.jpg">
                                 </a>
                                 <div class="widget-item-right">
                                     <a href="#">
@@ -199,7 +199,7 @@
                             </div>
                             <div class="widget-item">
                                 <a href="#">
-                                    <img src="images/blog-img-11-150x150.jpg">
+                                    <img src="assets/blog-img-11-150x150.jpg">
                                 </a>
                                 <div class="widget-item-right">
                                     <a href="#">
@@ -218,42 +218,42 @@
                             <ul>
                                 <li>
                                     <a href="#">
-                                        <img src="images/55731233_129432651513947_8126695847471313537_n.jpg">
+                                        <img src="assets/55731233_129432651513947_8126695847471313537_n.jpg">
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img src="images/54429281_123937955370614_5722280565074263255_n.jpg">
+                                        <img src="assets/54429281_123937955370614_5722280565074263255_n.jpg">
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img src="images/53730445_303350890349016_2105597345185984442_n.jpg">
+                                        <img src="assets/53730445_303350890349016_2105597345185984442_n.jpg">
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img src="images/53898305_294571244773286_1681076972782938727_n.jpg">
+                                        <img src="assets/53898305_294571244773286_1681076972782938727_n.jpg">
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img src="images/54732207_2309061759420411_7754229395380267702_n.jpg">
+                                        <img src="assets/54732207_2309061759420411_7754229395380267702_n.jpg">
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img src="images/53423917_149512629413392_7621886354360448446_n.jpg">
+                                        <img src="assets/53423917_149512629413392_7621886354360448446_n.jpg">
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img src="images/53253055_333998163894397_315975867628131081_n.jpg">
+                                        <img src="assets/53253055_333998163894397_315975867628131081_n.jpg">
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img src="images/54247961_673610903058322_5989601907598599138_n.jpg">
+                                        <img src="assets/54247961_673610903058322_5989601907598599138_n.jpg">
                                     </a>
                                 </li>
 

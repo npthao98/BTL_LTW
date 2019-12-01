@@ -6,12 +6,10 @@
 	<meta charset="ISO-8859-1">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
 	<link rel="stylesheet" href="css/login.css">
-	<link rel="stylesheet" href="css/header.css">
 	<title>Insert title here</title>
 </head>
 <body>
-	<%@ include file="header_part.jsp" %>
-		  
+	<jsp:include page="header.jsp"/>
     <form action="/done" method="POST" class="margin-content login--form">
     	
         <h1 class="login_tittle">login</h1>

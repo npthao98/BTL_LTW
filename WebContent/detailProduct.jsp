@@ -16,18 +16,18 @@
             <div class="row">
                 <div class="col-6 image-product">
                     <div class="big-image">
-                        <img src="images/shop-img-1-600x600.jpg" class="image1" alt="">
+                        <img src="assets/shop-img-1-600x600.jpg" class="image1" alt="">
                     </div>
                     <div class="small-images">
-                        <img src="images/shop-small-img-1-3-300x300.jpg" class="image2" alt="">
-                        <img src="images/shop-small-img-1-1-300x300.jpg" class="image3" alt="">
-                        <img src="images/shop-small-img-1-4-300x300.jpg" class="image4" alt="">
-                        <img src="images/shop-small-img-1-2-300x300.jpg" class="image5" alt="">
+                        <img src="assets/shop-small-img-1-3-300x300.jpg" class="image2" alt="">
+                        <img src="assets/shop-small-img-1-1-300x300.jpg" class="image3" alt="">
+                        <img src="assets/shop-small-img-1-4-300x300.jpg" class="image4" alt="">
+                        <img src="assets/shop-small-img-1-2-300x300.jpg" class="image5" alt="">
                     </div>
                 </div>
                 <div class="col-6 info-product">
                     <div class="content-infor-product">
-                        <img src="images/Rating.JPG" alt="">
+                        <img src="assets/Rating.JPG" alt="">
                         <h1>PAIN DEPICES</h1>
                         <h2>100.000</h2>
                         <p>Mel an esse salutandi, eos wisi nonumes democritum id. Eu affert dolore rationibus mel.

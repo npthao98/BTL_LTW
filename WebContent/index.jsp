@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<img alt="" src="Images/53253055_333998163894397_315975867628131081_n.jpg">
+	<img alt="" src="assets/53253055_333998163894397_315975867628131081_n.jpg">
 	<p>Hello NP</p>
 </body>
 </html>

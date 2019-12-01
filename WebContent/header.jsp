@@ -153,7 +153,7 @@
 	            </div>
 	            <div class="header--logo_logo">
 	                <!-- TODO : link -->
-	                <img src="images/logo-dark.png" alt="">
+	                <img src="assets/logo-dark.png" alt="">
 	            </div>
 	            <div class="header--logo_item">
 	                <a href="">
