@@ -8,6 +8,9 @@
     float: left;
     /* padding: 15px; */
   }
+  .content .col-6{
+  	padding-right: 30px; 
+  }
 /* For desktop: */
 .col-1 {width: 8.33%;}
 .col-2 {width: 16.66%;}

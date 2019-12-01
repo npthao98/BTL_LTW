@@ -15,7 +15,7 @@
 </head>
 <body>
 
-	 <%@ include file="header_part.jsp" %>
+	 <%@ include file="header.jsp" %>
 	 
 	<div class="container margin-content">
         <!-- container--banner -->

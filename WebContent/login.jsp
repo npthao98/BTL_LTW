@@ -20,7 +20,7 @@
         </br>
         <button type="button" id="submit_form">Login</button>
     </form>    
-    
+    <jsp:include page="footer.jsp"/>
     <script language="JavaScript" src="js/login.js"></script>
      <script language="JavaScript" src="js/header.js"></script>
 </body>
