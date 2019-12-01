@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,8 +10,9 @@
 	<title>Insert title here</title>
 </head>
 <body>
-	<jsp:include page="header.jsp"/>
-    <form action="/done" method="POST" class="margin-content login--form">
+		<jsp:include page="header.jsp"/>
+			  
+	    <form action="/BTL_LTW/login" method="POST" class="margin-content login--form">
     	
         <h1 class="login_tittle">login</h1>
         <h3>Username :</h3>
@@ -22,6 +24,5 @@
     </form>    
     <jsp:include page="footer.jsp"/>
     <script language="JavaScript" src="js/login.js"></script>
-     <script language="JavaScript" src="js/header.js"></script>
 </body>
 </html>
