@@ -10,12 +10,11 @@
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
    <link rel="stylesheet" href="css/home.css">
-   <link rel="stylesheet" href="css/header.css">
 	<title>Insert title here</title>
 </head>
 <body>
 
-	 <%@ include file="header_part.jsp" %>
+	<jsp:include page="header.jsp"/>
 	 
 	<div class="container margin-content">
         <!-- container--banner -->
@@ -323,8 +322,9 @@
             </div>
         </div>
     </div>
+    
+     <jsp:include page="footer.jsp"/>
 
     <script src="js/home.js"></script>
-    <script src="js/header.js"></script>
 </body>
 </html>

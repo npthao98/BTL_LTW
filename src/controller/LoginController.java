@@ -12,16 +12,17 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class DuckTest
  */
 
-	@WebServlet(urlPatterns = { "/done" })
+	@WebServlet(urlPatterns = { "/login" })
 
-public class DuckTest extends HttpServlet {
+public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
 	
-    public DuckTest() {
+    public LoginController() {
+		// TODO Auto-generated constructor stub
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,14 +34,7 @@ public class DuckTest extends HttpServlet {
 		// TODO Auto-generated method stub
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
 	 ServletOutputStream out = response.getOutputStream();
-       out.println("<html>");
-       out.println("<head><title>Hello Servlet</title></head>");
-        
-       out.println("<body>");
-       out.println("<h3>Hello World</h3>");
-       out.println("GET METHOD");
-       out.println("</body>");
-       out.println("<html>");
+     
 	}
 
 	/**
@@ -50,15 +44,8 @@ public class DuckTest extends HttpServlet {
 		// TODO Auto-generated method stub
 //		doGet(request, response);
        ServletOutputStream out = response.getOutputStream();
-        
-       out.println("<html>");
-       out.println("<head><title>Hello Servlet</title></head>");
-        
-       out.println("<body>");
-       out.println("<h3>Hello World</h3>");
-       out.println("This is my first Servlet");
-       out.println("</body>");
-       out.println("<html>");
+       
+       
 	}
 
 }
