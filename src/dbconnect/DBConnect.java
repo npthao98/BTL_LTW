@@ -1,7 +1,8 @@
 package dbconnect;
 import java.sql.Connection;
 import java.sql.*;
-public class DBConnect {
+
+public class DBConnect{
 	public static Connection createConnection() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -23,6 +24,5 @@ public class DBConnect {
 		}
 		return null; 
 	}
-	 
 	
 }

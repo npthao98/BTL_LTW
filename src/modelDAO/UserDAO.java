@@ -6,7 +6,7 @@ import dbconnect.DBConnect;
 public class UserDAO {
 public static ResultSet select(String sql) {
 		
-		Connection con=DBConnect.createConnection();
+		Connection con = DBConnect.createConnection();
 		try {
 			Statement stm=con.createStatement();
 			ResultSet rs=stm.executeQuery(sql);

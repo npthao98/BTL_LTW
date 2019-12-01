@@ -1,2 +1,5 @@
 eclipse.preferences.version=1
 encoding//WebContent/footer.jsp=UTF-8
+encoding//WebContent/home.jsp=UTF-8
+encoding//src/dbconnect/MyConn.java=UTF-8
+encoding//src/dbconnect/MySQLConn.java=UTF-8
