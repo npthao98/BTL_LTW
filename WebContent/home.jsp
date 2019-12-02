@@ -10,7 +10,7 @@
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
    <link rel="stylesheet" href="css/home.css">
-   <link rel="stylesheet" href="css/changePW.css">
+<!--    <link rel="stylesheet" href="css/changePW.css"> -->
 	<title>Insert title here</title>
 </head>
 <body>
