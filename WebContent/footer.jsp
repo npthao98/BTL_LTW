@@ -10,10 +10,7 @@
 <title>Footer</title>
 </head>
 <body>
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-<!-- <link rel="stylesheet" href="css/footer.css"> -->
-    <Footer>
+    <footer>
         <div class="footer-top">
             <div>
                 <div class="row">
@@ -181,7 +178,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-3 item3">
+s                    <div class="col-3 item3">
                         <h3 class="widget-title">NEWS</h3>
                         <div class="widget-body">
                             <div class="widget-item">
@@ -306,6 +303,6 @@
                 </div>
             </div>
         </div>
-    </Footer>
+    </footer>
 </body>
 </html>

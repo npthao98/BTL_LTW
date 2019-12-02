@@ -5,9 +5,9 @@ import java.sql.*;
 public class DBConnect{
 	public static Connection createConnection() {
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
+			Class.forName("com.mysql.jdbc.Driver");
 		    // db parameters
-		    String url       = "jdbc:mysql://localhost:3306/bakery";
+		    String url       = "jdbc:mysql://localhost:3306/test";
 		    String user      = "root";
 		    String password  = "";
 		    

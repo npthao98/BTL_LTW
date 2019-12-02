@@ -7,14 +7,15 @@
 	<meta charset="ISO-8859-1">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
 	<link rel="stylesheet" href="css/login.css">
+	<link rel="stylesheet" href="css/changePW.css">
 	<title>Insert title here</title>
 </head>
 <body>
 		<jsp:include page="header.jsp"/>
 			  
-	    <form action="/BTL_LTW/login" method="POST" class="margin-content login--form">
-    	
+	    <form action="${pageContext.request.contextPath}/login" method="POST" class="margin-content login--form">
         <h1 class="login_tittle">login</h1>
+        
         <h3>Username :</h3>
         <input type="text" name="username" id="username" required>
         <h3>Password :</h3>
@@ -22,6 +23,7 @@
         </br>
         <button type="button" id="submit_form">Login</button>
     </form>    
+
     <jsp:include page="footer.jsp"/>
     <script language="JavaScript" src="js/login.js"></script>
 </body>
