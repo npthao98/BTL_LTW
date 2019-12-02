@@ -178,7 +178,7 @@
                             </div>
                         </div>
                     </div>
-s                    <div class="col-3 item3">
+                    <div class="col-3 item3">
                         <h3 class="widget-title">NEWS</h3>
                         <div class="widget-body">
                             <div class="widget-item">
