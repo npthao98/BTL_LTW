@@ -1,41 +1,35 @@
 @import url('https://fonts.googleapis.com/css?family=Cormorant&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    box-shadow: none;
-    outline: none;
-}
-.container{
+
+container{
     padding-top: 30px;
     /* max-width: 80%; */
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-.padding-content{
+container .padding-content{
     padding: 0 10% 0 10%;
 }
-.margin-content{
+container .margin-content{
     margin: 0 10% 0 10%;
 }
-a{
+container a{
     text-decoration: none;
 }
-.title_font{
+container .title_font{
     font-family: 'Cormorant', serif;
     font-size: 110%;
 }
-.rotate{
+container .rotate{
     transform: rotate(180deg);
 }
-button:disabled, button[disabled]{
+container button:disabled, button[disabled]{
     border: none;
     color: inherit;
 }
 
-.read_more{
+container .read_more{
     background: black;
     font-size: 0.8vw;
     border: none;
@@ -48,12 +42,12 @@ button:disabled, button[disabled]{
     letter-spacing: 1px;
     font-family: 'Cormorant', serif;
 }
-.read_more:hover{
+container .read_more:hover{
     background: #bb9230;
 }
 /* TODO : STYLE BANNER */
 
-.container--banner_ads{
+container .container--banner_ads{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -62,19 +56,19 @@ button:disabled, button[disabled]{
     position: relative;
 }
 
-.container--banner_button_prev{
+container .container--banner_button_prev{
     transform: transform(-100%);
     position: absolute;
     left: -60px;
     top: 50% + 21px;
 }
-.container--banner_button_next{
+container .container--banner_button_next{
     position: absolute;
     right: -60px;
     top: 50% + 21px;
 }
 
-.container--banner_content_grid{
+container .container--banner_content_grid{
     display: grid;
     width: 100%;
     grid-template-columns: repeat(3, 1fr);
@@ -84,20 +78,20 @@ button:disabled, button[disabled]{
     top: 0;
     left: 0;
 }
-.hidden{
+container .hidden{
     opacity: 0;
 }
-.animation_apper{
+container .animation_apper{
     animation:  container--banner_content_slide 0.3s linear alternate;
     opacity: 1;
     z-index: 2;
 }
-.animation_remov{
+container .animation_remov{
     animation:  container--banner_content_slide_removed 0.3s linear alternate;
     opacity: 0;
     z-index: 1;
 }
-.animation_apper_feedback{
+container .animation_apper_feedback{
     animation:  container--banner_content_slide 0.3s linear alternate;
     opacity: 1;
 }
@@ -105,30 +99,30 @@ button:disabled, button[disabled]{
     animation:  container--banner_content_slide_removed 0.3s linear alternate;
     opacity: 0;
 }
-.container--banner_content_grid_11{
+container .container--banner_content_grid_11{
     grid-row: auto/span 1;
     grid-column: auto/span 1;
 }
-.container--banner_content_grid_12{
+container .container--banner_content_grid_12{
     grid-row: auto/span 2;
 }
-.container--banner_content_grid_21{
+container .container--banner_content_grid_21{
     grid-column: auto/span 2;
 }
-.container--banner_content_grid_22{
+container .container--banner_content_grid_22{
     grid-row: auto/span 2;
     grid-column: auto/span 2;
 }
-.container--banner_content_grid img {
+container .container--banner_content_grid img {
     width: 100%;
     height: auto;
 }
-div[class^="container--banner_button"] button{
+container div[class^="container--banner_button"] button{
     border: none;
     background: none;
     outline: none;
 }
-.container--banner_content_ads_item_text{
+container .container--banner_content_ads_item_text{
     background: url("../assets/home/ads/masonry-gallery-15.jpg");
     display: flex;
     flex-direction: column;
@@ -138,16 +132,16 @@ div[class^="container--banner_button"] button{
     font-weight: 100;
     font-family: 'Cormorant', serif;
 }
-.container--banner_content_ads_item_text *{
+container .container--banner_content_ads_item_text *{
     text-transform: uppercase;
 }
-.container--banner_content_ads_item_text h3{
+container .container--banner_content_ads_item_text h3{
     font-family: 'Cormorant', sans-serif;
     font-size: 0.8vw;
     color: #6d6d6d;
     margin-bottom: 15px;
 }
-.container--banner_content_ads_item_text h1{
+container .container--banner_content_ads_item_text h1{
     text-align: center;
     font-size: 1.6vw;
     margin-bottom: 15px;
@@ -156,15 +150,15 @@ div[class^="container--banner_button"] button{
 
 
 /* TODO : FEED BACK */
-.fa-star{
+container .fa-star{
     color: #bb9230;
 }
-.container--banner_feedback {
+container .container--banner_feedback {
     /* overflow: hidden; */
     position: relative;
     overflow: hidden;
 }
-.container--banner_feedback_ele{
+container .container--banner_feedback_ele{
     width: 100%;
     height: 480px;
     display: inline-flex;
@@ -176,47 +170,47 @@ div[class^="container--banner_button"] button{
     left: 0;
 }
 
-.container--banner_feedback_ele_bg{
+container .container--banner_feedback_ele_bg{
     background: url('../assets/home/m-h-testimonial-background-2.jpg');
     background-size: cover;        
     background-repeat: no-repeat;
     background-position: center center; 
 }
-.feedback_comment{
+container .feedback_comment{
     font-style: italic;
     font-size: 40px;
     width: 70%;
     text-align: center;
     margin-top: 40px;
 }
-.container--banner_feedback{
+container .container--banner_feedback{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
 }
-.feedback_author{
+container .feedback_author{
     font-style: serif;
     font-size: 15px;
     margin-top: 40px;
 }
-.feedback_target{
+container .feedback_target{
     position: absolute;
     top: 78%;
 }
-.feedback_target_button{
+container .feedback_target_button{
     height: 15px;
     width: 15px;
     border-radius: 50%;
     border: 0;
     background: #d1d1d1;
 }
-.selected_feedback_button{
+container .selected_feedback_button{
     background: black;
 }
 
 /* TODO : STORY BAKERY */
-.container--story{
+container .container--story{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -224,11 +218,11 @@ div[class^="container--banner_button"] button{
     width: 100%;
     margin-top: 50px !important;
 }
-.container--story_img{
+container .container--story_img{
     position: relative;
     width: 100%;
 }
-#baked_with_love{
+container #baked_with_love{
     position: absolute;
     width: 100px;
     height: auto;
@@ -236,67 +230,67 @@ div[class^="container--banner_button"] button{
     right: -20px;
     transition: transform .5s;
 }
-.container--story_story{
+container .container--story_story{
     padding: 70px;
 }
-.container--story_img img{
+container .container--story_img img{
     width: 100%;
     height: auto;
 }
-.container--story_story *{
+container .container--story_story *{
     font-family: 'Cormorant', serif;
     margin-bottom: 22px;
 }
-.container--story h3{
+container .container--story h3{
     font-size: 200%;
 }
-.hidden_scale{
+container .hidden_scale{
     transform: scale(0.1) rotate(10deg);
 }
-.zoom{
+container .zoom{
     transform: scale(1) rotate(10deg);
 }
  /* ! RESPONSIVE MOBILE */
 @media screen and (max-width: 680px) {
-    .container--banner_content_grid{
+    container .container--banner_content_grid{
         display: flex !important;
         flex-direction: column;
         align-items: center;
     }
-    .container--banner_content_ads_item_text{
+    container .container--banner_content_ads_item_text{
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .padding-content{
+    container .padding-content{
         padding: 0 10% 0 10%;
     }
-    .margin-content{
+    container .margin-content{
         margin: 0 10% 0 10%;
     }
-    .container--banner_content_grid *{
+    container .container--banner_content_grid *{
         width: 70%;
         height: auto;
     }
-    .container--banner_content_ads_item_text h3{
+    container .container--banner_content_ads_item_text h3{
         font-size: 1.6vw;
     }
-    .container--banner_content_ads_item_text h1{
+    container .container--banner_content_ads_item_text h1{
         font-size: 3.2vw;
     }
-    .container--banner_content_ads_item_text button{
+    container .container--banner_content_ads_item_text button{
         font-size: 1.6vw;
     }
 
 
     /* TODO : FEEDBACK */
-    .container--banner_feedback_ele_bg{
+    container .container--banner_feedback_ele_bg{
         background: url('../assets/home/m-h-testimonial-background-4.jpg');
         background-size: cover;        
         background-repeat: no-repeat;
         background-position: center center; 
     }
-    .feedback_target{
+    container .feedback_target{
         position: absolute;
         top: 90%;
     }
@@ -304,35 +298,35 @@ div[class^="container--banner_button"] button{
 
  /* ! RESPONSIVE TABLET */
 @media screen and (max-width: 1032px) {
-    div[class^="container--banner_button"] button{
+    container div[class^="container--banner_button"] button{
         display: none;
     }
-    .container--banner_content_grid{
+    container .container--banner_content_grid{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 4px;
     }
 
     /* TODO : FEEDBACK */
-    .container--banner_feedback_ele_bg{
+    container .container--banner_feedback_ele_bg{
         background: url('../assets/home/m-h-testimonial-background-3-1.jpg');
         background-size: cover;        
         background-repeat: no-repeat;
         background-position: center center; 
     }
-    .feedback_target{
+    container .feedback_target{
         position: absolute;
         top: 80%;
     }
     /* TODO : STORY */
-    .container--story{
+    container .container--story{
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 100%;
         margin-top: 50px !important;
     }
-    .container--story button{
+    container .container--story button{
         font-size: 15px;
     }
 }

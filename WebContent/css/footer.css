@@ -8,7 +8,6 @@
 /* } */
 footer{
 	width: 100%;
-	
 }
 /*thiết lập cho css cho thẻ a*/
 @media only screen and (max-width: 768px) {
@@ -29,7 +28,7 @@ footer{
     	width: 100%;
     }
     footer .footer-bottom .note{
-	    text-align: center !impotant;
+	    text-align: center !important;
 	    position: relative;
 	    top: 10px;
 	}

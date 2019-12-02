@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	  <div class="header">
+  <div class="header">
         <div class="header--contact padding-content">
             <div class="header--contact__phone">
                 <i class="fas fa-phone-volume"></i>
@@ -980,6 +980,7 @@
             <div class="header--navbar_item">elements</div>
         </div>
     </div>
-	<script src="js/header.js"></script>
+
+    <script src="js/header.js"></script>
 </body>
 </html>
