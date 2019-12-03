@@ -367,6 +367,7 @@
                             <h3>DELIVERY</h3>
                             <p>Lorem ipsum dolor sit amet, his convenire similiqu.</p>
                         </div>
+                    </div>
                 </div>
                 
 	 </container>

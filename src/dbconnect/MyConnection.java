@@ -16,7 +16,7 @@ import java.sql.SQLException;
 public class MyConnection {
     static String hostName = "localhost";
  
-    static String dbName = "test";
+    static String dbName = "bakery";
     static String userName = "root";
     static String password = "";
     public static Connection getConnection() throws ClassNotFoundException, SQLException{

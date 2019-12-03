@@ -1,6 +1,6 @@
 package model;
 
-public class Account extends Model	{
+public class Account{
 	
 	public static String table_name = "";
 	
@@ -17,23 +17,6 @@ public class Account extends Model	{
 	}
 	public String getPass() {
 		return this.pass;
-	}
-	@Override
-	public void create(Model t) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void update(Model t) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void delete(Model t) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }
