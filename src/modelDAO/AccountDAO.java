@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import com.mysql.cj.protocol.Resultset;
 
 import dbconnect.DBConnect;
+import dbconnect.MyConnection;
 import model.Account;
 
 public class AccountDAO extends DAO{
@@ -18,14 +19,14 @@ public class AccountDAO extends DAO{
 	
 	public static ArrayList<Account> getAll() throws ClassNotFoundException, SQLException{
 		
-		Connection conn = DBConnect.createConnection();
+		Connection conn = MyConnection.getConnection();
 		
 		String sql = "SELECT * FROM account";
 		Statement state = conn.createStatement();
 		ResultSet res = state.executeQuery(sql);
 		ArrayList<Account> result = new ArrayList<Account>();
 		while(res.next()) {
-			result.add(new Account(res.getString(2), res.getString(3)));
+                    result.add(new Account(res.getString(2), res.getString(3)));
 		}
 		
 		conn.close();
@@ -43,6 +44,7 @@ public class AccountDAO extends DAO{
 		}
 		return false;
 	}
+        
 	
 
 }

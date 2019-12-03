@@ -31,18 +31,42 @@ document.addEventListener('DOMContentLoaded', function(){
 
     StartedRender();
 
-    function checkPosition(){
+    function checkPosition1(){
         let ele = document.querySelector('container #baked_with_love');
         var positionFromTop = ele.getBoundingClientRect().top;
         let windowHeight = window.innerHeight;
-        if (positionFromTop - windowHeight <= -200) {
+        if (positionFromTop - windowHeight <= -300) {
             ele.classList.remove('hidden_scale');
             ele.classList.add('zoom');
         }
     }
 
+
+    function checkPosition2(){
+        let ele = document.querySelector('.container--our_process_content');
+        var positionFromTop = ele.getBoundingClientRect().top;
+        let windowHeight = window.innerHeight;
+        if (positionFromTop - windowHeight <= -300) {
+            let item = document.querySelectorAll('.container--our_process_eachitem');
+//            .classList.add('.our_process_item_appear');
+            
+            item[0].classList.add('our_process_item_appear');
+            setTimeout(function(){
+                item[1].classList.add('our_process_item_appear');
+                setTimeout(function(){
+                    item[2].classList.add('our_process_item_appear');
+                    setTimeout(function(){
+                        item[3].classList.add('our_process_item_appear');
+                    }, 350);
+                }, 350);
+            }, 350);
+     
+        }
+    }
+
     window.addEventListener("scroll", function(){
-        checkPosition();
+        checkPosition1();
+        checkPosition2();
     });
     window.addEventListener("resize", function(){
         StartedRender();
