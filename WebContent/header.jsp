@@ -30,7 +30,7 @@
                 </div>
             </div>
         </div>
-        <div class="header--logo content">
+        <div class="header--logo content-header">
             <div class="header--logo_large">
                 <div class="header--logo_item">
                     <a href="">

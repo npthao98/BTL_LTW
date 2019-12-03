@@ -373,7 +373,7 @@
     
      <script src="js/home.js"></script>
 
-   	<jsp:include page="footer.jsp"/>
-    	
+    <jsp:include page="footer.jsp"/>
+    	     
 </body>
 </html>
