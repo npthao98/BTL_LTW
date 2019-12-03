@@ -42,6 +42,7 @@ public class LoginController extends HttpServlet {
             // TODO Auto-generated method stub
 //		ServletOutputStream out = response.getOutputStream();
             response.getWriter().append("Served at: ").append(request.getContextPath());
+//            request.getRequestDispatcher("account.jsp").forward(request, response);
     }
 
 	/**
