@@ -10,7 +10,6 @@
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
    <link rel="stylesheet" href="css/home.css">
-<!--    <link rel="stylesheet" href="css/changePW.css"> -->
 	<title>Insert title here</title>
 </head>
 <body>
@@ -324,12 +323,58 @@
 	                <button class="read_more">read more</button>
 	            </div>
 	        </div>
+
+			
 		</div>
+                
+                <div class="container--our_process">
+                    <h1>OUR PROCESS</h1>
+                    <p>Loremmmmmm</p>
+                    
+                    <div class="container--our_process_content padding-content">
+                        <div class="container--our_process_eachitem">
+                            <div class="container--our_process_item container--our_process_item1">
+                                <img src="assets/home/m-h-single-img-11-1.png">
+                                <div class="item_year">1809</div>
+                            </div>  
+                            <h3>FAMILY-OWNED</h3>
+                            <p>Lorem ipsum dolor sit amet, his convenire similiqu.</p>
+                        </div>
+                        
+                        <div class="container--our_process_eachitem">
+                           <div class="container--our_process_item container--our_process_item2">
+                               <img src="assets/home/m-h-single-img-12.png">
+                               <div class="item_year">1945</div>
+                           </div>
+                           <h3>PASSION FOR BREAD</h3>
+                           <p>Lorem ipsum dolor sit amet, his convenire similiqu.</p>
+                        </div>
+                    
+                        <div class="container--our_process_eachitem">
+                            <div class="container--our_process_item container--our_process_item3">
+                                <img src="assets/home/m-h-single-img-13-1.png">
+                                <div class="item_year">2006</div>
+                            </div>
+                            <h3>COFFEE TO GO</h3>
+                            <p>Lorem ipsum dolor sit amet, his convenire similiqu.</p>
+                        </div>
+                        
+                        <div class="container--our_process_eachitem">
+                            <div class="container--our_process_item container--our_process_item4">
+                                <img src="assets/home/m-h-single-img-14.png">
+                                <div class="item_year">2019</div>
+                            </div>
+                            <h3>DELIVERY</h3>
+                            <p>Lorem ipsum dolor sit amet, his convenire similiqu.</p>
+                        </div>
+                    </div>
+                </div>
+                
 	 </container>
     
      <script src="js/home.js"></script>
 
-   	<jsp:include page="footer.jsp"/>
-    	
+    <jsp:include page="footer.jsp"/>
+    	     
 </body>
 </html>

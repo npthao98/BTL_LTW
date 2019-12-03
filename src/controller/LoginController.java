@@ -20,7 +20,7 @@ import modelDAO.AccountDAO;
  * Servlet implementation class DuckTest
  */
 
-	@WebServlet("/login")
+@WebServlet("/login")
 
 public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -38,36 +38,43 @@ public class LoginController extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+            // TODO Auto-generated method stub
 //		ServletOutputStream out = response.getOutputStream();
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
+            response.getWriter().append("Served at: ").append(request.getContextPath());
+    }
 
 	/**
+     * @param request
+     * @param response
+     * @throws javax.servlet.ServletException
+     * @throws java.io.IOException
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub	
 		
-     HttpSession session = request.getSession();
+    HttpSession session = request.getSession();
+
+    String username = request.getParameter("username");
+    String pass = request.getParameter("password");     
+    Account user = new Account(username, pass);
      
-     String username = request.getParameter("username");
-     String pass = request.getParameter("password");     
-     Account user = new Account(username, pass);
-     
-     try {
-		ArrayList<Account> list = AccountDAO.getAll();
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	} catch (ClassNotFoundException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	} catch (SQLException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-     
-     
+    String decode = ProcessSys.decodeSHA("helloworld");
+    
+    try {
+        ArrayList<Account> list = AccountDAO.getAll();
+        response.getWriter().append(decode);
+    } catch (ClassNotFoundException e) {
+            // TODO Auto-generated catch block
+        response.getWriter().append(e.getMessage());
+    } catch (SQLException e) {
+            // TODO Auto-generated catch block
+        response.getWriter().append(e.getMessage());
+    }
+
+    
 //     try {
 //		if(AccountDAO.checkIsExid(user) == true) {
 ////			session.setAttribute("user", user);
@@ -100,6 +107,6 @@ public class LoginController extends HttpServlet {
      
        
 		
-	}
+    }
 
 }

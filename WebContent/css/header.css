@@ -1,12 +1,32 @@
 @import url('https://fonts.googleapis.com/css?family=Cormorant&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 *{
     padding: 0;
     margin: 0;
 }
-
+.header--contact svg{
+    fill: #f5f1e5;
+    margin-right: 10px;
+    font-family: Cormorant,sans-serif;
+}
+.header--contact > div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.header--contact__ > div{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-content: center;
+}
 .header *{
     text-transform: uppercase;
+    font-family: Muli,sans-serif;
+    font-size: 11px;
+    color: #e0dcd0;
+    letter-spacing: 2px;
 }
 .padding-content{
     padding: 0 10% 0 10%;
@@ -68,6 +88,13 @@ div[class^="header--contact__"] i{
     font-family: 'Cormorant', serif;
     font-size: 110%;
     margin: 0 20px 0 20px;
+}
+.header--navbar_item a{
+    text-decoration: none;
+    color: black;
+}
+.header--navbar_item a:hover{
+    color: #bb9230;
 }
 @media screen and (max-width: 1032px) {
     .header--contact, .header--logo_large{
