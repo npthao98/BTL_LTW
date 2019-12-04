@@ -50,13 +50,19 @@ public class UpdateInformation extends HttpServlet {
 		HttpSession session = request.getSession();
 		Client client = null;
 		client = (Client)session.getAttribute("user");
-		String name = request.getParameter("name");
-		System.out.print(name);
-		String address = request.getParameter("address");
-		ClientDAO.update(client.getID(), name, address);
-		Client acc=ClientDAO.getByID(client.getID());
-		session.setAttribute("user", acc);
-		response.sendRedirect("/BTL_LTW/Account");
+		if(client == null) {
+			response.sendRedirect("/BTL_LTW/login");
+		}
+		else {
+			String name = request.getParameter("name");
+			System.out.print(name);
+			String address = request.getParameter("address");
+			ClientDAO.update(client.getID(), name, address);
+			Client acc=ClientDAO.getByID(client.getID());
+			session.setAttribute("user", acc);
+			response.sendRedirect("/BTL_LTW/Account");
+		}
+		
 	}
 
 }

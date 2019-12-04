@@ -118,6 +118,20 @@ public class UserDAO {
 
         return null;
     }
+    
+    public static void updatePW(int id, String pw) {
+            Connection con=DBConnect.createConnection();
+            try {
+                    PreparedStatement ps=con.prepareStatement("update user set Password=? where ID=?");
+                    ps.setString(1, pw);
+                    ps.setInt(2, id);
+                    ps.execute();
+
+            } catch (SQLException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+            }
+    }
 
     public static User getUserByAccount(Account acc) throws ClassNotFoundException, SQLException{
         Connection conn = MyConnection.getConnection();

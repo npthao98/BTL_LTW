@@ -1,7 +1,6 @@
 <%@page import="controller.ProcessSys"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@page import="model.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,9 +8,10 @@
 <link rel="stylesheet" href="css/changePW.css">
 <title>Insert title here</title>
 </head>
-<body>
-	<% User user = (User)request.getAttribute("user"); %>
+<body onload ="thongBao()">
 	<jsp:include page="header.jsp"/>
+	<% String tb = (String)request.getAttribute("alert"); %>
+	<input type = "hidden" value="<%=tb %>" id="message">
     <div class="content">
         <form action="/BTL_LTW/ChangePW" method="post" accept-charset="ISO-8859-1" onsubmit="return checkInputChangePW()">
         	<div class="change-pw">
@@ -26,7 +26,7 @@
 	                    <input type="password" id="pw2" name="pw2" required>
 	                </div>
 	                <div class="col-6">
-	                    <label for="">Nhắc lại mật khẩu mới:</label>
+	                    <label for="">Nhập lại mật khẩu mới:</label>
 	                    <input type="password" id="pw3" name="pw3" required>
 	                </div>
 	                <div class="actions">
@@ -56,6 +56,15 @@
 			else {
 				return true;
 			}
+		}
+	}
+	function thongBao(){
+		var message =  document.getElementById("message").value;
+		if(message=="Fail"){
+			alert("Mật khẩu không đúng, yêu cầu nhập lại.");
+		}
+		else if(message=="Success"){
+			alert("Đổi mật khẩu thành công.");
 		}
 	}
 </script>

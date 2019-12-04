@@ -35,12 +35,14 @@ public class ChangePW extends HttpServlet {
 		HttpSession session = request.getSession();
 		Client client = null;
 		client = (Client)session.getAttribute("user");
+		String alert ="";
 		if(client == null) {
 			response.sendRedirect("/BTL_LTW/login");
 		}
 		else {
 			User user = UserDAO.getByClientID(client.getID());
 			request.setAttribute("user", user);
+			request.setAttribute("alert", alert);
 			request.getRequestDispatcher("changePW.jsp").forward(request, response);
 		}
 		
@@ -51,16 +53,35 @@ public class ChangePW extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		HttpSession session = request.getSession();
-//		Client client = null;
-//		client = (Client)session.getAttribute("user");
-//		String name = request.getParameter("name");
-//		System.out.print(name);
-//		String address = request.getParameter("address");
-//		ClientDAO.update(client.getID(), name, address);
-//		Client acc=ClientDAO.getByID(client.getID());
-//		session.setAttribute("user", acc);
-		response.sendRedirect("/BTL_LTW/Account");
+		HttpSession session = request.getSession();
+		Client client = null;
+		client = (Client)session.getAttribute("user");
+		if(client == null) {
+			response.sendRedirect("/BTL_LTW/login");
+		}
+		else {
+			User user = UserDAO.getByClientID(client.getID());
+			String pw1 = request.getParameter("pw1");
+			String pw2 = request.getParameter("pw2");
+			String pw = user.getPassword();
+			String alert;
+			System.out.println(pw1);
+			System.out.println(ProcessSys.decodeSHA(pw1));
+			System.out.println(ProcessSys.decodeSHA("helloworld"));
+			System.out.println(pw);
+			if(pw.equals(ProcessSys.decodeSHA(pw1))) {
+				UserDAO.updatePW(user.getID(), ProcessSys.decodeSHA(pw2));
+				alert = "Success";
+			}
+			else {
+				
+				alert = "Fail";
+			}
+			request.setAttribute("alert", alert);
+			request.getRequestDispatcher("/changePW.jsp").forward(request, response);
+		}
+		
+		
 	}
 
 }

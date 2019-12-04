@@ -8,9 +8,14 @@
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <script src="js/detailProduct.js"></script>
 <title>Insert title here</title>
+ <%@page import="model.*" %>
+ <%@page import="modelDAO.*" %>
+ <%@page import="java.util.List"%>
 </head>
 <body>
 	<jsp:include page="header.jsp"/>
+	<% Cake cake=(Cake)request.getAttribute("cake"); %>
+	<% List<ImageUrl> listImage = ImageurlDAO.getByCakeID(cake.getID()); %>
     <div class="content">
         <div class="detail-product">
             <div class="row">
@@ -19,7 +24,8 @@
                         <img src="assets/shop-img-1-600x600.jpg" class="image1" alt="">
                     </div>
                     <div class="small-images">
-                        <img src="assets/shop-small-img-1-3-300x300.jpg" class="image2" alt="">
+                        <img src="<%=listImage.get(0).getUrl() %>" class="image2" alt="">
+                        <img src="assets/Black magic cake 1.jpg" class="image2" alt="">
                         <img src="assets/shop-small-img-1-1-300x300.jpg" class="image3" alt="">
                         <img src="assets/shop-small-img-1-4-300x300.jpg" class="image4" alt="">
                         <img src="assets/shop-small-img-1-2-300x300.jpg" class="image5" alt="">
