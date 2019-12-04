@@ -56,8 +56,6 @@ public class LoginController extends HttpServlet {
         @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub	
-		
-    HttpSession session = request.getSession();
 
 //    String username = request.getParameter("username");
 //    String pass = request.getParameter("password");     
@@ -75,6 +73,29 @@ public class LoginController extends HttpServlet {
 //            // TODO Auto-generated catch block
 //        response.getWriter().append(e.getMessage());
 //    }
+        HttpSession session = request.getSession();
+
+
+        String username = request.getParameter("username");
+        String pass = request.getParameter("password");     
+        Account user = new Account(username, pass);
+            
+        session.setAttribute("duck", user);
+
+        String decode = ProcessSys.decodeSHA("helloworld");
+
+        response.sendRedirect(request.getContextPath() + "/home.jsp");
+
+        try {
+            ArrayList<Account> list = AccountDAO.getAll();
+            response.getWriter().append(decode);
+        } catch (ClassNotFoundException e) {
+                // TODO Auto-generated catch block
+            response.getWriter().append(e.getMessage());
+        } catch (SQLException e) {
+                // TODO Auto-generated catch block
+            response.getWriter().append(e.getMessage());
+        }
 
     //Tam
     Client acc= ClientDAO.getByID(1);
