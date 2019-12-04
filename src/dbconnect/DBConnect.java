@@ -7,7 +7,7 @@ public class DBConnect{
             try {
                 Class.forName("com.mysql.jdbc.Driver");
                 // db parameters
-                String url       = "jdbc:mysql://localhost:3306/test";
+                String url       = "jdbc:mysql://localhost:3306/bakery";
                 String user      = "root";
                 String password  = "";
 
