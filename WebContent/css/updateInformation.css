@@ -70,7 +70,7 @@
     margin-top: 10px;
     margin-bottom: 5px;
 }
-.content .update-information input,select{
+.content .update-information .col-6 input,.content .update-information .col-12 input,.content .update-information select{
     border-top: 0;
     border-left: 0;
     border-right: 0;

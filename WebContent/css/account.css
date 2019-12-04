@@ -63,7 +63,7 @@
     text-transform: uppercase;
     border-bottom: 1px solid #cccccc;
     padding-bottom: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 45px;
 }
 .content .detail-account .label{
     color: #757575;
@@ -74,7 +74,7 @@
 
 /* button actions */
 .content .actions {
-    margin-top: 50px;
+/*     margin-top: 50px; */
 }
 .content .actions .update-inf,.change-pw{
     margin-bottom: 15px;
