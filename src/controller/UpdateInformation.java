@@ -10,15 +10,30 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class UpdateInformation
  */
-@WebServlet(urlPatterns = "/UpdateInformation")
+@WebServlet("/UpdateInformation")
 public class UpdateInformation extends HttpServlet {
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.getRequestDispatcher("updateInformation.jsp").forward(req, resp);
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public UpdateInformation() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.getRequestDispatcher("/updateInformation.jsp").forward(request, response);
 	}
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		resp.sendRedirect("/Account");
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.sendRedirect("/BTL_LTW/Account");
 	}
 
 }

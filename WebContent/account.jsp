@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@page import="model.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +10,8 @@
 </head>
 <body>
 	<jsp:include page="header.jsp"/>
-	
+	<% User user = (User)session.getAttribute("user"); %>
+	<% Client client = (Client)request.getAttribute("client"); %>
     <div class="content">
         <div class="account">
             <h1 class="a-title">THÔNG TIN TÀI KHOẢN</h1>
@@ -19,7 +21,7 @@
                         <div class="detail-account">
                             <p>
                                 <span class="label">Họ và tên:</span>
-                                <span>Thảo Phương Nguyên</span>
+                                <span><%= client.getName()  %></span>
                             </p>
                             <p>
                                 <span class="label">Email:</span>
@@ -54,10 +56,10 @@
                     <div class="col-5">
                         <div class="actions">
                             <div class="update-inf">
-                                <a href="#" class="button">SỬA THÔNG TIN</a>
+                                <a href="/BTL_LTW/UpdateInformation" class="button">SỬA THÔNG TIN</a>
                             </div>
                             <div class="change-pw">
-                                <a href="#" class="button">THAY ĐỔI MẬT KHẨU</a>
+                                <a href="/BTL_LTW/ChangePW" class="button">THAY ĐỔI MẬT KHẨU</a>
                             </div>
                         </div>
                     </div>

@@ -14,7 +14,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.Account;
+import model.Client;
+import model.User;
 import modelDAO.AccountDAO;
+import modelDAO.ClientDAO;
+import modelDAO.UserDAO;
 
 /**
  * Servlet implementation class DuckTest
@@ -39,10 +43,7 @@ public class LoginController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            // TODO Auto-generated method stub
-//		ServletOutputStream out = response.getOutputStream();
-            response.getWriter().append("Served at: ").append(request.getContextPath());
-//            request.getRequestDispatcher("account.jsp").forward(request, response);
+            request.getRequestDispatcher("login.jsp").forward(request, response);
     }
 
 	/**
@@ -58,24 +59,27 @@ public class LoginController extends HttpServlet {
 		
     HttpSession session = request.getSession();
 
-    String username = request.getParameter("username");
-    String pass = request.getParameter("password");     
-    Account user = new Account(username, pass);
-     
-    String decode = ProcessSys.decodeSHA("helloworld");
-    
-    try {
-        ArrayList<Account> list = AccountDAO.getAll();
-        response.getWriter().append(decode);
-    } catch (ClassNotFoundException e) {
-            // TODO Auto-generated catch block
-        response.getWriter().append(e.getMessage());
-    } catch (SQLException e) {
-            // TODO Auto-generated catch block
-        response.getWriter().append(e.getMessage());
-    }
+//    String username = request.getParameter("username");
+//    String pass = request.getParameter("password");     
+//    Account user = new Account(username, pass);
+//     
+//    String decode = ProcessSys.decodeSHA("helloworld");
+//    
+//    try {
+//        ArrayList<Account> list = AccountDAO.getAll();
+//        response.getWriter().append(decode);
+//    } catch (ClassNotFoundException e) {
+//            // TODO Auto-generated catch block
+//        response.getWriter().append(e.getMessage());
+//    } catch (SQLException e) {
+//            // TODO Auto-generated catch block
+//        response.getWriter().append(e.getMessage());
+//    }
 
-    
+    //Tam
+    Client acc= ClientDAO.getByID(1);
+    session.setAttribute("user", acc);
+    response.sendRedirect("home.jsp");
 //     try {
 //		if(AccountDAO.checkIsExid(user) == true) {
 ////			session.setAttribute("user", user);
