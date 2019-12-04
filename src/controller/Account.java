@@ -32,14 +32,12 @@ public class Account extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		User user = null;
-		user = (User)session.getAttribute("user");
-		if(user == null) {
+		Client client = null;
+		client = (Client)session.getAttribute("user");
+		if(client == null) {
 			response.sendRedirect("/BTL_LTW/login");
 		}
 		else {
-			Client client= ClientDAO.getByID(user.getClientID());
-			request.setAttribute("client", client);
 			request.getRequestDispatcher("account.jsp").forward(request, response);
 		}
 		

@@ -10,8 +10,7 @@
 </head>
 <body>
 	<jsp:include page="header.jsp"/>
-	<% User user = (User)session.getAttribute("user"); %>
-	<% Client client = (Client)request.getAttribute("client"); %>
+	<% Client user = (Client)session.getAttribute("user"); %>
     <div class="content">
         <div class="account">
             <h1 class="a-title">THÔNG TIN TÀI KHOẢN</h1>
@@ -21,36 +20,36 @@
                         <div class="detail-account">
                             <p>
                                 <span class="label">Họ và tên:</span>
-                                <span><%= client.getName()  %></span>
+                                <span><%= user.getName()  %></span>
                             </p>
                             <p>
                                 <span class="label">Email:</span>
-                                <span>nguyenphuongthao12041998@gmail.com</span>
+                                <span><%= user.getEmail()  %></span>
                             </p>
                             <p>
                                 <span class="label">Điện thoại:</span>
-                                <span></span>
+                                <span><%= user.getPhone()  %></span>
                             </p>
-                            <p>
-                                <span class="label">Ngày sinh:</span>
-                                <span></span>
-                            </p>
-                            <p>
-                                <span class="label">Giới tính:</span>
-                                <span>Nữ</span>
-                            </p>
+<!--                             <p> -->
+<!--                                 <span class="label">Ngày sinh:</span> -->
+<!--                                 <span></span> -->
+<!--                             </p> -->
+<!--                             <p> -->
+<!--                                 <span class="label">Giới tính:</span> -->
+<!--                                 <span>Nữ</span> -->
+<!--                             </p> -->
                             <p>
                                 <span class="label">Địa chỉ:</span>
-                                <span></span>
+                                <span><%= user.getAddress()  %></span>
                             </p>
-                            <p>
-                                <span class="label">Quận/Huyện:</span>
-                                <span></span>
-                            </p>
-                            <p>
-                                <span class="label">Thành phố/Tỉnh:</span>
-                                <span></span>
-                            </p>
+<!--                             <p> -->
+<!--                                 <span class="label">Quận/Huyện:</span> -->
+<!--                                 <span></span> -->
+<!--                             </p> -->
+<!--                             <p> -->
+<!--                                 <span class="label">Thành phố/Tỉnh:</span> -->
+<!--                                 <span></span> -->
+<!--                             </p> -->
                         </div>
                     </div>
                     <div class="col-5">

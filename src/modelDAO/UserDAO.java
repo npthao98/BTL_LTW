@@ -90,5 +90,32 @@ public static ResultSet select(String sql) {
 			
 		
 	}
+	public static User getByClientID(int clientID) {
+		Connection con=DBConnect.createConnection();
+			
+			PreparedStatement ps;
+			try {
+				ps = con.prepareStatement("select * from user where ClientID=?");
+				ps.setInt(1, clientID);
+				ResultSet rs=ps.executeQuery();
+				while(rs.next()) {
+					int ID = rs.getInt(1);
+					int ClientID = rs.getInt(2);
+					String UserName=rs.getString(3);
+				
+					String Password=rs.getString(4);
+					int Role= rs.getInt(5);
+					User acc=new User(ID, ClientID, UserName, Password, Role);
+					return acc;
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			return null;
+			
+		
+	}
 
 }
