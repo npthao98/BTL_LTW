@@ -1,3 +1,5 @@
+<%@page import="model.Account"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
@@ -15,8 +17,9 @@
 <body>
 	
 	<jsp:include page="header.jsp"/>
+        
 	
-	 <container>
+        <container>
 		<div class="container margin-content">
 	        <!-- container--banner -->
 	        <div class="container--banner_ads">
@@ -120,7 +123,7 @@
 	                    <h3>don't miss</h3>
 	                    <h1>the finess homemade recipes</h1>
 	                    
-	                    <a href="#">
+	                    <a href="">
 	                        <button class="read_more">read more</button>
 	                    </a>
 	                </div>
@@ -373,8 +376,11 @@
 	 </container>
     
      <script src="js/home.js"></script>
-
+     
+   
     <jsp:include page="footer.jsp"/>
-    	     
+    
+
+
 </body>
 </html>

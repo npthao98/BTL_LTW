@@ -17,10 +17,10 @@
         <h1 class="login_tittle">login</h1>  
         <h3>Username :</h3>
         <h4 id="error_message" class="error_message"></h4>
-        <input type="text" name="username" id="username" required>
+        <input type="text" name="username" id="username">
         <h3>Password :</h3>
         <h4 id="password_error_message" class="error_message"></h4>
-        <input type="password" name="password" id="password" required>
+        <input type="password" name="password" id="password">
         </br>
         <button type="button" id="submit_form">Login</button>
     </form>    

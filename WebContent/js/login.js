@@ -50,12 +50,14 @@ document.addEventListener('DOMContentLoaded', function(){
 	    }
 	    return true;
 	}
-	username.addEventListener('input', function(){
+	
+        username.addEventListener('input', function(){
            err_username.innerHTML = ""; 
         });
         password.addEventListener('input', function(){
            err_pass.innerHTML = "";
         });
+        
 	button.addEventListener('click', function(){
             let user_val = validateUsername(),
                 pass_val = validatePass();
