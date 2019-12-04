@@ -9,5 +9,9 @@
 <body>
 	<img alt="" src="assets/53253055_333998163894397_315975867628131081_n.jpg">
 	<p>Hello NP</p>
+	<a href="DetailProduct?id=1
+<%-- 	<%=id%> --%>
+	">Detail Product
+	</a>
 </body>
 </html>
