@@ -18,7 +18,6 @@
 	
 	<jsp:include page="header.jsp"/>
         
-	
         <container>
 		<div class="container margin-content">
 	        <!-- container--banner -->
@@ -377,10 +376,7 @@
     
      <script src="js/home.js"></script>
      
-   
     <jsp:include page="footer.jsp"/>
     
-
-
 </body>
 </html>

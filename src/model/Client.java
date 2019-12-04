@@ -9,13 +9,18 @@ public class Client {
 	public Client() {
 		
 	}
+  	public Client(String name, String address, String phone, String email){
+            Name = name;
+            Address = address;
+            Phone = phone;
+            Email = email;
+	}      
 	public Client(int iD, String name, String address, String phone, String email) {
-		super();
-		ID = iD;
-		Name = name;
-		Address = address;
-		Phone = phone;
-		Email = email;
+            ID = iD;
+            Name = name;
+            Address = address;
+            Phone = phone;
+            Email = email;
 	}
 	public int getID() {
 		return ID;
