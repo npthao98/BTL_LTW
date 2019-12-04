@@ -1,0 +1,72 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 5, 2019, 12:53:52 AM
+    Author     : Duck
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+container .padding-content{
+    padding: 0 10% 0 10%;
+}
+container .margin-content{
+    margin: 0 10% 0 10%;
+}
+container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 50px !important;
+    margin-bottom: 50px !important;
+}
+
+container .list_products{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 70%;
+}
+container .products_filter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+container select{
+    width: 250px;
+    height: 43px;
+    border: 1px solid gray;
+}
+container option{
+    width: 250px;
+    height: 43px;
+}
+
+
+
+container .list_catgories{
+    width: 30%;
+}
+
+@media screen and (max-width: 680px) {
+    
+}
+
+@media screen and (max-width: 1032px) {
+    container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    container .products_filter{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

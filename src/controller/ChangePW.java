@@ -18,7 +18,7 @@ import modelDAO.UserDAO;
  */
 @WebServlet("/ChangePW")
 public class ChangePW extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
