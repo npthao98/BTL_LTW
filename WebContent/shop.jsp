@@ -36,9 +36,19 @@
                 <div class="products_list">
                     <% 
                         ArrayList<CakeInfor> products = (ArrayList<CakeInfor>)session.getAttribute("products");
-                        for(int i = 0; i < 10; i += 1) { %>
-                    <img src="${ products.get(i).getImgList() }">
+                        for(int i = 0; i < 10; i += 1){
+                    %>
+                    <div class="each_product">
+                        <a href="" class="link_detail">
+                            <img src="<%=products.get(i).getImgList()%>">
+                        </a>
+                        <a href="#<%=i%>" class="add_to_cart">
+                            <button>Thêm vào giỏ hàng</button>
+                        </a>
+                    </div>
+                    
                     <% } %>
+                    <img src="assets/Coconut Cupcake 1.jpg">
                 </div>
             </div>
             <div class="list_catgories">
@@ -48,6 +58,9 @@
     
         <script src="js/shop.js"></script>
      
+        <script>
+            
+        <script>
         <jsp:include page="footer.jsp"/>
     
     </body>
