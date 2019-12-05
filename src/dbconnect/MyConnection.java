@@ -21,7 +21,7 @@ public class MyConnection {
     static String password = "";
     public static Connection getConnection() throws ClassNotFoundException, SQLException{
         Class.forName("com.mysql.jdbc.Driver");
-        String connectionURL = "jdbc:mysql://" + hostName + ":3306/" + dbName;
+        String connectionURL = "jdbc:mysql://" + hostName + ":3306/" + dbName + "?useUnicode=yes&characterEncoding=UTF-8&useFastDateParsing=false";
         Connection conn = DriverManager.getConnection(connectionURL, userName,
              password);
         return conn;

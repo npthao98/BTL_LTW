@@ -14,10 +14,12 @@ import java.util.ArrayList;
 public class CakeInfor {
     private Cake cake;
     private ArrayList<Type> type;
-
-    public CakeInfor(Cake cake, ArrayList<Type> type) {
+    private ArrayList<ImageUrl> img;
+    
+    public CakeInfor(Cake cake, ArrayList<Type> type, ArrayList<ImageUrl> img) {
         this.cake = cake;
         this.type = type;
+        this.img = img;
     }
     
     public Cake getCake() {
@@ -36,6 +38,9 @@ public class CakeInfor {
         this.type = type;
     }
 
+    public String getImgList(){
+        return this.img.get(0).getUrl();
+    }
 
     
 }

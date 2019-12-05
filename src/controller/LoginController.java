@@ -46,6 +46,7 @@ public class LoginController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             // TODO Auto-generated method stub
 //		ServletOutputStream out = response.getOutputStream();
+        ProcessSys.setCharacterUTF8(request, response);
         response.sendRedirect(request.getContextPath() + "/login.jsp");
 //            request.getRequestDispatcher("account.jsp").forward(request, response);
     }
@@ -60,7 +61,7 @@ public class LoginController extends HttpServlet {
         @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub	
-
+        ProcessSys.setCharacterUTF8(request, response);
         HttpSession session = request.getSession();
 
 

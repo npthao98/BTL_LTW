@@ -41,7 +41,7 @@ public class DetailProduct extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		int id=Integer.parseInt(request.getParameter("id"));
+		int id = Integer.parseInt(request.getParameter("id"));
 		Cake cake= CakeDAO.getByID(id);
 //		List<Cake_Type> cakeType = CakeTypeDAO.getByCakeID(cake.getID());
 //		List<Type> listType = new ArrayList<Type>();

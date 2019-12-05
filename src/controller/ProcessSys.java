@@ -1,9 +1,12 @@
 package controller;
 
 
+import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -45,5 +48,10 @@ public class ProcessSys {
         catch (NoSuchAlgorithmException e) { 
             throw new RuntimeException(e); 
         }
+    }
+    
+    public static void setCharacterUTF8(HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException{
+        request.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
     }
 }

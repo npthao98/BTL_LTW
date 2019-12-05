@@ -43,8 +43,10 @@ public class RegistAccount extends HttpServlet {
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             // TODO Auto-generated method stub
-         response.sendRedirect(request.getContextPath() + "/registAccount.jsp");
-         
+        ProcessSys.setCharacterUTF8(request, response);
+
+        response.sendRedirect(request.getContextPath() + "/registAccount.jsp");
+
     }
 
     /**
@@ -52,6 +54,8 @@ public class RegistAccount extends HttpServlet {
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             // TODO Auto-generated method stub
+        ProcessSys.setCharacterUTF8(request, response);
+            
         HttpSession session = request.getSession();
             
         String username = (String) request.getParameter("username"),
