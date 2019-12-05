@@ -50,7 +50,7 @@ public class DetailSuccessOrder extends HttpServlet {
 			int id=Integer.parseInt(request.getParameter("id"));
 			Order order = OrderDAO.getByID(id);
 			Order_Client order_client = OrderClientDAO.getByOrderID(order.getID());
-			if(order_client.getClientID() != client.getID()) {
+			if(order_client.getClientID() != client.getID() || order==null) {
 				response.setContentType("text/html");
 				PrintWriter writter = response.getWriter();
 				writter.println("Don hang khong ton tai");
