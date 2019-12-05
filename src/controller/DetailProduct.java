@@ -43,14 +43,14 @@ public class DetailProduct extends HttpServlet {
 		
 		int id=Integer.parseInt(request.getParameter("id"));
 		Cake cake= CakeDAO.getByID(id);
-//		List<Cake_Type> cakeType = CakeTypeDAO.getByCakeID(cake.getID());
-//		List<Type> listType = new ArrayList<Type>();
-//		for(int i=0; i<cakeType.size(); i++) {
-//			Type t = TypeDAO.getByID(cakeType.get(i).getTypeID());
-//			listType.add(t);
-//		}
+		List<Cake_Type> cakeType = CakeTypeDAO.getByCakeID(cake.getID());
+		List<Type> listType = new ArrayList<Type>();
+		for(int i=0; i<cakeType.size(); i++) {
+			Type t = TypeDAO.getByID(cakeType.get(i).getTypeID());
+			listType.add(t);
+		}
 		request.setAttribute("cake", cake);
-//		request.setAttribute("listType", listType);
+		request.setAttribute("listType", listType);
 		request.getRequestDispatcher("/detailProduct.jsp").forward(request, response);
 	}
 

@@ -13,5 +13,6 @@
 <%-- 	<%=id%> --%>
 	">Detail Product
 	</a>
+	<img src="assets/Cheesecake_2.jpg" class="image1" alt="">
 </body>
 </html>

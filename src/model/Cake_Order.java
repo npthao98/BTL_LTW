@@ -15,6 +15,12 @@ public class Cake_Order {
 		CakeID = cakeID;
 		Quantity = quantity;
 	}
+	public Cake_Order(int orderID, int cakeID, int quantity) {
+		super();
+		OrderID = orderID;
+		CakeID = cakeID;
+		Quantity = quantity;
+	}
 	public int getID() {
 		return ID;
 	}

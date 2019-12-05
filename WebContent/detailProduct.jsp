@@ -17,15 +17,15 @@
 	<jsp:include page="header.jsp"/>
 	<% Cake cake=(Cake)request.getAttribute("cake"); %>
 	<% List<ImageUrl> listImage = ImageurlDAO.getByCakeID(cake.getID()); %>
-	<% 
-		List<Type> listType = TypeDAO.getListTypeByListCakeType(CakeTypeDAO.getByCakeID(cake.getID()));
-	%>
+	<% List<Type> listType = (List<Type>)request.getAttribute("listType"); %>
+
     <div class="content">
         <div class="detail-product">
             <div class="row">
                 <div class="col-6 image-product">
                     <div class="big-image">
                         <img src="<%=listImage.get(0).getUrl() %>" class="image1" alt="">
+                        <img src="assets/Coconut Cupcake 1.jpg" class="image1" alt="">
                     </div>
                     <div class="small-images">
                         <img src="<%=listImage.get(0).getUrl() %>" class="image2" alt="">
