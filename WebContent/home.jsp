@@ -6,8 +6,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="ISO-8859-1">
-  	<meta charset="UTF-8">
+    <meta charset="ISO-8859-1">
+    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
@@ -18,7 +18,6 @@
 	
 	<jsp:include page="header.jsp"/>
         
-	
         <container>
 		<div class="container margin-content">
 	        <!-- container--banner -->
@@ -377,10 +376,7 @@
     
      <script src="js/home.js"></script>
      
-   
     <jsp:include page="footer.jsp"/>
     
-
-
 </body>
 </html>

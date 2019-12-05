@@ -4,6 +4,7 @@ public class Account{
 	
 	public static String table_name = "";
 	
+        private int ID;
 	private String username;
 	private String pass;
 	
@@ -18,5 +19,11 @@ public class Account{
 	public String getPass() {
 		return this.pass;
 	}
-
+        
+        public void setID(int ID){
+            this.ID = ID;
+        }
+        public int getID(){
+            return this.ID;
+        }
 }

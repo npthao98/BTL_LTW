@@ -16,11 +16,16 @@
     <form action="${pageContext.request.contextPath}/login" method="POST" class="margin-content login--form">
         <h1 class="login_tittle">login</h1>  
         <h3>Username :</h3>
-        <h4 id="error_message" class="error_message"></h4>
-        <input type="text" name="username" id="username">
+        <h4 id="error_message" class="error_message">${error}</h4>
+        <%
+            if(session.getAttribute("error") != null){
+                session.setAttribute("error", null);
+            }
+        %>
+        <input type="text" name="username" id="username" required>
         <h3>Password :</h3>
         <h4 id="password_error_message" class="error_message"></h4>
-        <input type="password" name="password" id="password">
+        <input type="password" name="password" id="password" required>
         </br>
         <button type="button" id="submit_form">Login</button>
     </form>    

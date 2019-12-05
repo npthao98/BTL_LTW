@@ -1,0 +1,72 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 4, 2019, 7:06:43 PM
+    Author     : Duck
+*/
+@import url('https://fonts.googleapis.com/css?family=Cormorant&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+input::selection{
+    background: #bb9230;
+    color: #fff;
+}
+#form_regist{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-family: Cormorant, sans-serif;
+}
+#form_regist h2{
+    margin-bottom: 30px;
+}
+#form_regist input{
+    height: 50px;
+    font-size: 20px;
+    min-width: 200px;
+    max-width: 50%;
+    font-family: Muli, sans-serif;
+}
+#form_regist .margin-content{
+    margin: 0 10% 0 10%;
+}
+#form_regist h3, h4, input{
+    margin-left: 100px;
+}
+#form_regist input{
+    margin-bottom: 20px;
+}
+.error_message{
+    font-family: Muli,sans-serif;
+    color: red;
+    height: 22px;
+    margin: 10px 0 0 0;
+    padding-left: 150px;
+    padding-bottom: 10px;
+    font-style: italic;
+}
+.regist_button{
+    background: black;
+    font-size: 0.8vw;
+    border: none;
+    outline: none;
+    color: #fff;
+    height: 50px;
+    width: 162px;
+    transition: all 0.4s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Cormorant', serif;
+    margin-top: 10px;
+    align-self: center;
+}
+
+#form_regist button:hover{
+    background: #bb9230;
+}

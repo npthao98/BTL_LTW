@@ -3,6 +3,8 @@ package controller;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,7 +18,6 @@ import javax.servlet.http.HttpSession;
 import model.Account;
 import model.Client;
 import model.User;
-import modelDAO.AccountDAO;
 import modelDAO.ClientDAO;
 import modelDAO.UserDAO;
 
@@ -27,7 +28,7 @@ import modelDAO.UserDAO;
 @WebServlet("/login")
 
 public class LoginController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -43,7 +44,10 @@ public class LoginController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            request.getRequestDispatcher("/login.jsp").forward(request, response);
+            // TODO Auto-generated method stub
+//		ServletOutputStream out = response.getOutputStream();
+        response.sendRedirect(request.getContextPath() + "/login.jsp");
+//            request.getRequestDispatcher("account.jsp").forward(request, response);
     }
 
 	/**
@@ -57,50 +61,39 @@ public class LoginController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub	
 
-//    String username = request.getParameter("username");
-//    String pass = request.getParameter("password");     
-//    Account user = new Account(username, pass);
-//     
-//    String decode = ProcessSys.decodeSHA("helloworld");
-//    
-//    try {
-//        ArrayList<Account> list = AccountDAO.getAll();
-//        response.getWriter().append(decode);
-//    } catch (ClassNotFoundException e) {
-//            // TODO Auto-generated catch block
-//        response.getWriter().append(e.getMessage());
-//    } catch (SQLException e) {
-//            // TODO Auto-generated catch block
-//        response.getWriter().append(e.getMessage());
-//    }
         HttpSession session = request.getSession();
 
 
-//        String username = request.getParameter("username");
-//        String pass = request.getParameter("password");     
-//        Account user = new Account(username, pass);
-//            
-//        session.setAttribute("duck", user);
-//
-//        String decode = ProcessSys.decodeSHA("helloworld");
-//
-//        response.sendRedirect(request.getContextPath() + "/home.jsp");
-//
-//        try {
-//            ArrayList<Account> list = AccountDAO.getAll();
-//            response.getWriter().append(decode);
-//        } catch (ClassNotFoundException e) {
-//                // TODO Auto-generated catch block
-//            response.getWriter().append(e.getMessage());
-//        } catch (SQLException e) {
-//                // TODO Auto-generated catch block
-//            response.getWriter().append(e.getMessage());
-//        }
+        String username = request.getParameter("username");
+        String pass = ProcessSys.decodeSHA(request.getParameter("password"));    
+        Account account = new Account(username, pass);
+        
+        try {
+            User t = UserDAO.getUserByAccount(account);
+            if(t == null){
+                session.setAttribute("error", "Account is wrong !!!");
+                response.sendRedirect(request.getContextPath() + "/login");
+            }else{
+                Client user = ClientDAO.checkAccountExid(t);
+                if(user != null){
+                    session.setAttribute("user", user);
+                    response.sendRedirect(request.getContextPath() + "/home.jsp");
+                }
+                else{
+                    session.setAttribute("error", "Account is wrong !!!");
+                    response.sendRedirect(request.getContextPath() + "/login");
+                }                 
+            }
+         
+        }catch (ClassNotFoundException ex) {
+            response.getWriter().append(ex.getMessage());
+            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            response.getWriter().append(ex.getMessage());
+        }
 
-    //Tam
-    Client acc=ClientDAO.getByID(1);
-    session.setAttribute("user", acc);
-    response.sendRedirect("home.jsp");
+        
+    
 //     try {
 //		if(AccountDAO.checkIsExid(user) == true) {
 ////			session.setAttribute("user", user);
