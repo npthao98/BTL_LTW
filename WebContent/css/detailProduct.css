@@ -119,9 +119,11 @@ body{
 }
 .content .content-infor-product h1{
     margin-top: 0px;
+    margin-bottom: 15px;
 }
 .content .content-infor-product h2{
     color: #bb9230;
+    margin-bottom: 15px;
 }
 .content .content-infor-product p{
     color: #545454;

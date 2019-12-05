@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -11,9 +12,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.Cake;
+import model.Cake_Type;
 import model.ImageUrl;
+import model.Type;
 import modelDAO.CakeDAO;
+import modelDAO.CakeTypeDAO;
 import modelDAO.ImageurlDAO;
+import modelDAO.TypeDAO;
 
 /**
  * Servlet implementation class DetailProduct
@@ -38,9 +43,14 @@ public class DetailProduct extends HttpServlet {
 		
 		int id=Integer.parseInt(request.getParameter("id"));
 		Cake cake= CakeDAO.getByID(id);
-		List<ImageUrl> listImage = ImageurlDAO.getByCakeID(cake.getID());
+//		List<Cake_Type> cakeType = CakeTypeDAO.getByCakeID(cake.getID());
+//		List<Type> listType = new ArrayList<Type>();
+//		for(int i=0; i<cakeType.size(); i++) {
+//			Type t = TypeDAO.getByID(cakeType.get(i).getTypeID());
+//			listType.add(t);
+//		}
 		request.setAttribute("cake", cake);
-		request.setAttribute("listImage", listImage);
+//		request.setAttribute("listType", listType);
 		request.getRequestDispatcher("/detailProduct.jsp").forward(request, response);
 	}
 
