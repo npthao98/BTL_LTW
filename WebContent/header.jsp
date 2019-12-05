@@ -1110,7 +1110,7 @@
             <div class="header--navbar_item"><a href="">home</a></div>
             <div class="header--navbar_item"><a href="">blog</a></div>
             <div class="header--navbar_item"><a href="">portfolio</a></div>
-            <div class="header--navbar_item"><a href="">shop</a></div>
+            <div class="header--navbar_item"><a href="${pageContext.request.contextPath}/shop">shop</a></div>
         </div>
     </div>
 

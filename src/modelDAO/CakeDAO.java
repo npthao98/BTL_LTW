@@ -44,7 +44,7 @@ public class CakeDAO {
         public static ArrayList<Cake> getAllCake() throws ClassNotFoundException, SQLException{
             ArrayList<Cake> result = new ArrayList<Cake>();
             
-            Connection conn = MyConnection.getConnection();
+            Connection conn = DBConnect.createConnection();
             
             String sql = "SELECT * FROM cake";
             Statement state = conn.createStatement();

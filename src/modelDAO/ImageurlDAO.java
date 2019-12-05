@@ -39,7 +39,7 @@ public class ImageurlDAO {
     }
 
     public static ArrayList<ImageUrl> getByCake(Cake cake) throws ClassNotFoundException, SQLException {
-        Connection con = MyConnection.getConnection();
+        Connection con = DBConnect.createConnection();
         PreparedStatement ps;
         try {
             ps = con.prepareStatement("select * from imageurl where CakeID=?");

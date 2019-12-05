@@ -40,7 +40,7 @@ public class TypeDAO {
     }
     
     public static ArrayList<Type> getAllType() throws ClassNotFoundException, SQLException{
-        Connection con = MyConnection.getConnection();
+        Connection con = DBConnect.createConnection();
         Statement state = con.createStatement();
         
         ArrayList<Type> result = new ArrayList<Type>();
@@ -53,7 +53,7 @@ public class TypeDAO {
     }
     
     public static ArrayList<Type> getByCake(Cake cake) throws ClassNotFoundException, SQLException {
-        Connection con = MyConnection.getConnection();
+        Connection con = DBConnect.createConnection();
         ArrayList<Type> result = new ArrayList<Type>(),
                         alltypes = getAllType();
         ArrayList<Cake_Type> cakeType = (ArrayList<Cake_Type>) CakeTypeDAO.getByCake(cake);

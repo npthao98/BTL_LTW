@@ -36,7 +36,6 @@ public class ShopController extends HttpServlet {
 //        response.sendRedirect(request.getContextPath() + "/shop.jsp");
         ProcessSys.setCharacterUTF8(request, response);
         HttpSession session = request.getSession();
-        
         try {
             int dem = 0;
             ArrayList<Cake> list = CakeDAO.getAllCake();

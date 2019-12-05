@@ -40,7 +40,7 @@ public class CakeTypeDAO {
     
     
     public static List<Cake_Type> getByCake(Cake cake) throws ClassNotFoundException, SQLException {
-        Connection con = MyConnection.getConnection();
+        Connection con = DBConnect.createConnection();
         PreparedStatement ps;
         try {
             ps = con.prepareStatement("select * from cake_type where CakeID=?");
