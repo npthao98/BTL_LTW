@@ -78,7 +78,10 @@ public class LoginController extends HttpServlet {
                 Client user = ClientDAO.checkAccountExid(t);
                 if(user != null){
                     session.setAttribute("user", user);
-                    response.sendRedirect(request.getContextPath() + "/home.jsp");
+                    if(t.getRole() == 1)
+                        response.sendRedirect(request.getContextPath() + "/home.jsp");
+                    else
+                       response.sendRedirect(request.getContextPath() + "/staff_home.jsp"); 
                 }
                 else{
                     session.setAttribute("error", "Account is wrong !!!");

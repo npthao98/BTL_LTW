@@ -62,11 +62,35 @@ container .products_list .each_product{
     position: relative;
     object-fit: cover;
 }
-container .each_product img{
-    object-fit: cover;
+.product_img{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
     width: 100%;
-    height: auto;
 }
+.button_add_cart{
+    width: 90%;
+    height: 20%;
+    margin: 5%;
+    z-index: 2;
+    transition: all .2s ease-in-out!important;
+    background-color: #fff;
+    color: #000;
+    letter-spacing: .15em;
+    opacity: 0;
+    border: none;
+    outline: none;
+}
+.product_img:hover > .button_add_cart{
+    opacity: 1;
+}
+
+.button_add_cart:hover{
+    background: #bb9230;
+    color: white;
+}
+
 
 container .list_catgories{
     width: 30%;
