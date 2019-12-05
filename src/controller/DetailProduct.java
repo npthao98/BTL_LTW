@@ -49,8 +49,14 @@ public class DetailProduct extends HttpServlet {
 			Type t = TypeDAO.getByID(cakeType.get(i).getTypeID());
 			listType.add(t);
 		}
+		
 		request.setAttribute("cake", cake);
+		
 		request.setAttribute("listType", listType);
+		
+		List<ImageUrl> listImage = ImageurlDAO.getByCakeID(cake.getID());
+		request.setAttribute("listImage", listImage);
+		
 		request.getRequestDispatcher("/detailProduct.jsp").forward(request, response);
 	}
 

@@ -17,7 +17,7 @@ public class CakeOrderDAO {
         Connection con=DBConnect.createConnection();
         PreparedStatement ps;
         try {
-            ps = con.prepareStatement("select * from cake_order where ClientID=?");
+            ps = con.prepareStatement("select * from cake_order where OrderID=?");
             ps.setInt(1, orderID);
             ResultSet rs=ps.executeQuery();
             List<Cake_Order> res = new ArrayList<Cake_Order>();
