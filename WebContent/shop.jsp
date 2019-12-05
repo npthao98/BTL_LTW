@@ -4,7 +4,10 @@
     Author     : Duck
 --%>
 
+<%@page import="model.CakeInfor"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,7 +21,7 @@
     </head>
     <body>
         <jsp:include page="header.jsp"/>
-
+        
         <container class="margin-content">
             <div class="list_products">
                 <div class="products_filter">
@@ -31,7 +34,11 @@
                     </select>
                 </div>
                 <div class="products_list">
-                    
+                    <% 
+                        ArrayList<CakeInfor> products = (ArrayList<CakeInfor>)session.getAttribute("products");
+                        for(int i = 0; i < 10; i += 1) { %>
+                    <img src="${ products.get(i).getImgList() }">
+                    <% } %>
                 </div>
             </div>
             <div class="list_catgories">
