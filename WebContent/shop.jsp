@@ -33,24 +33,26 @@
                         <option value="audi">Theo tên</option>
                     </select>
                 </div>
+ 
                 <div class="products_list">
+                <%
+                   ArrayList<CakeInfor> list = (ArrayList<CakeInfor>)session.getAttribute("products");
+                   for(int i = 0; i < list.size(); i++){
+                %>
                     <div class="each_product">
-                        <a class="product_img" style="background: url('assets/cake/Apple_Cinnamon_Spice_Whoopie_Pies_1.jpg')">
+                        <a class="product_img" style="background-image: url('<%=list.get(i).getImgList()%>')"
+                           href="#">
                             <button class="button_add_cart">
                                 <i class="fas fa-shopping-cart"></i>
                                 ADD TO CART</button>
                         </a>
-                        
+                        <div class="infor-product">
+                            <img src="assets/Rating.JPG">
+                            <h3><%=list.get(i).getCake().getName()%></h3>
+                            <p class="price_product"><%=list.get(i).getCake().getPrice()%></p>
+                        </div>
                     </div>
-                    
-                    <div class="each_product">
-                        <a class="product_img" style="background: url('assets/cake/Apple_Cinnamon_Spice_Whoopie_Pies_1.jpg')">
-                            <button class="button_add_cart">
-                                <i class="fas fa-shopping-cart"></i>
-                                ADD TO CART</button>
-                        </a>
-                        
-                    </div>
+                <%}%>
                     
                 </div>
             </div>
