@@ -131,11 +131,6 @@
                                                     Details
                                                 </a>
                                             </div>
-                                            <div class="col-6">
-                                                <a href="#" class="bt-right">
-                                                    Cancel
-                                                </a>
-                                            </div>
                                         </td>
                                     </tr>
                                 </tbody>

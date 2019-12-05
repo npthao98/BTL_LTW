@@ -57,6 +57,7 @@ float: left;
     }
     .content .row .content-infor-product{
         padding: 20px 0px;
+        margin-left: 20px;
     }
 }
 
@@ -156,10 +157,10 @@ body{
 /* add to cart button */
 .content .bt-add-to-cart{
     position: relative;
-    left: -5px;
+    left: 0px;
     top: -1px;
     margin-top: 20px;
-    padding: 18px 37px;
+    padding: 20px 37px;
     color: #fff;
     background-color: #1f1e1e;
     border: 1px solid transparent;
