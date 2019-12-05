@@ -9,17 +9,15 @@
 <script src="js/detailProduct.js"></script>
 <title>Insert title here</title>
  <%@page import="model.*" %>
- <%@page import="modelDAO.*" %>
  <%@page import="java.util.List"%>
   <%@page import="java.util.ArrayList"%>
 </head>
 <body>
 	<jsp:include page="header.jsp"/>
 	<% Cake cake=(Cake)request.getAttribute("cake"); %>
-	<% List<ImageUrl> listImage = ImageurlDAO.getByCakeID(cake.getID()); %>
-	<% 
-		List<Type> listType = TypeDAO.getListTypeByListCakeType(CakeTypeDAO.getByCakeID(cake.getID()));
-	%>
+	<% List<ImageUrl> listImage = (List<ImageUrl>)request.getAttribute("listImage"); %>
+	<% List<Type> listType = (List<Type>)request.getAttribute("listType"); %>
+
     <div class="content">
         <div class="detail-product">
             <div class="row">

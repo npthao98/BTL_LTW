@@ -9,8 +9,13 @@ import dbconnect.DBConnect;
 import dbconnect.MyConnection;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
+
 import model.Cake;
+import model.Cake_Order;
+import model.Cake_Type;
 import model.Client;
+import model.Type;
 
 public class CakeDAO {
 	private static final DBConnect DBConnector = null;
@@ -55,5 +60,14 @@ public class CakeDAO {
             }
             
             return result;
+        }
+        
+        public static List<Cake> getCakesByOrderCakes(List<Cake_Order> CakeOrders) {
+            List<Cake> listCakes = new ArrayList<Cake>();
+            for(int i=0; i<CakeOrders.size(); i++) {
+                Cake t = CakeDAO.getByID(CakeOrders.get(i).getCakeID());
+                listCakes.add(t);
+            }
+            return listCakes;
         }
 }

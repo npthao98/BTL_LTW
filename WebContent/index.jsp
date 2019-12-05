@@ -13,5 +13,7 @@
 <%-- 	<%=id%> --%>
 	">Detail Product
 	</a>
+	<img src="assets/Pumpkin Cupcakes 1.jpg" class="image1" alt="">
+	<img src="assets/Pumpkin Bundt Cake 1.jpg" class="image1" alt="">
 </body>
 </html>

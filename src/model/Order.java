@@ -39,6 +39,10 @@ public class Order {
 	public void setState(int state) {
 		State = state;
 	}
+	@Override
+	public String toString() {
+		return "Order [ID=" + ID + ", Time=" + Time + ", Total=" + Total + ", State=" + State + "]";
+	}
 	
 	
 }

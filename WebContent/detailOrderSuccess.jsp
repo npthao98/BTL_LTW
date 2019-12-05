@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@page import="model.*" %>
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,60 +13,75 @@
 <title>Detail Order Success</title>
 </head>
 <body>
+<% 
+	Order order=(Order)request.getAttribute("order");
+	Client client=(Client)request.getAttribute("client");
+    List<Cake> cakes = (List<Cake>)request.getAttribute("cakes"); 
+    List<Cake_Order> cakeOrders = (List<Cake_Order>)request.getAttribute("cakeOrders"); 
+%>
 <jsp:include page="header.jsp"/>
 <div class="content">
     <div class="detail-order-success">
         <form action="#">
             <div class="customer-details">
                 <div class="row">
-                    <h3 class="customer-details-item-title">BILL DETAILS</h3>
+                    <h3 class="customer-details-item-title">CHI TIẾT SẢN PHẨM</h3>
                     <div class="col-6 bill-details">
                         <div class="order-revieiw">
                             <table class="shop_table">
                                 <thead>
                                 <tr>
-                                    <th class="product-name">Product</th>
-                                    <th class="product-total">Total</th>
+                                    <th class="product-name">Sản phẩm</th>
+                                    <th class="product-total">Thành tiền</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr class="cart_item">
-                                    <td class="product-name">
-                                        Coffee Intense&nbsp;
-                                        <strong class="product-quantity">× 1</strong>
-                                    </td>
-                                    <td class="product-total">
-                                <span class="woocommerce-Price-amount amount">
-                                    <span class="woocommerce-Price-currencySymbol">$</span>
-                                    40.00
-                                </span>
-                                    </td>
-                                </tr>
-                                <tr class="cart_item">
-                                    <td class="product-name">
-                                        Roule Saucisse&nbsp;
-                                        <strong class="product-quantity">× 1</strong>
-                                    </td>
-                                    <td class="product-total">
-                                <span class="woocommerce-Price-amount amount">
-                                    <span class="woocommerce-Price-currencySymbol">$</span>
-                                    29.00
-                                </span>
-                                    </td>
-                                </tr>
+                                <% int total=0; 
+                                for(int i=0; i<cakes.size(); i++){ %>
+	                                <tr class="cart_item">
+	                                    <td class="product-name">
+	                                        <%=cakes.get(i).getName() %>&nbsp;
+	                                        <strong class="product-quantity">× 
+	                                        	<%for(int j=0; j<cakeOrders.size(); j++){ 
+	                                        		if(cakeOrders.get(j).getCakeID()==cakes.get(i).getID()){
+	                                        			%>
+	                                        			<%= cakeOrders.get(j).getQuantity() %>
+	                                        			<% 
+	                                        			break;
+	                                        		}
+	                                        	} %>
+	                                        </strong>
+	                                    </td>
+	                                    <td class="product-total">
+	                                <span class="woocommerce-Price-amount amount">
+<!-- 	                                    <span class="woocommerce-Price-currencySymbol">$</span> -->
+	                                    <% int price = 0;
+	                                    for(int j=0; j<cakeOrders.size(); j++){ 
+	                                        		if(cakeOrders.get(j).getCakeID()==cakes.get(i).getID()){
+	                                        			price = price + cakeOrders.get(j).getQuantity()*cakes.get(i).getPrice();
+	                                        			break;
+	                                        		}
+	                                      }
+	                                    total+=price;
+	                                      %>
+	                                      <%=price %>
+	                                </span>
+	                                    </td>
+	                                </tr>
+                                <%} %>
                                 </tbody>
                                 <tfoot>
                                 <tr class="cart-subtotal">
-                                    <th>Subtotal</th>
+                                    <th>Tổng phụ</th>
                                     <td>
                                     <span class="woocommerce-Price-amount amount">
-                                        <span class="woocommerce-Price-currencySymbol">$</span>
-                                        69.00
+<!--                                         <span class="woocommerce-Price-currencySymbol">$</span> -->
+                                        <%=total %>
                                     </span>
                                     </td>
                                 </tr>
                                 <tr class="cart-subtotal">
-                                    <th>payment method</th>
+                                    <th>Phương thức thanh toán</th>
                                     <td>
                                     <span class="woocommerce-Price-amount amount">
                                         COD
@@ -71,12 +89,12 @@
                                     </td>
                                 </tr>
                                 <tr class="order-total">
-                                    <th>Total</th>
+                                    <th>Tổng tiền</th>
                                     <td>
                                         <strong>
                                         <span class="woocommerce-Price-amount amount">
-                                            <span class="woocommerce-Price-currencySymbol">$</span>
-                                            69.00
+<!--                                             <span class="woocommerce-Price-currencySymbol">$</span> -->
+                                            <%=total %>
                                         </span>
                                         </strong>
                                     </td>
@@ -86,31 +104,27 @@
                         </div>
                     </div>
                     <div class="col-6 bill-information">
-                        <h4>Thanks for trusting us</h4>
+                        <h4>ĐƠN HÀNG CHI TIẾT</h4>
                         <ul style="    padding-left: 50px;"">
                             <li>
-                                <label>Order id: </label>
-                                <span>1183</span>
+                                <label>Mã đơn: </label>
+                                <span><%=order.getID() %></span>
                             </li>
                             <li>
-                                <label>Datetime: </label>
-                                <span>11h59 12/04/2020</span>
+                                <label>Thời gian đặt: </label>
+                                <span><%=order.getTime() %></span>
                             </li>
                             <li>
-                                <label>Name: </label>
-                                <span>Nguyễn Phương Thảo</span>
+                                <label>Tên người nhận: </label>
+                                <span><%=client.getName() %></span>
                             </li>
                             <li>
-                                <label>Detail address: </label>
-                                <span>Nhà 11 ngõ 32</span>
+                                <label>Địa chỉ: </label>
+                                <span><%=client.getAddress() %></span>
                             </li>
                             <li>
-                                <label>Town/City:</label>
-                                <span>Hà Nội</span>
-                            </li>
-                            <li>
-                                <label>Phone: </label>
-                                <span>033********</span>
+                                <label>SDT: </label>
+                                <span><%=client.getPhone() %></span>
                             </li>
                         </ul>
                     </div>
@@ -119,30 +133,70 @@
             </div>
             <div class="state-order">
                 <ul>
-                    <li>
-                        <div>
-                            <img src="assets/check.png">
-                        </div>
-                        <p>1. Received the order</p>
-                    </li>
-                    <li>
-                        <div>
-                            <img src="assets/packing.png">
-                        </div>
-                        <p>2. Packing the goods</p>
-                    </li>
-                    <li>
-                        <div>
-                            <img src="assets/transfer.png">
-                        </div>
-                        <p>3. Freight</p>
-                    </li>
-                    <li class="select-state">
-                        <div >
-                            <img src="assets/receive.png" >
-                        </div>
-                        <p>4. Delivered</p>
-                    </li>
+                	<%if(order.getState()==0){ %>
+	                    <li class="select-state">
+	                        <div>
+	                            <img src="assets/check.png">
+	                        </div>
+	                        <p>1. Chờ xác nhận</p>
+	                    </li>
+                    <%} else{
+                    %>
+                    	<li>
+	                        <div>
+	                            <img src="assets/check.png">
+	                        </div>
+	                        <p>1. Chờ xác nhận</p>
+	                    </li>
+                    <%} %>
+                    <%if(order.getState()==1){ %>
+	                    <li class="select-state">
+	                        <div>
+	                            <img src="assets/packing.png">
+	                        </div>
+	                        <p>2. Đã xác nhận</p>
+	                    </li>
+                    <%} else{
+                    %>
+                    	<li>
+	                        <div>
+	                            <img src="assets/packing.png">
+	                        </div>
+	                        <p>2. Đã xác nhận</p>
+	                    </li>
+                    <%} %>
+                    <%if(order.getState()==2){ %>
+	                    <li class="select-state">
+	                        <div>
+	                            <img src="assets/transfer.png">
+	                        </div>
+	                        <p>3. Đang giao hàng</p>
+	                    </li>
+                    <%} else{
+                    %>
+                    	<li>
+	                        <div>
+	                            <img src="assets/transfer.png">
+	                        </div>
+	                        <p>3. Đang giao hàng</p>
+	                    </li>
+                    <%} %>
+                    <%if(order.getState()==3){ %>
+	                    <li class="select-state">
+	                        <div >
+	                            <img src="assets/receive.png" >
+	                        </div>
+	                        <p>4. Đã giao hàng</p>
+	                    </li>
+                    <%} else{
+                    %>
+                    	<li>
+	                        <div >
+	                            <img src="assets/receive.png" >
+	                        </div>
+	                        <p>4. Đã giao hàng</p>
+	                    </li>
+                    <%} %>
                 </ul>
             </div>
             <div class="checkout-payment">
