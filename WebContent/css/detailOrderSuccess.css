@@ -178,6 +178,19 @@ body{
 .content .bill-information ul li{
     margin-bottom: 13px;
 }
+.content .bill-information .button {
+    width: 150px;
+    display: block;
+    padding: 13px 0px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #1f1e1e;
+    border: 1px solid transparent;
+    cursor: pointer;
+    z-index: 3;
+    text-align: center;
+    margin: auto;
+}
 /*end Bill information*/
 
 /*end customer-details*/

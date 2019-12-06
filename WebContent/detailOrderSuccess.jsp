@@ -120,13 +120,24 @@
                             </li>
                             <li>
                                 <label>Địa chỉ: </label>
-                                <span><%=client.getAddress() %></span>
+                                <span><%=order.getAddress() %></span>
                             </li>
                             <li>
                                 <label>SDT: </label>
                                 <span><%=client.getPhone() %></span>
                             </li>
+                            <%if(order.getState()==4){ %>
+                        		<li>
+	                                <label>Trạng thái đơn: </label>
+	                                <span>Đã hủy</span>
+	                            </li>
+	                    	<%} %>
                         </ul>
+                        <div>
+                        	<%if(order.getState()==0){ %>
+                        		<a class="button" href="/BTL_LTW/CancelOrder?id=<%=order.getID()%>"  onclick="return xacNhan()">HỦY ĐƠN</a>
+	                    	<%} %>
+                        </div>
                     </div>
                 </div>
 
@@ -200,12 +211,21 @@
                 </ul>
             </div>
             <div class="checkout-payment">
-                <button type="submit" class="button-payment" name="woocommerce_checkout_place_order"
-                        id="place_order" value="Place order" data-value="Place order">Back main page</button>
+                <a href="/BTL_LTW/ListOrders" class="button-payment">Quay lại</a>
             </div>
         </form>
     </div>
 </div>
 <jsp:include page="footer.jsp"/>
+
+<script>
+function xacNhan() {
+	  if (confirm("Bạn có chắc muốn hủy đơn không?")) {
+	    return true;
+	  } else {
+	    return false;
+	  }
+	}
+</script>
 </body>
 </html>

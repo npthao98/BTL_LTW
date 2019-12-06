@@ -4,11 +4,12 @@ public class Order {
 	private int ID;
 	private String Time;
 	private int Total;
+	private String Address;
 	private int State;
 	public Order() {
 		super();
 	}
-	public Order(int iD, String time, int total, int state) {
+	public Order(int iD, String time, int total,String address, int state ) {
 		super();
 		ID = iD;
 		Time = time;
@@ -32,6 +33,12 @@ public class Order {
 	}
 	public void setTotal(int total) {
 		Total = total;
+	}
+	public String getAddress() {
+		return Address;
+	}
+	public void setAddress(String address) {
+		Address = address;
 	}
 	public int getState() {
 		return State;
