@@ -33,35 +33,38 @@
                         <option value="audi">Theo tên</option>
                     </select>
                 </div>
+ 
                 <div class="products_list">
-                    <% 
-                        ArrayList<CakeInfor> products = (ArrayList<CakeInfor>)session.getAttribute("products");
-                        for(int i = 0; i < 10; i += 1){
-                    %>
+                <%
+                   ArrayList<CakeInfor> list = (ArrayList<CakeInfor>)session.getAttribute("products");
+                   for(int i = 0; i < list.size(); i++){
+                %>
                     <div class="each_product">
-                        <a href="" class="link_detail">
-                            <img src="<%=products.get(i).getImgList()%>">
+                        <a class="product_img" style="background-image: url('<%=list.get(i).getImgList()%>')"
+                           href="#">
+                            <button class="button_add_cart">
+                                <i class="fas fa-shopping-cart"></i>
+                                ADD TO CART</button>
                         </a>
-                        <a href="#<%=i%>" class="add_to_cart">
-                            <button>Thêm vào giỏ hàng</button>
-                        </a>
+                        <div class="infor-product">
+                            <img src="assets/Rating.JPG">
+                            <h3><%=list.get(i).getCake().getName()%></h3>
+                            <p class="price_product"><%=list.get(i).getCake().getPrice()%></p>
+                        </div>
                     </div>
+                <%}%>
                     
-                    <% } %>
-                    <img src="assets/Coconut Cupcake 1.jpg">
                 </div>
             </div>
+            
             <div class="list_catgories">
                 
             </div>
         </container>
-    
+     
         <script src="js/shop.js"></script>
      
-        <script>
-            
-        <script>
         <jsp:include page="footer.jsp"/>
-    
+        
     </body>
 </html>
