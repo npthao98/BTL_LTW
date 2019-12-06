@@ -1,6 +1,10 @@
 package model;
 
-public class ImageUrl {
+import java.io.Serializable;
+
+public class ImageUrl implements Serializable{
+    
+    static final long serialVersionUID = 8L;
 	private int ID;
 	private int CakeID;
 	private String Url;

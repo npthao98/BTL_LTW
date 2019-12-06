@@ -14,7 +14,7 @@ import model.Cake_Type;
 import model.ImageUrl;
 
 public class CakeTypeDAO {
-    private static final DBConnect DBConnector = null;
+//    private static final DBConnect DBConnector = null;
     
     public static List<Cake_Type> getByCakeID(int cakeID) {
         Connection con=DBConnect.createConnection();
@@ -30,6 +30,7 @@ public class CakeTypeDAO {
                     Cake_Type cakeType = new Cake_Type(CakeID, TypeID);
                     res.add(cakeType);
             }
+            ps.close();
             return res;
         } catch (SQLException e) {
                 // TODO Auto-generated catch block
@@ -53,6 +54,7 @@ public class CakeTypeDAO {
                 Cake_Type cakeType = new Cake_Type(CakeID, TypeID);
                 res.add(cakeType);
             }
+            ps.close();
             return res;
         } catch (SQLException e) {
                 // TODO Auto-generated catch block

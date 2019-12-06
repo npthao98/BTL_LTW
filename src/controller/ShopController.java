@@ -35,22 +35,25 @@ public class ShopController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        response.sendRedirect(request.getContextPath() + "/shop.jsp");
         ProcessSys.setCharacterUTF8(request, response);
+        
         HttpSession session = request.getSession();
+        
+        session.removeAttribute("products");
+        
         try {
-            int dem = 0;
             ArrayList<Cake> list = CakeDAO.getAllCake();
             ArrayList<CakeInfor> products = new ArrayList<CakeInfor>();
             for(int i = 0; i < list.size(); i++){
                 ArrayList<ImageUrl> urls = ImageurlDAO.getByCake(list.get(i));
                 ArrayList<Type> types = TypeDAO.getByCake(list.get(i));
-//                for(int j = 0; j < urls.size(); j++){
-//                    response.getWriter().append(urls.get(j).getUrl()+ "---");
-//                    dem++;
-//                }
                 products.add(new CakeInfor(list.get(i), types, urls));
             }
-            System.out.println(dem);
             session.setAttribute("products", products);
+            
+            if(session.getAttribute("cart") == null){
+                ArrayList<CakeInfor> cart = new ArrayList<CakeInfor>();            
+                session.setAttribute("cart", products);
+            }
             response.sendRedirect(request.getContextPath() + "/shop.jsp");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ShopController.class.getName()).log(Level.SEVERE, null, ex);

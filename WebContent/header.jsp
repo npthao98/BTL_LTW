@@ -558,7 +558,7 @@
                     </a>
                 </div>
                 <div class="header--logo_item">
-                    <a href="">
+                    <a href="${pageContext.request.contextPath}/cartDetail.jsp">
                         <svg width="40px" class="svg-shopping-cart" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 29 29" style="enable-background:new 0 0 29 29;" xml:space="preserve">
                             <path class="st0" d="M8,24.3c0-0.4,0-0.9,0-1.4c0-0.3,0-0.5,0-0.8c0-0.3,0-0.6,0-0.9c0-0.6,0-1.2,0-1.9c0-0.3,0-0.7,0-1
                                 c0-0.2,0-0.3,0-0.5c0-0.1,0-0.2,0-0.3l0-0.1c0,0,0,0,0-0.1c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1C8,17,7.9,16.8,7.8,16.8c0,0-0.1,0-0.1,0
@@ -1107,7 +1107,7 @@
                         C23.5,20.7,22.1,19.3,20.8,17.9z"></path>
                 </svg>
             </button>
-            <div class="header--navbar_item"><a href="">home</a></div>
+            <div class="header--navbar_item"><a href="${pageContext.request.contextPath}">home</a></div>
             <div class="header--navbar_item"><a href="">blog</a></div>
             <div class="header--navbar_item"><a href="">portfolio</a></div>
             <div class="header--navbar_item"><a href="${pageContext.request.contextPath}/shop">shop</a></div>

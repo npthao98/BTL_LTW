@@ -71,15 +71,14 @@ container .products_list .each_product{
     align-items: center;
     justify-content: flex-end;
     width: 100%;
-    background-size:     cover;
+    /*background-size: cover;*/
     background-repeat:   no-repeat;
-    background-position: center center;  
+    background-position: center center;
 }
 .button_add_cart{
     width: 90%;
     height: 20%;
     margin: 5%;
-    z-index: 2;
     background-color: #fff;
     color: #000;
     letter-spacing: .15em;
@@ -126,7 +125,11 @@ container .infor-product p{
 }
 
 @media screen and (max-width: 680px) {
-    
+  container .products_list{
+    display: grid;
+    grid-template-columns: 60% !important;
+    align-items: center;
+  }
 }
 
 @media screen and (max-width: 1032px) {

@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -16,6 +17,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.Account;
+import model.Cake;
+import model.CakeInfor;
 import model.Client;
 import model.User;
 import modelDAO.ClientDAO;
@@ -27,7 +30,7 @@ import modelDAO.UserDAO;
 
 @WebServlet("/login")
 
-public class LoginController extends HttpServlet {
+public class LoginController extends HttpServlet implements Serializable{
     private static final long serialVersionUID = 1L;
        
     /**
@@ -47,6 +50,9 @@ public class LoginController extends HttpServlet {
             // TODO Auto-generated method stub
 //		ServletOutputStream out = response.getOutputStream();
         ProcessSys.setCharacterUTF8(request, response);
+        
+        HttpSession session = request.getSession();
+        session.invalidate();
         response.sendRedirect(request.getContextPath() + "/login.jsp");
 //            request.getRequestDispatcher("account.jsp").forward(request, response);
     }
@@ -78,8 +84,12 @@ public class LoginController extends HttpServlet {
                 Client user = ClientDAO.checkAccountExid(t);
                 if(user != null){
                     session.setAttribute("user", user);
-                    if(t.getRole() == 1)
+                    if(t.getRole() == 1){
                         response.sendRedirect(request.getContextPath() + "/home.jsp");
+                        ArrayList<CakeInfor> cart = new ArrayList<CakeInfor>();
+                        session.setAttribute("cart", cart);
+
+                    }
                     else
                        response.sendRedirect(request.getContextPath() + "/staff_home.jsp"); 
                 }

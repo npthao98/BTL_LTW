@@ -12,7 +12,7 @@ import model.Cake;
 import model.ImageUrl;
 
 public class ImageurlDAO {
-    private static final DBConnect DBConnector = null;
+//    private static final DBConnect DBConnector = null;
 
     public static List<ImageUrl> getByCakeID(int cakeID) {
         Connection con=DBConnect.createConnection();
@@ -40,9 +40,8 @@ public class ImageurlDAO {
 
     public static ArrayList<ImageUrl> getByCake(Cake cake) throws ClassNotFoundException, SQLException {
         Connection con = DBConnect.createConnection();
-        PreparedStatement ps;
+        PreparedStatement ps = con.prepareStatement("select * from imageurl where CakeID=?");
         try {
-            ps = con.prepareStatement("select * from imageurl where CakeID=?");
             ps.setInt(1, cake.getID());
             ResultSet rs = ps.executeQuery();
             ArrayList<ImageUrl> res = new ArrayList<ImageUrl>();
