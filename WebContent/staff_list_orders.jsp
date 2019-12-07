@@ -1,25 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@page import="model.*" %>
+<%@page import="model.*" %>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<script src='https://kit.fontawesome.com/a076d05399.js'></script>
-<link rel="stylesheet" href="css/listOrders.css">
-<script src="js/listOrders.js"></script>
-<title>List Orders</title>
+<title>Insert title here</title>
 </head>
 <body>
-<% 
-	List<OrderDetail> orders=(List<OrderDetail>)request.getAttribute("orders");
-	Client client=(Client)request.getAttribute("client");
-%>
-	<jsp:include page="header.jsp"/>
-    <div class="content">
-        <div class="list-orders">
+	<%List<OrderDetail> orders= (List<OrderDetail>)request.getAttribute("orders"); %>
+	<div style="text-align: center;font-size: 70px; width: 100%; height: 100px;float: left">
+	    Thêm Sách
+	</div>
+	<div class="list-orders">
             <div class="col-12">
             
                 <ul class="menu-state col-3">
@@ -299,20 +294,5 @@
             </div>
 
         </div>
-    </div>
-	<jsp:include page="footer.jsp"/>
-	
-	<script type="text/javascript">Ư
-		const url = "http://localhost:8080/BTL_LTW/api/ordersByClient?id="+<%=client.getID()%>;
-		console.log(url);
-		fetch(url)
-		.then (data => {return data.json()})
-		.then (res => {
-			console.log(res);	
-			document.getElementById("cake").innerHTML = res[0].orderDetail[0].cakeName;
-			
-		})
-		console.log(k);
-	</script>
 </body>
 </html>

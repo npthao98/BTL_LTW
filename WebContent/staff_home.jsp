@@ -19,6 +19,23 @@
             font-size: 20px;
 
         }
+        a.button{
+		    display: inline-block;
+		    text-align: center;
+		    width: 105px;
+		    padding: 13px 0px;
+		    font-size: 14px;
+/* 		    color: black; */
+		    border: 1px solid transparent;
+		    cursor: pointer;
+		    z-index: 3;
+		}
+		a.button:hover{
+			color: red;
+		}
+		a, a:hover{
+			text-decoration: none;
+		}
     </style>
 </head>
 <body>
@@ -27,22 +44,25 @@
 //             session == null || session.getAttribute("staffIsAuthenticated") == null) response.sendRedirect("staff_login.jsp");
 %>
 <div style="text-align: end;font-size: 25px; width: 100%; height: 100px;float: left">
-    <h3>
-        Xin chào : NP Thao
-    </h3>
-    <a href="/BTL_LTW/StaffLogout">Logout</a>
+    <a href="/BTL_LTW/StaffChangePW" class="button">ĐỔI MẬT KHẨU</a>
+    <a href="/BTL_LTW/StaffLogout" class="button">ĐĂNG XUẤT</a>
 </div>
 <div style="width: 100%; text-align: center; font-size: 100px; padding-top: 60px;">Staff Home</div>
 <div style="text-align: right; height: 50px;font-size: 50px">
     <a href="order_handle.jsp" style="display: none">Chi tiết đơn hàng</a>
 </div>
 <div style="width: 100%;text-align: center;height: 500px">
-    <form action="order-handle">
-        <button>Quản lí đơn hàng</button>
-    </form>
-    <form action="follow-add-book">
-        <button>Quản lí sản phẩm</button>
-    </form>
+    <div style="margin-bottom: 20px">
+    	<a href="/BTL_LTW/StaffListOrders">
+	        <button>Quản lí đơn hàng</button>
+	    </a>
+    </div>
+    <div>
+    	<a href="follow-add-book">
+	        <button>Quản lí sản phẩm</button>
+	    </a>
+    </div>
+    
 </div>
 
 
