@@ -12,16 +12,16 @@ import model.Client;
 import modelDAO.OrderDAO;
 
 /**
- * Servlet implementation class CancelOrder
+ * Servlet implementation class StaffCancelOrder
  */
-@WebServlet("/CancelOrder")
-public class CancelOrder extends HttpServlet {
+@WebServlet("/StaffCancelOrder")
+public class StaffCancelOrder extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CancelOrder() {
+    public StaffCancelOrder() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,12 +34,12 @@ public class CancelOrder extends HttpServlet {
 		Client client = null;
 		client = (Client)session.getAttribute("user");
 		if(client == null) {
-			response.sendRedirect("/BTL_LTW/login");
+			response.sendRedirect("/BTL_LTW/staff_login");
 		}
 		else {
 			int id= Integer.parseInt(request.getParameter("id"));
 			OrderDAO.cancelOrder(id);
-			response.sendRedirect("/BTL_LTW/DetailSuccessOrder?id="+id);
+			response.sendRedirect("/BTL_LTW/StaffDetailOrder?id="+id);
 		}
 		
 	}

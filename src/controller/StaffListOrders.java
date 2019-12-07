@@ -1,6 +1,10 @@
 package controller;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,19 +13,21 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.Client;
+import model.OrderDetail;
 import modelDAO.OrderDAO;
+import modelDAO.OrderDetailDAO;
 
 /**
- * Servlet implementation class CancelOrder
+ * Servlet implementation class StaffListOrders
  */
-@WebServlet("/CancelOrder")
-public class CancelOrder extends HttpServlet {
+@WebServlet("/StaffListOrders")
+public class StaffListOrders extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CancelOrder() {
+    public StaffListOrders() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,12 +40,21 @@ public class CancelOrder extends HttpServlet {
 		Client client = null;
 		client = (Client)session.getAttribute("user");
 		if(client == null) {
-			response.sendRedirect("/BTL_LTW/login");
+			response.sendRedirect("/BTL_LTW/staff_login");
 		}
 		else {
-			int id= Integer.parseInt(request.getParameter("id"));
-			OrderDAO.cancelOrder(id);
-			response.sendRedirect("/BTL_LTW/DetailSuccessOrder?id="+id);
+			List<OrderDetail> orders= new ArrayList<OrderDetail>();
+			try {
+				orders= (List<OrderDetail>)OrderDetailDAO.getAllOrder();
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			request.setAttribute("orders", orders);
+			request.getRequestDispatcher("staff_list_orders.jsp").forward(request, response);
 		}
 		
 	}

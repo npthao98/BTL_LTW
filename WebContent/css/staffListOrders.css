@@ -1,0 +1,120 @@
+.row::after {
+    content: "";
+    width: 100%;
+    clear: both;
+    display: inline-block;
+}
+  
+/* For desktop: */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+      width: 100%;
+    }
+    .content .col-3 {
+        text-align: center;
+    }
+    [class*="none"] {
+        display: none;
+    }
+    [class*="bt-right"] {
+        position: relative;
+        top: 20px;
+    }
+}
+
+.content .list-orders{
+    width: 80%;
+    padding: 70px 0 40px;
+    margin: 0 auto;
+}
+.content a{
+    text-decoration: none;
+    color: #000;
+}
+.content a:focus{
+    text-decoration: none;
+}
+.content a:hover{
+    text-decoration: none;
+}
+.content ul{
+    list-style-type: none;
+    text-decoration: none;
+    padding: 0px;
+    margin: 0px;
+}
+.content .list-orders ul li{
+    text-decoration: none;
+}
+
+.content .list-orders .menu-state{
+    float: left;
+    /* width: 20%; */
+}
+.content .list-orders .menu-state li{
+    margin-bottom: 20px;
+}
+.content .list-orders .menu-state a{
+    margin-right: 15px;
+}
+.content .list-orders .tab-content{
+    float: left;
+    /* width: 80%; */
+}
+.content .view{
+    display: block;
+}
+.content .none-view{
+    display: none;
+}
+.content .view2{
+    display: inline-block;
+}
+.content .none-view2{
+    display: none;
+}
+.content .list-orders table{
+    margin: 0px;
+    width: 100%;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+.content .list-orders td,tr{
+        padding: 10px;
+}
+a.button{
+    display: inline-block;
+    text-align: center;
+    width: 105px;
+    padding: 13px 0px;
+    font-size: 14px;
+/* 		    color: black; */
+    border: 1px solid transparent;
+    cursor: pointer;
+    z-index: 3;
+}
+a.button:hover{
+	color: red;
+}
+button{
+    text-align: center;
+    font-size: 15px;
+    padding: 5px 7px;
+
+}
