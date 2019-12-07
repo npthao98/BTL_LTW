@@ -13,8 +13,8 @@
     
     <jsp:include page="header.jsp"/>
 			  
-    <form action="${pageContext.request.contextPath}/login" method="POST" class="margin-content login--form">
-        <h1 class="login_tittle">login</h1>  
+    <form action="${pageContext.request.contextPath}/check_login" method="POST" class="margin-content login--form">
+        <h1 class="login_tittle">login</h1>
         <h3>Username :</h3>
         <h4 id="error_message" class="error_message">${error}</h4>
         <%

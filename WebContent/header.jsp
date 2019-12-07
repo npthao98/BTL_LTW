@@ -1,3 +1,4 @@
+<%@page import="model.Client"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -102,7 +103,8 @@
                                     </svg>
                     History Orders
                 </div>
-                <div class="header--contact__locations">
+                <a class="header--contact__locations"
+                   href="${pageContext.request.contextPath}/login">
                     <svg width="16px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22 28" style="enable-background:new 0 0 22 28;" xml:space="preserve">
                                         <g>
                                     <path class="st0" d="M19.7,11.4c1,0,1.3,1.8,1.6,2.6c0.4,1.3,0.7,2.5,0.7,3.7c0,1.3-0.4,2.5-0.9,3.6c-0.3,0.9-0.8,1.5-1.3,2.2
@@ -156,8 +158,14 @@
                                             c0.6-1,1.1-2.1,1.4-3.4C13.6,22.9,11.8,22.9,10.4,23z"></path>
                                     </g>
                                     </svg>
-                    Logout
-                </div>
+                    <%
+                        Client user = (Client)session.getAttribute("user");
+                        if(user != null)
+                            out.println("Logout");
+                        else
+                            out.println("Login");
+                    %>
+                </a>
                 
             </div>
         </div>

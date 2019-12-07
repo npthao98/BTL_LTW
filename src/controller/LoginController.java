@@ -29,7 +29,6 @@ import modelDAO.UserDAO;
  */
 
 @WebServlet("/login")
-
 public class LoginController extends HttpServlet implements Serializable{
     private static final long serialVersionUID = 1L;
        
@@ -50,8 +49,8 @@ public class LoginController extends HttpServlet implements Serializable{
             // TODO Auto-generated method stub
 //		ServletOutputStream out = response.getOutputStream();
         ProcessSys.setCharacterUTF8(request, response);
-        
         HttpSession session = request.getSession();
+        
         session.removeAttribute("user");
         response.sendRedirect(request.getContextPath() + "/login.jsp");
 //            request.getRequestDispatcher("account.jsp").forward(request, response);
@@ -67,80 +66,7 @@ public class LoginController extends HttpServlet implements Serializable{
         @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub	
-        ProcessSys.setCharacterUTF8(request, response);
-        
-        HttpSession session = request.getSession();
-
-
-        String username = request.getParameter("username");
-        String pass = ProcessSys.decodeSHA(request.getParameter("password"));    
-        Account account = new Account(username, pass);
-        
-        try {
-            User t = UserDAO.getUserByAccount(account);
-            if(t == null){
-                session.setAttribute("error", "Account is wrong !!!");
-                response.sendRedirect(request.getContextPath() + "/login");
-            }else{
-                Client user = ClientDAO.checkAccountExid(t);
-                if(user != null){
-                    session.setAttribute("user", user);
-                    if(t.getRole() == 1){
-                        response.sendRedirect(request.getContextPath() + "/home.jsp");
-                        ArrayList<CakeInfor> cart = new ArrayList<CakeInfor>();
-                        session.setAttribute("cart", cart);
-
-                    }
-                    else
-                       response.sendRedirect(request.getContextPath() + "/staff_home.jsp"); 
-                }
-                else{
-                    session.setAttribute("error", "Account is wrong !!!");
-                    response.sendRedirect(request.getContextPath() + "/login");
-                }                 
-            }
-         
-        }catch (ClassNotFoundException ex) {
-            response.getWriter().append(ex.getMessage());
-            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            response.getWriter().append(ex.getMessage());
-        }
-
-        
-    
-//     try {
-//		if(AccountDAO.checkIsExid(user) == true) {
-////			session.setAttribute("user", user);
-//			response.getWriter().append("Ahihi").append(request.getContextPath());
-////			response.sendRedirect(request.getContextPath() + "/home.jsp");
-//		 }
-//		else {
-//			
-////			response.sendRedirect(request.getContextPath() + "/login.jsp");
-//		}
-//	} catch (ClassNotFoundException e) {
-//		// TODO Auto-generated catch block
-//		response.getWriter().append(e.getMessage());
-//	} catch (SQLException e) {
-//		// TODO Auto-generated catch block
-//		response.getWriter().append(e.getMessage());
-//	}
-//     
-     
-//     session.setAttribute("user", user);
-//     	response.sendRedirect(request.getContextPath() + "/home.jsp");
-//     response.getWriter().append(" " + username);
-     
-//       response.sendRedirect(request.getContextPath() + "/home.jsp");
-     
-     
-//       RequestDispatcher dispatcher;
-//       dispatcher = this.getServletContext().getRequestDispatcher("/home.jsp");
-//       dispatcher.forward(request, response);
-     
-       
-		
+        ProcessSys.setCharacterUTF8(request, response);		
     }
 
 }
