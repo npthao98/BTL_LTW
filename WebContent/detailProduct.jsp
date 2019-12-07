@@ -35,8 +35,8 @@
                 <div class="col-6 info-product">
                     <div class="content-infor-product">
                         <img src="assets/Rating.JPG" alt="">
-                        <h1><%=cake.getName() %></h1>
-                        <h2><%=cake.getPrice() %></h2>
+                        <h1 id="name"></h1>
+                        <h2 id="price"></h2>
                         <p><%=cake.getDescription() %></p>
                         <div class="quantity">
                             <label for="">Quantity</label>
@@ -62,6 +62,19 @@
         </div>
     </div>
 	<jsp:include page="footer.jsp"/>
-	
+	<script type="text/javascript">
+		const url = "http://localhost:8080/BTL_LTW/api/cake?id="+<%=cake.getID()%>;
+		console.log(url);
+		fetch(url)
+		.then (data => {return data.json()})
+		.then (res => {
+			let t;
+			console.log(res);	
+			t= res;	
+			document.getElementById("name").innerHTML = res.Name;
+			document.getElementById("price").innerHTML = res.Price;
+		})
+		console.log(t);
+	</script>
 </body>
 </html>

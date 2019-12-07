@@ -36,8 +36,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <% int total=0; 
-                                for(int i=0; i<cakes.size(); i++){ %>
+                                <%for(int i=0; i<cakes.size(); i++){ %>
 	                                <tr class="cart_item">
 	                                    <td class="product-name">
 	                                        <%=cakes.get(i).getName() %>&nbsp;
@@ -62,7 +61,6 @@
 	                                        			break;
 	                                        		}
 	                                      }
-	                                    total+=price;
 	                                      %>
 	                                      <%=price %>
 	                                </span>
@@ -74,9 +72,7 @@
                                 <tr class="cart-subtotal">
                                     <th>Tổng phụ</th>
                                     <td>
-                                    <span class="woocommerce-Price-amount amount">
-<!--                                         <span class="woocommerce-Price-currencySymbol">$</span> -->
-                                        <%=total %>
+                                    <span class="woocommerce-Price-amount amount" id="total">
                                     </span>
                                     </td>
                                 </tr>
@@ -92,9 +88,7 @@
                                     <th>Tổng tiền</th>
                                     <td>
                                         <strong>
-                                        <span class="woocommerce-Price-amount amount">
-<!--                                             <span class="woocommerce-Price-currencySymbol">$</span> -->
-                                            <%=total %>
+                                        <span class="woocommerce-Price-amount amount" id="total2">
                                         </span>
                                         </strong>
                                     </td>
@@ -108,11 +102,11 @@
                         <ul style="    padding-left: 50px;"">
                             <li>
                                 <label>Mã đơn: </label>
-                                <span><%=order.getID() %></span>
+                                <span id="idOrder"></span>
                             </li>
                             <li>
                                 <label>Thời gian đặt: </label>
-                                <span><%=order.getTime() %></span>
+                                <span id="time"></span>
                             </li>
                             <li>
                                 <label>Tên người nhận: </label>
@@ -120,7 +114,7 @@
                             </li>
                             <li>
                                 <label>Địa chỉ: </label>
-                                <span><%=order.getAddress() %></span>
+                                <span><%=order.getAddress()%></span>
                             </li>
                             <li>
                                 <label>SDT: </label>
@@ -226,6 +220,21 @@ function xacNhan() {
 	    return false;
 	  }
 	}
+	
+const url = "http://localhost:8080/BTL_LTW/api/orderById?id="+<%=order.getID()%>;
+console.log(url);
+fetch(url)
+.then (data => {return data.json()})
+.then (res => {
+	let t;
+	console.log(res);	
+	t= res;	
+	document.getElementById("total").innerHTML = res.Total;
+	document.getElementById("total2").innerHTML = res.Total;
+	document.getElementById("idOrder").innerHTML = res.ID;
+	document.getElementById("time").innerHTML = res.Time;
+})
+console.log(t);
 </script>
 </body>
 </html>

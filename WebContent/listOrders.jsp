@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@page import="model.*" %>
+pageEncoding="UTF-8"%>
+<%@page import="model.*" %>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <!DOCTYPE html>
@@ -302,17 +302,19 @@
     </div>
 	<jsp:include page="footer.jsp"/>
 	
-	<script type="text/javascript">Ư
+	<script type="text/javascript">
 		const url = "http://localhost:8080/BTL_LTW/api/ordersByClient?id="+<%=client.getID()%>;
 		console.log(url);
 		fetch(url)
 		.then (data => {return data.json()})
 		.then (res => {
+			let t;
 			console.log(res);	
+			t= res;	
 			document.getElementById("cake").innerHTML = res[0].orderDetail[0].cakeName;
 			
 		})
-		console.log(k);
+		console.log(t);
 	</script>
 </body>
 </html>
