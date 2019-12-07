@@ -1,6 +1,9 @@
 package controller;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -56,13 +59,17 @@ public class UpdateInformation extends HttpServlet {
 			response.sendRedirect("/BTL_LTW/login");
 		}
 		else {
-			String name = request.getParameter("name");
-			System.out.print(name);
-			String address = request.getParameter("address");
-			ClientDAO.update(client.getID(), name, address);
-			Client acc=ClientDAO.getByID(client.getID());
-			session.setAttribute("user", acc);
-			response.sendRedirect("/BTL_LTW/Account");
+                    try {
+                        String name = request.getParameter("name");
+                        System.out.print(name);
+                        String address = request.getParameter("address");
+                        ClientDAO.update(client.getID(), name, address);
+                        Client acc=ClientDAO.getByID(client.getID());
+                        session.setAttribute("user", acc);
+                        response.sendRedirect("/BTL_LTW/Account");
+                    } catch (SQLException ex) {
+                        Logger.getLogger(UpdateInformation.class.getName()).log(Level.SEVERE, null, ex);
+                    }
 		}
 		
 	}

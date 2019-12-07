@@ -68,6 +68,7 @@ public class LoginController extends HttpServlet implements Serializable{
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub	
         ProcessSys.setCharacterUTF8(request, response);
+        
         HttpSession session = request.getSession();
 
 
