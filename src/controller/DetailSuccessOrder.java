@@ -2,7 +2,10 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -47,29 +50,28 @@ public class DetailSuccessOrder extends HttpServlet {
 			response.sendRedirect("/BTL_LTW/login");
 		}
 		else {
-			int id=Integer.parseInt(request.getParameter("id"));
-			Order order = OrderDAO.getByID(id);
-			Order_Client order_client = OrderClientDAO.getByOrderID(order.getID());
-			if(order_client.getClientID() != client.getID() || order==null) {
-				response.setContentType("text/html");
-				PrintWriter writter = response.getWriter();
-				writter.println("Don hang khong ton tai");
-			}
-			else {
-				request.setAttribute("order", order);
-				
-				request.setAttribute("client", client);
-				
-				List<Cake_Order> CakeOrders = CakeOrderDAO.getByOrderID(order.getID());
-				request.setAttribute("cakeOrders", CakeOrders);
-				
-				List<Cake> cakes = CakeDAO.getCakesByOrderCakes(CakeOrders);
+                    int id=Integer.parseInt(request.getParameter("id"));
+                    Order order = OrderDAO.getByID(id);
+                    Order_Client order_client = OrderClientDAO.getByOrderID(order.getID());
+                    if(order_client.getClientID() != client.getID() || order==null) {
+                            response.setContentType("text/html");
+                            PrintWriter writter = response.getWriter();
+                            writter.println("Don hang khong ton tai");
+                    }
+                    else {
+                        try {
+                            request.setAttribute("order", order);
+                            request.setAttribute("client", client);
+                            List<Cake_Order> CakeOrders = CakeOrderDAO.getByOrderID(order.getID());
+                            request.setAttribute("cakeOrders", CakeOrders);
+                            List<Cake> cakes = CakeDAO.getCakesByOrderCakes(CakeOrders);
 //				System.out.println(cakes);
-				request.setAttribute("cakes", cakes);
-				
-				request.getRequestDispatcher("/detailOrderSuccess.jsp").forward(request, response);
-			}
-			
+                            request.setAttribute("cakes", cakes);
+                            request.getRequestDispatcher("/detailOrderSuccess.jsp").forward(request, response);
+                        } catch (SQLException ex) {
+                            Logger.getLogger(DetailSuccessOrder.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
 		}
 		
 		

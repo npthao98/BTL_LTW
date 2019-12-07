@@ -23,11 +23,10 @@ import model.User;
 public class ClientDAO {
     private static final DBConnect DBConnector = null;
     
-    public static Client getByID(int id) {
+    public static Client getByID(int id) throws SQLException {
         Connection con = DBConnect.createConnection();
-        PreparedStatement ps;
+        PreparedStatement ps = con.prepareStatement("select * from client where ID=?");
         try {
-            ps = con.prepareStatement("select * from client where ID=?");
             ps.setInt(1, id);
             ResultSet rs=ps.executeQuery();
             while(rs.next()) {
@@ -42,7 +41,7 @@ public class ClientDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
+        ps.close();
         return null;
     }
     
@@ -54,7 +53,7 @@ public class ClientDAO {
             ps.setString(2, address);
             ps.setInt(3, id);
             ps.execute();
-
+            ps.close();
         } catch (SQLException e) {
                 // TODO Auto-generated catch block
             e.printStackTrace();

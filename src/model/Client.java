@@ -1,6 +1,9 @@
 package model;
 
 public class Client {
+    
+    static final long serialVersionUID = 10L;
+    
 	private int ID;
 	private String Name;
 	private String Address;

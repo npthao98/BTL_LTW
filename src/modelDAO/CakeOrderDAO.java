@@ -12,8 +12,8 @@ import model.Cake_Order;
 import model.Order_Client;
 
 public class CakeOrderDAO {
-	private static final DBConnect DBConnector = null;
-	public static List<Cake_Order> getByOrderID(int orderID) {
+//	private static final DBConnect DBConnector = null;
+    public static List<Cake_Order> getByOrderID(int orderID) {
         Connection con=DBConnect.createConnection();
         PreparedStatement ps;
         try {
@@ -28,6 +28,7 @@ public class CakeOrderDAO {
                 Cake_Order acc = new Cake_Order(OrderID, CakeID, quantity);
                 res.add(acc);
             }
+            ps.close();
             return res;
         } catch (SQLException e) {
             // TODO Auto-generated catch block

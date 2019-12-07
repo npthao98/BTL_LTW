@@ -2,8 +2,11 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -39,25 +42,29 @@ public class DetailProduct extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		
-		int id = Integer.parseInt(request.getParameter("id"));
-		Cake cake= CakeDAO.getByID(id);
-		List<Cake_Type> cakeType = CakeTypeDAO.getByCakeID(cake.getID());
-		List<Type> listType = new ArrayList<Type>();
-		for(int i=0; i<cakeType.size(); i++) {
-			Type t = TypeDAO.getByID(cakeType.get(i).getTypeID());
-			listType.add(t);
-		}
-		
-		request.setAttribute("cake", cake);
-		
-		request.setAttribute("listType", listType);
-		
-		List<ImageUrl> listImage = ImageurlDAO.getByCakeID(cake.getID());
-		request.setAttribute("listImage", listImage);
-		
-		request.getRequestDispatcher("/detailProduct.jsp").forward(request, response);
+            try {
+                // TODO Auto-generated method stub
+                
+                int id = Integer.parseInt(request.getParameter("id"));
+                Cake cake= CakeDAO.getByID(id);
+                List<Cake_Type> cakeType = CakeTypeDAO.getByCakeID(cake.getID());
+                List<Type> listType = new ArrayList<Type>();
+                for(int i=0; i<cakeType.size(); i++) {
+                    Type t = TypeDAO.getByID(cakeType.get(i).getTypeID());
+                    listType.add(t);
+                }
+                
+                request.setAttribute("cake", cake);
+                
+                request.setAttribute("listType", listType);
+                
+                List<ImageUrl> listImage = ImageurlDAO.getByCakeID(cake.getID());
+                request.setAttribute("listImage", listImage);
+                
+                request.getRequestDispatcher("/detailProduct.jsp").forward(request, response);
+            } catch (SQLException ex) {
+                Logger.getLogger(DetailProduct.class.getName()).log(Level.SEVERE, null, ex);
+            }
 	}
 
 	/**

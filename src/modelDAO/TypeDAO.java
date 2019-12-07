@@ -15,7 +15,7 @@ import model.Cake_Type;
 import model.Type;
 
 public class TypeDAO {
-    private static final DBConnect DBConnector = null;
+//    private static final DBConnect DBConnector = null;
     
     private static ArrayList<Type> types;
     
@@ -54,15 +54,13 @@ public class TypeDAO {
     
     public static ArrayList<Type> getByCake(Cake cake) throws ClassNotFoundException, SQLException {
         Connection con = DBConnect.createConnection();
-        ArrayList<Type> result = new ArrayList<Type>(),
-                        alltypes = getAllType();
-        ArrayList<Cake_Type> cakeType = (ArrayList<Cake_Type>) CakeTypeDAO.getByCake(cake);
-        for(int i = 0; i < alltypes.size(); i++){
-            for(int j = 0; j < cakeType.size(); j++){
-                if(alltypes.get(i).getID() == cakeType.get(j).getTypeID()){
-                    result.add(alltypes.get(i));
-                }
-            }
+        ArrayList<Type> result = new ArrayList<Type>();
+        String sql = "SELECT type.ID, type.Name FROM type, cake_type WHERE cake_type.CakeID = ? AND cake_type.TypeID = type.ID";
+        PreparedStatement ps = con.prepareStatement(sql);
+        ps.setInt(1, cake.getID());
+        ResultSet rs = ps.executeQuery();
+        while(rs.next()){
+            result.add(new Type(rs.getInt(1), rs.getString(2)));
         }
         return result;
     }
@@ -75,4 +73,5 @@ public class TypeDAO {
         }
         return listType;
     }
+    
 }

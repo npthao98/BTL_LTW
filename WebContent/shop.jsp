@@ -40,11 +40,11 @@
                    for(int i = 0; i < list.size(); i++){
                 %>
                     <div class="each_product">
-                        <a class="product_img" style="background-image: url('<%=list.get(i).getImgList()%>')"
-                           href="#">
-                            <button class="button_add_cart">
+                        <a class="product_img" style="background-image: url('<%=list.get(i).getImgList()%>')" onclick="show('DetailProduct?id=<%=list.get(i).getCake().getID()%>')">
+                            <button class="button_add_cart" type="button" onclick="addCart(this, '<%=list.get(i).getCake().getID()%>', '${pageContext.request.contextPath}')">
                                 <i class="fas fa-shopping-cart"></i>
-                                ADD TO CART</button>
+                                ADD TO CART
+                            </button>
                         </a>
                         <div class="infor-product">
                             <img src="assets/Rating.JPG">
