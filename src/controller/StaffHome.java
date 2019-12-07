@@ -6,6 +6,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import model.Client;
+import modelDAO.OrderDAO;
 
 /**
  * Servlet implementation class StaffHome
@@ -26,7 +30,16 @@ public class StaffHome extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("staff_home.jsp").forward(request, response);
+		HttpSession session = request.getSession();
+		Client client = null;
+		client = (Client)session.getAttribute("user");
+		if(client == null) {
+			response.sendRedirect("/BTL_LTW/staff_login");
+		}
+		else {
+			request.getRequestDispatcher("staff_home.jsp").forward(request, response);
+		}
+		
 	}
 
 	/**

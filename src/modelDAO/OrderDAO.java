@@ -63,4 +63,17 @@ public class OrderDAO {
 			e.printStackTrace();
 		}
 	}
+	public static void updateStateOrder(int id, int state) {
+		Connection con=DBConnect.createConnection();
+		try {
+			PreparedStatement ps=con.prepareStatement("update bakery.order set State=? where ID=? ");
+			ps.setInt(1, state);
+			ps.setInt(2, id);
+			ps.execute();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }

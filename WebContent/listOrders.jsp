@@ -45,7 +45,7 @@
                     </li>
                     <li>
                         <a href="#" onclick="menu5()">Đã Hủy</a>
-                        <i id="arrow-menu4" class='fas fa-long-arrow-alt-left none-view2'></i>
+                        <i id="arrow-menu5" class='fas fa-long-arrow-alt-left none-view2'></i>
                     </li>
                 </ul>
                 <div class="tab-content col-9">
@@ -53,12 +53,12 @@
                         <div class="table-responsive">
                             <table>
                                 <thead>
-                                    <th style="width: 40px;">ID</th>
-                                    <th class="none">Address</th>
-                                    <th class="none">Phone</th>
-                                    <th>Items</th>
-                                    <th class="none">Price</th>
-                                    <th>State</th>
+                                    <th style="width: 40px;">STT</th>
+                                    <th class="none">Địa chỉ</th>
+                                    <th class="none">Số điện thoại</th>
+                                    <th>Mặt hàng</th>
+                                    <th class="none">Tổng tiền</th>
+                                    <th>Trạng thái</th>
                                     <th></th>
                                 </thead>
                                 <tbody>
@@ -103,12 +103,12 @@
                         <div class="table-responsive">
                             <table>
                                 <thead>
-                                    <th style="width: 40px;">ID</th>
-                                    <th class="none">Address</th>
-                                    <th class="none">Phone</th>
-                                    <th>Items</th>
-                                    <th class="none">Price</th>
-                                    <th>State</th>
+                                    <th style="width: 40px;">STT</th>
+                                    <th class="none">Địa chỉ</th>
+                                    <th class="none">Số điện thoại</th>
+                                    <th>Mặt hàng</th>
+                                    <th class="none">Tổng tiền</th>
+                                    <th>Trạng thái</th>
                                     <th></th>
                                 </thead>
                                 <tbody>
@@ -143,12 +143,12 @@
                         <div class="table-responsive">
                             <table>
                                 <thead>
-                                    <th style="width: 40px;">ID</th>
-                                    <th class="none">Address</th>
-                                    <th class="none">Phone</th>
-                                    <th>Items</th>
-                                    <th class="none">Price</th>
-                                    <th>State</th>
+                                    <th style="width: 40px;">STT</th>
+                                    <th class="none">Địa chỉ</th>
+                                    <th class="none">Số điện thoại</th>
+                                    <th>Mặt hàng</th>
+                                    <th class="none">Tổng tiền</th>
+                                    <th>Trạng thái</th>
                                     <th></th>
                                 </thead>
                                 <tbody>
@@ -182,12 +182,12 @@
                         <div class="table-responsive">
                             <table>
                                 <thead>
-                                    <th style="width: 40px;">ID</th>
-                                    <th class="none">Address</th>
-                                    <th class="none">Phone</th>
-                                    <th>Items</th>
-                                    <th class="none">Price</th>
-                                    <th>State</th>
+                                    <th style="width: 40px;">STT</th>
+                                    <th class="none">Địa chỉ</th>
+                                    <th class="none">Số điện thoại</th>
+                                    <th>Mặt hàng</th>
+                                    <th class="none">Tổng tiền</th>
+                                    <th>Trạng thái</th>
                                     <th></th>
                                 </thead>
                                 <tbody>
@@ -221,17 +221,17 @@
                         <div class="table-responsive">
                             <table>
                                 <thead>
-                                    <th style="width: 40px;">ID</th>
-                                    <th class="none">Address</th>
-                                    <th class="none">Phone</th>
-                                    <th>Items</th>
-                                    <th class="none">Price</th>
-                                    <th>State</th>
+                                    <th style="width: 40px;">STT</th>
+                                    <th class="none">Địa chỉ</th>
+                                    <th class="none">Số điện thoại</th>
+                                    <th>Mặt hàng</th>
+                                    <th class="none">Tổng tiền</th>
+                                    <th>Trạng thái</th>
                                     <th></th>
                                 </thead>
                                 <tbody>
                                     <%for(int i=0; i<orders.size(); i++){ %>
-                                    	<%if(orders.get(i).getState()==0){ %>
+                                    	<%if(orders.get(i).getState()==3){ %>
                                     		<tr>
 		                                        <td><%=i+1 %></td>
 		                                        <td class="none"><%=orders.get(i).getAddress() %></td>
@@ -260,12 +260,12 @@
                         <div class="table-responsive">
                             <table>
                                 <thead>
-									<th style="width: 40px;">ID</th>
-                                    <th class="none">Address</th>
-                                    <th class="none">Phone</th>
-                                    <th>Items</th>
-                                    <th class="none">Price</th>
-                                    <th>State</th>
+									<th style="width: 40px;">STT</th>
+                                    <th class="none">Địa chỉ</th>
+                                    <th class="none">Số điện thoại</th>
+                                    <th>Mặt hàng</th>
+                                    <th class="none">Tổng tiền</th>
+                                    <th>Trạng thái</th>
                                     <th></th>
                                 </thead>
                                 <tbody>

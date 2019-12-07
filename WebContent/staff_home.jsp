@@ -25,7 +25,7 @@
 		    width: 105px;
 		    padding: 13px 0px;
 		    font-size: 14px;
-/* 		    color: black; */
+ 		    color: black; 
 		    border: 1px solid transparent;
 		    cursor: pointer;
 		    z-index: 3;
@@ -39,12 +39,7 @@
     </style>
 </head>
 <body>
-<%
-//     if((session.getAttribute("staffIsAuthenticated") != "true") ||
-//             session == null || session.getAttribute("staffIsAuthenticated") == null) response.sendRedirect("staff_login.jsp");
-%>
 <div style="text-align: end;font-size: 25px; width: 100%; height: 100px;float: left">
-    <a href="/BTL_LTW/StaffChangePW" class="button">ĐỔI MẬT KHẨU</a>
     <a href="/BTL_LTW/StaffLogout" class="button">ĐĂNG XUẤT</a>
 </div>
 <div style="width: 100%; text-align: center; font-size: 100px; padding-top: 60px;">Staff Home</div>

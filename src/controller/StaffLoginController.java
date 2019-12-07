@@ -72,7 +72,7 @@ public class StaffLoginController extends HttpServlet {
                 if(user != null){
                     session.setAttribute("user", user);
                     if(t.getRole() == 0)
-                       response.sendRedirect(request.getContextPath() + "/staff_home.jsp"); 
+                       response.sendRedirect(request.getContextPath() + "/StaffHome"); 
                     else{
                         session.setAttribute("error", "This account is not admin !!!");
                         response.sendRedirect(request.getContextPath() + "/staff_login"); 
