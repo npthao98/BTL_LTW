@@ -59,5 +59,7 @@ public class CakeInfor implements Serializable{
     public void giamDem(){
         this.dem--;
     }
-    
+    public void setDem(int t){
+        this.dem = t;
+    }
 }

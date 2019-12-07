@@ -12,9 +12,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.Cake;
+import model.CakeInfor;
 import model.Cake_Order;
 import model.Cake_Type;
 import model.Client;
+import model.ImageUrl;
 import model.Type;
 
 public class CakeDAO {
@@ -53,7 +55,7 @@ public class CakeDAO {
         while(res.next()){
             result.add(new Cake(res.getInt(1), res.getString(2), res.getInt(3), res.getString(4)));
         }
-        state.close();
+        conn.close();
         return result;
     }
         
@@ -64,5 +66,40 @@ public class CakeDAO {
             listCakes.add(t);
         }
         return listCakes;
+    }
+    
+    public ArrayList<CakeInfor> getAllCakeInfor() throws SQLException{
+        ArrayList<CakeInfor> result = new ArrayList<CakeInfor>();
+        String sqlCake = "SELECT * FROM Cake",
+            sqlType = "SELECT * FROM Type",
+            sqlUrl = "SELECT * FROM ImageUrl";
+        Connection conn = DBConnect.createConnection();
+        Statement state = conn.createStatement();
+        
+        ResultSet cake = state.executeQuery(sqlCake),
+                  type = state.executeQuery(sqlType),
+                   url = state.executeQuery(sqlUrl);
+        ArrayList<Cake> cakes = new ArrayList<Cake>();
+        ArrayList<Type> types = new ArrayList<Type>();
+        ArrayList<ImageUrl> urls = new ArrayList<ImageUrl>();
+        
+        while(cake.next()){
+            cakes.add(new Cake(cake.getInt(1), cake.getString(2), cake.getInt(3), cake.getString(4)));
+        }
+        while(type.next()){
+            types.add(new Type(type.getInt(1), type.getString(2)));
+        }
+        while(url.next()){
+            urls.add(new ImageUrl(url.getInt(1), url.getInt(2), url.getString(3)));
+        }
+        
+        for(int i = 0; i < cakes.size(); i++){
+            
+        }
+        
+        
+        conn.close();
+        
+        return result;
     }
 }

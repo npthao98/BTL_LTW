@@ -22,34 +22,64 @@
         <jsp:include page="header.jsp"/>
 
         <container>
-            <table>
-                <tr>
-                    <th></th>
-                    <th>Product</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Total</th>
-                </tr>
-                    
+            <table class="margin-content">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
                 <%
                     ArrayList<CakeInfor> carts = (ArrayList<CakeInfor>)session.getAttribute("cart");
                     for(int i = 0; i < carts.size(); i++){
                 %>
-                <tr>
-                    <th></th>
+                <tr id="product_<%=carts.get(i).getCake().getID()%>" class="each_product">
                     <th>
-                        <span class="cake_img"></span>
-                        <span><%=carts.get(i).getCake().getName()%></span>
+                        <button class="delete_product" onclick="deleteProduct(this)">
+                            X
+                        </button>
                     </th>
-                    <th><%=carts.get(i).getCake().getPrice()%></th>
-                    <th></th>
-                    <th></th>                
+                    <th class="product_info">
+                        <span class="cake_img" style="background-image: url('<%=carts.get(i).getImgList()%>')"></span>
+                        <a href="${pageContext.request.contextPath}/DetailProduct?id=<%=carts.get(i).getCake().getID()%>">
+                            <%=carts.get(i).getCake().getName()%>
+                        </a>
+                    </th>
+                    <th>
+                        <span class="price_text product_price"><%=carts.get(i).getCake().getPrice()%></span>
+                        <span class="price_text"> VNĐ</span>
+                    </th>
+                    <th>
+                        <div class="quantity">
+                            <span class="pointer arrow" onclick="giamSL(this)"><i class="fas fa-caret-left"></i></span>
+                            <input class="quantity_product" min="1" type="text" value="<%=carts.get(i).getDem()%>" id="<%=carts.get(i).getCake().getID()%>">
+                            <span class="pointer arrow" onclick="tangSL(this)"><i class="fas fa-caret-right"></i></span>
+                        </div>
+                    </th>
+                    <th class="price_text total_price_product">
+                        
+                    </th>                
                 </tr>    
                 
                 <%}%>
+                </tbody>
             </table>
-        </container>
-        
+            <div class="margin-content option_button">
+                <button class="button_cart">BACK TO SHOP</button>
+                <button class="button_cart">UPDATE CART</button>
+            </div>
+         
+            <div class="margin-content cart_total">
+                <span>TOTAL : <span class="price_text"></span></span>
+                <button class="button_cart">CHECKOUT</button>
+            </div>
+        <container>
+        <script src="js/detailCart.js"></script>
+
         <jsp:include page="footer.jsp"/>
     </body>
 </html>

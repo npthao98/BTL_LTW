@@ -52,7 +52,7 @@ public class ShopController extends HttpServlet {
             
             if(session.getAttribute("cart") == null){
                 ArrayList<CakeInfor> cart = new ArrayList<CakeInfor>();            
-                session.setAttribute("cart", products);
+                session.setAttribute("cart", cart);
             }
             response.sendRedirect(request.getContextPath() + "/shop.jsp");
         } catch (ClassNotFoundException ex) {

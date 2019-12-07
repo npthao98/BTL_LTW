@@ -50,12 +50,10 @@ public class AddToCartAJAX extends HttpServlet {
         
         HttpSession session = request.getSession();
         
-        
-        
         // Thêm sản phẩm vào giỏ hàng
         String IDCake = request.getParameter("idCake");
         int ID = Integer.valueOf(IDCake);
-        
+        System.out.println(IDCake);
         ArrayList<CakeInfor> list = (ArrayList<CakeInfor>)session.getAttribute("products"),
                              cart = (ArrayList<CakeInfor>)session.getAttribute("cart");
         int dem = 0;
@@ -82,7 +80,7 @@ public class AddToCartAJAX extends HttpServlet {
 //        for(int i = 0; i < cart.size(); i++){
 //            dem += cart.get(i).getDem();
 //        }
-        response.getWriter().write("ahihihii" + dem);
+        response.getWriter().write(IDCake);
     }
 
 	/**

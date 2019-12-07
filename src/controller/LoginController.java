@@ -52,7 +52,7 @@ public class LoginController extends HttpServlet implements Serializable{
         ProcessSys.setCharacterUTF8(request, response);
         
         HttpSession session = request.getSession();
-        session.invalidate();
+        session.removeAttribute("user");
         response.sendRedirect(request.getContextPath() + "/login.jsp");
 //            request.getRequestDispatcher("account.jsp").forward(request, response);
     }
