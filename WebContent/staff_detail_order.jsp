@@ -68,12 +68,12 @@
 	    List<Cake_Order> cakeOrders = (List<Cake_Order>)request.getAttribute("cakeOrders"); 
 	%>
 	<div style="font-size: 25px; height: 100px;float: left;">
-	    <a href="/BTL_LTW/StaffListOrders" class="button">
+	    <a href="${pageContext.request.contextPath}/StaffListOrders" class="button">
 	    	<button style="padding: 7px 10px">QUAY LẠI</button>
 	    </a>
 	</div>
 	<div style="font-size: 25px; height: 100px;float: right;">
-	    <a href="/BTL_LTW/StaffLogout" class="button">ĐĂNG XUẤT</a>
+	    <a href="${pageContext.request.contextPath}/StaffLogout" class="button">ĐĂNG XUẤT</a>
 	</div>
     <div style="width: 100%;text-align: center;font-size: 40px;float: left; margin-bottom: 40px">
         CHI TIẾT ĐƠN HÀNG
@@ -161,7 +161,7 @@
     		valueBt="Thành công";
     	}%>
 	    <div style="width: 50%;text-align: center;font-size: 30px;height:50px;float: left">
-	        <form action="/BTL_LTW/StaffUpdateStateOrder" method="get">
+	        <form action="${pageContext.request.contextPath}/StaffUpdateStateOrder" method="get">
 	            <input type="hidden" value="<%=order.getState()+1 %>" name="state">
 	            <input type="hidden" value="<%=order.getID() %>" name="id">
 	            <input type="submit" style="padding:7px 10px;font-size: 15px" value="<%=valueBt%>" onclick="return xacNhan1()">
@@ -170,7 +170,7 @@
     <%} %>
     <%if(order.getState()==0){ %>
     	<div style="width: 50%;text-align: center;font-size: 30px;height:50px;float: left">
-        <a href="/BTL_LTW/StaffCancelOrder?id=<%=order.getID()%>">
+        <a href="${pageContext.request.contextPath}/StaffCancelOrder?id=<%=order.getID()%>">
             <input type="button" style="width:70px;padding:7px 10px;font-size: 15px" value="hủy" onclick="return xacNhan2()">
         </a>
     </div>

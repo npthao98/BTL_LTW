@@ -88,7 +88,7 @@ pageEncoding="UTF-8"%>
 	                                        	<%} %>
 	                                        </td>
 	                                        <td>
-	                                            <a href="/BTL_LTW/DetailSuccessOrder?id=<%=orders.get(i).getId() %>">
+	                                            <a href="${pageContext.request.contextPath}/DetailSuccessOrder?id=<%=orders.get(i).getId() %>">
 	                                                Details
 	                                            </a>
 	                                        </td>
@@ -127,7 +127,7 @@ pageEncoding="UTF-8"%>
 		                                        <td class="none"><%=orders.get(i).getTotal() %></td>
 		                                        <td>Chờ xác nhận</td>
 		                                        <td>
-		                                            <a href="/BTL_LTW/DetailSuccessOrder?id=<%=orders.get(i).getId() %>">
+		                                            <a href="${pageContext.request.contextPath}/DetailSuccessOrder?id=<%=orders.get(i).getId() %>">
 		                                                Details
 		                                            </a>
 		                                        </td>
@@ -167,7 +167,7 @@ pageEncoding="UTF-8"%>
 		                                        <td class="none"><%=orders.get(i).getTotal() %></td>
 		                                        <td>Đã xác nhận</td>
 		                                        <td>
-		                                            <a href="/BTL_LTW/DetailSuccessOrder?id=<%=orders.get(i).getId() %>">
+		                                            <a href="${pageContext.request.contextPath}/DetailSuccessOrder?id=<%=orders.get(i).getId() %>">
 		                                                Details
 		                                            </a>
 		                                        </td>
@@ -206,7 +206,7 @@ pageEncoding="UTF-8"%>
 		                                        <td class="none"><%=orders.get(i).getTotal() %></td>
 		                                        <td>Đang giao</td>
 		                                        <td>
-		                                            <a href="/BTL_LTW/DetailSuccessOrder?id=<%=orders.get(i).getId() %>">
+		                                            <a href="${pageContext.request.contextPath}/DetailSuccessOrder?id=<%=orders.get(i).getId() %>">
 		                                                Details
 		                                            </a>
 		                                        </td>
@@ -245,7 +245,7 @@ pageEncoding="UTF-8"%>
 		                                        <td class="none"><%=orders.get(i).getTotal() %></td>
 		                                        <td>Đã giao</td>
 		                                        <td>
-		                                            <a href="/BTL_LTW/DetailSuccessOrder?id=<%=orders.get(i).getId() %>">
+		                                            <a href="${pageContext.request.contextPath}/DetailSuccessOrder?id=<%=orders.get(i).getId() %>">
 		                                                Details
 		                                            </a>
 		                                        </td>
@@ -284,7 +284,7 @@ pageEncoding="UTF-8"%>
 		                                        <td class="none"><%=orders.get(i).getTotal() %></td>
 		                                        <td>Đã hủy</td>
 		                                        <td>
-		                                            <a href="/BTL_LTW/DetailSuccessOrder?id=<%=orders.get(i).getId() %>">
+		                                            <a href="${pageContext.request.contextPath}/DetailSuccessOrder?id=<%=orders.get(i).getId() %>">
 		                                                Details
 		                                            </a>
 		                                        </td>

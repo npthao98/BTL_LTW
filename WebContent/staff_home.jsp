@@ -40,7 +40,7 @@
 </head>
 <body>
 <div style="text-align: end;font-size: 25px; width: 100%; height: 100px;float: left">
-    <a href="/BTL_LTW/StaffLogout" class="button">ĐĂNG XUẤT</a>
+    <a href="${pageContext.request.contextPath}/StaffLogout" class="button">ĐĂNG XUẤT</a>
 </div>
 <div style="width: 100%; text-align: center; font-size: 100px; padding-top: 60px;">Staff Home</div>
 <div style="text-align: right; height: 50px;font-size: 50px">
@@ -48,7 +48,7 @@
 </div>
 <div style="width: 100%;text-align: center;height: 500px">
     <div style="margin-bottom: 20px">
-    	<a href="/BTL_LTW/StaffListOrders">
+    	<a href="${pageContext.request.contextPath}/StaffListOrders">
 	        <button>Quản lí đơn hàng</button>
 	    </a>
     </div>

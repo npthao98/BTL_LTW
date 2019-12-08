@@ -129,7 +129,7 @@
                         </ul>
                         <div>
                         	<%if(order.getState()==0){ %>
-                        		<a class="button" href="/BTL_LTW/CancelOrder?id=<%=order.getID()%>"  onclick="return xacNhan()">HỦY ĐƠN</a>
+                        		<a class="button" href="${pageContext.request.contextPath}/CancelOrder?id=<%=order.getID()%>"  onclick="return xacNhan()">HỦY ĐƠN</a>
 	                    	<%} %>
                         </div>
                     </div>
@@ -205,7 +205,7 @@
                 </ul>
             </div>
             <div class="checkout-payment">
-                <a href="/BTL_LTW/ListOrders" class="button-payment">Quay lại</a>
+                <a href="${pageContext.request.contextPath}/ListOrders" class="button-payment">Quay lại</a>
             </div>
         </form>
     </div>
