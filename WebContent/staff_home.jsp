@@ -53,7 +53,7 @@
 	    </a>
     </div>
     <div>
-    	<a href="follow-add-book">
+    	<a href="${pageContext.request.contextPath}/StaffListProducts">
 	        <button>Quản lí sản phẩm</button>
 	    </a>
     </div>

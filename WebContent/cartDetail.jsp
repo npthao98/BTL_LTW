@@ -39,7 +39,7 @@
                 %>
                 <tr id="product_<%=carts.get(i).getCake().getID()%>" class="each_product">
                     <th>
-                        <button class="delete_product" onclick="deleteProduct('<%=carts.get(i).getCake().getID()%>')">
+                        <button class="delete_product" onclick="deleteProduct('<%=carts.get(i).getCake().getID()%>', '${pageContext.request.contextPath}')">
                             X
                         </button>
                     </th>
