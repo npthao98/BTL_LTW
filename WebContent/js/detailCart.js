@@ -68,7 +68,7 @@ function tangSL(ele, idCake){
     NUMBER.push(number);
 }
 
-function deleteProduct(ID, idCake){
+function deleteProduct(ID,context_path){
     var ele = document.querySelector("#product_" + ID),
         xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function(){
@@ -77,7 +77,7 @@ function deleteProduct(ID, idCake){
             renderPrice();
         };
     }
-    xhttp.open("GET", "/delete_from_cart?idCake=" + ID, true);
+    xhttp.open("GET", context_path +"/delete_from_cart?idCake=" + ID, true);
     xhttp.send();
 }
 
