@@ -49,7 +49,6 @@ public class TypeDAO {
         while(res.next()){
             result.add(new Type(res.getInt(1), res.getString(2)));
         }
-        state.close();
         con.close();
         return result;
     }
@@ -64,7 +63,6 @@ public class TypeDAO {
         while(rs.next()){
             result.add(new Type(rs.getInt(1), rs.getString(2)));
         }
-        ps.close();
         con.close();
         return result;
     }

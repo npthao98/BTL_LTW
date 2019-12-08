@@ -44,8 +44,6 @@ public class Cake implements Serializable{
     }
     public void setDescription(String description) {
             Description = description;
-    }
-
-	
+    }	
 
 }

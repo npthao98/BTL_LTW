@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -28,7 +29,7 @@ import modelDAO.TypeDAO;
  *
  * @author Duck
  */
-@WebServlet("/shop")
+@WebServlet(urlPatterns={"/shop"})
 
 public class ShopController extends HttpServlet {
     
@@ -54,7 +55,8 @@ public class ShopController extends HttpServlet {
                 ArrayList<CakeInfor> cart = new ArrayList<CakeInfor>();            
                 session.setAttribute("cart", cart);
             }
-            response.sendRedirect(request.getContextPath() + "/shop.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher(request.getContextPath() + "/shop.jsp");
+            dispatcher.forward(request, response);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ShopController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {

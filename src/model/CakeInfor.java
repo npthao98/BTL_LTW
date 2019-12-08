@@ -12,7 +12,7 @@ import java.util.ArrayList;
  *
  * @author Duck
  */
-public class CakeInfor implements Serializable{
+public class CakeInfor implements Serializable, Comparable<CakeInfor>{
     
     static final long serialVersionUID = 6L;
     
@@ -62,4 +62,24 @@ public class CakeInfor implements Serializable{
     public void setDem(int t){
         this.dem = t;
     }
+    public boolean checkType(int ID_Type){
+        for(int i = 0; i < type.size(); i++){
+            if(ID_Type == type.get(i).getID())
+                return true;
+        }
+        return false;
+    }
+    public int getPrice(){
+        return this.cake.getPrice();
+    }    
+
+    public int compareTo(CakeInfor o) {
+        int hieu = this.getPrice() - o.getPrice();
+        if(hieu == 0)
+            return 0;
+        if(hieu > 1)
+            return 1;
+        return -1;
+    }
+
 }

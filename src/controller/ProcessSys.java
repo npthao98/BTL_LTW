@@ -5,10 +5,13 @@ import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.CakeInfor;
+import model.Type;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -57,9 +60,28 @@ public class ProcessSys {
         response.setContentType("text/html;charset=UTF-8");
     }
     
-     public static void setCharacterUTF8(ServletRequest request, ServletResponse response) throws UnsupportedEncodingException{
+    public static void setCharacterUTF8(ServletRequest request, ServletResponse response) throws UnsupportedEncodingException{
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
     }
+     
+    public static ArrayList<CakeInfor> filterType(ArrayList<CakeInfor> list, int Type){
+        ArrayList<CakeInfor> res = new ArrayList<CakeInfor>();
+        for(int i = 0; i < list.size(); i++){
+            if(list.get(i).checkType(Type) == true){
+                res.add(list.get(i));
+            }
+        }
+        return res;
+    } 
+    
+    public static ArrayList<CakeInfor> sortPriceInc(ArrayList<CakeInfor> list){
+        ArrayList<CakeInfor> res = new ArrayList<CakeInfor>();
+
+                
+        
+        return res;
+    }
+
     
 }

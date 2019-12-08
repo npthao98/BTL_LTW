@@ -8,9 +8,15 @@ and open the template in the editor.
     Author     : Duck
 */
 
+@import url('https://fonts.googleapis.com/css?family=Cormorant&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
 *{
     margin: 0;
     padding: 0;
+}
+ul li{
+    list-style: none;
 }
 a{
     text-decoration: none !important;
@@ -75,6 +81,16 @@ container .products_list .each_product{
     background-repeat:   no-repeat;
     background-position: center center;
 }
+.filter_show{
+    height: 43px;
+    border: 1px solid #ddd;
+    padding : 20px;
+}
+.number_product{
+    font-family: Muli,sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+}
 .button_add_cart{
     width: 90%;
     height: 20%;
@@ -99,6 +115,7 @@ container .products_list .each_product{
 
 container .list_catgories{
     width: 30%;
+    margin-left: 30px;
 }
 
 container .infor-product{
@@ -123,6 +140,10 @@ container .infor-product p{
     text-align: center;
     margin-top: 15px;
 }
+.fa-star{
+    color: #bb9230 !important;
+}
+
 
 @media screen and (max-width: 680px) {
   container .products_list{

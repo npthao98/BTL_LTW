@@ -52,12 +52,13 @@ public class ImageurlDAO {
                     ImageUrl imageurl = new ImageUrl(ID, CakeID, Url);
                     res.add(imageurl);
             }
+            con.close();
             return res;
         } catch (SQLException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
         }
-
+        con.close();
         return null;
     }
 }
