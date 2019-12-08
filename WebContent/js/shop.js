@@ -47,7 +47,7 @@ function addCart(ele, id_cake, context_path){
             ele.innerHTML = '<i class="fas fa-shopping-cart"></i>' + 'HAVE IN CART !';
         };
     }
-    xhttp.open("GET", "/addtocart?idCake=" + id_cake, false);
+    xhttp.open("GET", context_path + "/addtocart?idCake=" + id_cake, false);
     ele.innerHTML = '<i class="fas fa-shopping-cart"></i>'+'ADDING TO CART...';
     xhttp.send();
 }
