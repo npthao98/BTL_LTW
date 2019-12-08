@@ -14,7 +14,7 @@
     <div class="content">
         <div class="update-information">
             <h1 class="a-title">CẬP NHẬT TÀI KHOẢN</h1>
-            <form action="/BTL_LTW/UpdateInformation" method="post" accept-charset="ISO-8859-1">
+            <form action="${pageContext.request.contextPath}/UpdateInformation" method="post" accept-charset="ISO-8859-1">
             	<div class="box-update-information">
 	                <div class="col-6">
 	                    <label for="">Họ và tên:</label>
@@ -45,7 +45,7 @@
 	                </div>
 	                <div class="actions">
 	                    <input type="submit" class="button" value="LƯU THAY ĐỔI">
-	                    <a href="/BTL_LTW/Account" class="button cancel">HỦY</a>
+	                    <a href="${pageContext.request.contextPath}/Account" class="button cancel">HỦY</a>
 	                </div>
 	            </div>
             </form>

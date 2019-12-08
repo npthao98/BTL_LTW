@@ -17,7 +17,7 @@
             <div class="account-order-check">
                 <p>Tìm kiếm đơn hàng để theo dõi quá trình vận chuyển sản phẩm bạn đã đặt hàng</p>
                 <div class="form-order-check">
-                    <form action="/BTL_LTW/SearchOrder" method="get">
+                    <form action="${pageContext.request.contextPath}/SearchOrder" method="get">
                         <div class="ip-search">
                             <div class="form-group">
                                 <label for="email">Mã đơn hàng: *</label>

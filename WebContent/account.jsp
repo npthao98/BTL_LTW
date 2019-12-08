@@ -55,10 +55,10 @@
                     <div class="col-5">
                         <div class="actions">
                             <div class="update-inf">
-                                <a href="/BTL_LTW/UpdateInformation" class="button">SỬA THÔNG TIN</a>
+                                <a href="${pageContext.request.contextPath}/UpdateInformation" class="button">SỬA THÔNG TIN</a>
                             </div>
                             <div class="change-pw">
-                                <a href="/BTL_LTW/ChangePW" class="button">THAY ĐỔI MẬT KHẨU</a>
+                                <a href="${pageContext.request.contextPath}/ChangePW" class="button">THAY ĐỔI MẬT KHẨU</a>
                             </div>
                         </div>
                     </div>

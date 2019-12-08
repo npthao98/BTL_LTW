@@ -13,7 +13,7 @@
 	<% String tb = (String)request.getAttribute("alert"); %>
 	<input type = "hidden" value="<%=tb %>" id="message">
     <div class="content">
-        <form action="/BTL_LTW/ChangePW" method="post" accept-charset="ISO-8859-1" onsubmit="return checkInputChangePW()">
+        <form action="${pageContext.request.contextPath}/ChangePW" method="post" accept-charset="ISO-8859-1" onsubmit="return checkInputChangePW()">
         	<div class="change-pw">
 	            <h1 class="a-title">THÔNG TIN TÀI KHOẢN</h1>
 	            <div class="box-change-PW">
@@ -31,7 +31,7 @@
 	                </div>
 	                <div class="actions">
 	                    <input type="submit" class="button" value="LƯU THAY ĐỔI">
-	                    <a href="/BTL_LTW/Account" class="button cancel">HỦY</a>
+	                    <a href="${pageContext.request.contextPath}/Account" class="button cancel">HỦY</a>
 	                </div>
 	            </div>
 	        </div>

@@ -17,12 +17,12 @@
 	<div class="content">
 		<%List<OrderDetail> orders= (List<OrderDetail>)request.getAttribute("orders"); %>
 		<div style="font-size: 25px; height: 100px;float: left;">
-		    <a href="/BTL_LTW/StaffHome" class="button">
+		    <a href="${pageContext.request.contextPath}/StaffHome" class="button">
 		    	<button style="padding: 7px 10px">QUAY LẠI</button>
 		    </a>
 		</div>
 		<div style="font-size: 25px; height: 100px;float: right;">
-		    <a href="/BTL_LTW/StaffLogout" class="button">ĐĂNG XUẤT</a>
+		    <a href="${pageContext.request.contextPath}/StaffLogout" class="button">ĐĂNG XUẤT</a>
 		</div>
 	<div style="text-align: center;font-size: 50px; width: 100%; height: 100px;float: left; margin:30px 0px;">
 	    Danh sách đơn hàng
@@ -94,7 +94,7 @@
 	                                        	<%} %>
 	                                        </td>
 	                                        <td>
-	                                            <a href="/BTL_LTW/StaffDetailOrder?id=<%=orders.get(i).getId() %>">
+	                                            <a href="${pageContext.request.contextPath}/StaffDetailOrder?id=<%=orders.get(i).getId() %>">
 	                                                <button>Details</button>
 	                                            </a>
 	                                        </td>
@@ -131,7 +131,7 @@
 		                                        <td class="none"><%=orders.get(i).getTotal() %></td>
 		                                        <td>Chờ xác nhận</td>
 		                                        <td>
-		                                            <a href="/BTL_LTW/StaffDetailOrder?id=<%=orders.get(i).getId() %>">
+		                                            <a href="${pageContext.request.contextPath}/StaffDetailOrder?id=<%=orders.get(i).getId() %>">
 		                                                <button>Details</button>
 		                                            </a>
 		                                        </td>
@@ -169,7 +169,7 @@
 		                                        <td class="none"><%=orders.get(i).getTotal() %></td>
 		                                        <td>Đã xác nhận</td>
 		                                        <td>
-		                                            <a href="/BTL_LTW/StaffDetailOrder?id=<%=orders.get(i).getId() %>">
+		                                            <a href="${pageContext.request.contextPath}/StaffDetailOrder?id=<%=orders.get(i).getId() %>">
 		                                                <button>Details</button>
 		                                            </a>
 		                                        </td>
@@ -206,7 +206,7 @@
 		                                        <td class="none"><%=orders.get(i).getTotal() %></td>
 		                                        <td>Đang giao</td>
 		                                        <td>
-		                                            <a href="/BTL_LTW/StaffDetailOrder?id=<%=orders.get(i).getId() %>">
+		                                            <a href="${pageContext.request.contextPath}/StaffDetailOrder?id=<%=orders.get(i).getId() %>">
 		                                                <button>Details</button>
 		                                            </a>
 		                                        </td>
@@ -243,7 +243,7 @@
 		                                        <td class="none"><%=orders.get(i).getTotal() %></td>
 		                                        <td>Đã giao</td>
 		                                        <td>
-		                                            <a href="/BTL_LTW/StaffDetailOrder?id=<%=orders.get(i).getId() %>">
+		                                            <a href="${pageContext.request.contextPath}/StaffDetailOrder?id=<%=orders.get(i).getId() %>">
 		                                                <button>Details</button>
 		                                            </a>
 		                                        </td>
@@ -280,7 +280,7 @@
 		                                        <td class="none"><%=orders.get(i).getTotal() %></td>
 		                                        <td>Đã hủy</td>
 		                                        <td>
-		                                            <a href="/BTL_LTW/StaffDetailOrder?id=<%=orders.get(i).getId() %>">
+		                                            <a href="${pageContext.request.contextPath}/StaffDetailOrder?id=<%=orders.get(i).getId() %>">
 		                                                <button>Details</button>
 		                                            </a>
 		                                        </td>
