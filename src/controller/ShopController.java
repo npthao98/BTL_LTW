@@ -55,7 +55,7 @@ public class ShopController extends HttpServlet {
                 ArrayList<CakeInfor> cart = new ArrayList<CakeInfor>();            
                 session.setAttribute("cart", cart);
             }
-            RequestDispatcher dispatcher = request.getRequestDispatcher(request.getContextPath() + "/shop.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/shop.jsp");
             dispatcher.forward(request, response);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ShopController.class.getName()).log(Level.SEVERE, null, ex);
