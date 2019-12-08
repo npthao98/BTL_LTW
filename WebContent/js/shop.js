@@ -39,11 +39,9 @@ document.addEventListener('DOMContentLoaded', function(){
 
 function addCart(ele, id_cake, context_path){
     isButtonClick = 1;
-    console.log(id_cake);
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function(){
         if (this.readyState == 4 && this.status == 200) {
-            console.log(this.responseText);
             ele.innerHTML = '<i class="fas fa-shopping-cart"></i>' + 'HAVE IN CART !';
         };
     }

@@ -71,7 +71,7 @@
             </table>
             <div class="margin-content option_button">
                 <button class="button_cart"><a href="${pageContext.request.contextPath}/shop">BACK TO SHOP</a></button>
-                <button class="button_cart" id="update_cart">UPDATE CART</button>
+                <button class="button_cart" id="update_cart" onclick="updateCart('${pageContext.request.contextPath}')">UPDATE CART</button>
             </div>
          
             <div class="margin-content cart_total">
