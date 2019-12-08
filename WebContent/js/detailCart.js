@@ -80,22 +80,20 @@ function deleteProduct(ID,context_path){
     xhttp.open("GET", context_path +"/delete_from_cart?idCake=" + ID, true);
     xhttp.send();
 }
-
+function updateCart(url){
+    for(let i = 0; i < ID_CAKE.length; i++){
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function(){
+            if (this.readyState == 4 && this.status == 200) {
+                
+            };
+        }
+        xhttp.open("GET", url + "/update_to_cart?idCake=" + ID_CAKE[i] + "&number=" + NUMBER[i], true);
+        xhttp.send();
+   }
+   renderPrice();
+}
 document.addEventListener('DOMContentLoaded', function(){
     renderPrice();
-   
     var button_update = document.querySelector("#update_cart");
-   button_update.addEventListener('click', function(){
-       for(let i = 0; i < ID_CAKE.length; i++){
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function(){
-                if (this.readyState == 4 && this.status == 200) {
-                    
-                };
-            }
-            xhttp.open("GET", "/update_to_cart?idCake=" + ID_CAKE[i] + "&number=" + NUMBER[i], true);
-            xhttp.send();
-       }
-       renderPrice();
-   });
 });

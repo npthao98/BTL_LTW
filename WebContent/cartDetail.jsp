@@ -40,6 +40,7 @@
                 <tr id="product_<%=carts.get(i).getCake().getID()%>" class="each_product">
                     <th>
                         <button class="delete_product" onclick="deleteProduct('<%=carts.get(i).getCake().getID()%>','${pageContext.request.contextPath}')">
+
                             X
                         </button>
                     </th>
@@ -71,7 +72,7 @@
             </table>
             <div class="margin-content option_button">
                 <button class="button_cart"><a href="${pageContext.request.contextPath}/shop">BACK TO SHOP</a></button>
-                <button class="button_cart" id="update_cart">UPDATE CART</button>
+                <button class="button_cart" id="update_cart" onclick="updateCart('${pageContext.request.contextPath}')">UPDATE CART</button>
             </div>
          
             <div class="margin-content cart_total">
