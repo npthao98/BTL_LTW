@@ -77,7 +77,7 @@
                         </g>
                     </svg>
                     <span>My Account</span>
-                </div>
+                    </div>
                 </a>
                 <div class="header--contact__careers">
                     <svg width="16px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 37 47.5" style="enable-background:new 0 0 37 47.5;" xml:space="preserve">
@@ -1115,7 +1115,7 @@
                         C23.5,20.7,22.1,19.3,20.8,17.9z"></path>
                 </svg>
             </button>
-            <div class="header--navbar_item"><a href="${pageContext.request.contextPath}">home</a></div>
+            <div class="header--navbar_item"><a href="${pageContext.request.contextPath}/">home</a></div>
             <div class="header--navbar_item"><a href="">blog</a></div>
             <div class="header--navbar_item"><a href="">portfolio</a></div>
             <div class="header--navbar_item"><a href="${pageContext.request.contextPath}/shop">shop</a></div>

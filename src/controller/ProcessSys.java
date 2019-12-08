@@ -73,15 +73,5 @@ public class ProcessSys {
             }
         }
         return res;
-    } 
-    
-    public static ArrayList<CakeInfor> sortPriceInc(ArrayList<CakeInfor> list){
-        ArrayList<CakeInfor> res = new ArrayList<CakeInfor>();
-
-                
-        
-        return res;
-    }
-
-    
+    }     
 }

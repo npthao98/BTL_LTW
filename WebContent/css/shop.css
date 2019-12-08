@@ -63,6 +63,7 @@ container .products_list{
     column-gap: 0.5%;
     row-gap: 10px;
     width: 100%;
+    margin: 20px 0 20px 0;
 }
 container .products_list .each_product{
     display: flex;
@@ -81,11 +82,11 @@ container .products_list .each_product{
     background-repeat:   no-repeat;
     background-position: center center;
 }
-.filter_show{
+/*.filter_show{
     height: 43px;
     border: 1px solid #ddd;
     padding : 20px;
-}
+}*/
 .number_product{
     font-family: Muli,sans-serif !important;
     font-size: 16px !important;
@@ -143,7 +144,36 @@ container .infor-product p{
 .fa-star{
     color: #bb9230 !important;
 }
+container .list_catgories h2{
+    color: #bb9230;
+    font-weight: 400;
+}
 
+container .type_cake{
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20px;
+    margin-bottom: 20px;
+}
+container .list_catgories ul{
+    margin-top: 20px;
+}
+container .type_cake a{
+    font-family: Muli,sans-serif;
+    font-style: italic;
+    color: black;
+    font-size: 20px;
+}
+container .type_cake a:hover{
+    color: #bb9230;
+}
+.icon_cake_type{
+    height: 50px;
+    width: auto;
+    margin-right: 100px;
+}
 
 @media screen and (max-width: 680px) {
   container .products_list{
@@ -158,6 +188,9 @@ container .infor-product p{
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+    container .list_catgories{
+        width: 80%;
     }
     container .products_filter{
         display: flex;

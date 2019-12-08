@@ -58,3 +58,9 @@ function show(link){
     else
         isButtonClick = 0;
 }
+function redirectSort(link){
+    var next = link.value;
+    if(next != null){
+        window.location.href = next;
+    }
+}

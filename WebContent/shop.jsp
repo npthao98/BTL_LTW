@@ -74,15 +74,13 @@
         <container class="margin-content">
             <div class="list_products">
                 <div class="products_filter">
-                    <div class="number_product">Hiển thị từ 1 - <%=number_record%> sản phẩm</div>
-                    <div class="filter_show">
-                        Lọc sản phẩm theo :
-                        <ul>
-                            <li><a href="${pageContext.request.contextPath}/<%=url%>sort=0">Tất cả sản phẩm</a></li>
-                            <li><a href="${pageContext.request.contextPath}/<%=url%>sort=1">Giá tăng dần</a></li>
-                            <li><a href="${pageContext.request.contextPath}/<%=url%>sort=2">Giá giảm dần</a></li>
-                        </ul>
-                    </div>
+                    <div class="number_product">Số bánh : <%=number_record%> sản phẩm</div>
+                    <select class="filter_show" onchange="redirectSort(this)">
+                        <option value="NULL">--Lọc sản phẩm theo--</option>
+                        <option value="${pageContext.request.contextPath}/<%=url%>sort=0">Tất cả sản phẩm</option>
+                        <option value="${pageContext.request.contextPath}/<%=url%>sort=1">Giá tăng dần</option>
+                        <option value="${pageContext.request.contextPath}/<%=url%>sort=2">Giá giảm dần</option>
+                    </select>
                 </div>
  
                 <div class="products_list">
@@ -116,18 +114,47 @@
             </div>
             
             <div class="list_catgories">
-                <h2>CATEGORIES</h2>
+                <h2>CATEGORIES<span class="line_middle"></span></h2>
                 <ul>
-                    <li><a href="${pageContext.request.contextPath}/shop?type=1">Cupcake</a></li>
-                    <li><a href="${pageContext.request.contextPath}/shop?type=2">Fruit cake</a></li>
-                    <li><a href="${pageContext.request.contextPath}/shop?type=3">Roll cake</a></li>
-                    <li><a href="${pageContext.request.contextPath}/shop?type=4">Chocolate Cake</a></li>
-                    <li><a href="${pageContext.request.contextPath}/shop?type=5">Desert</a></li>
-                    <li><a href="${pageContext.request.contextPath}/shop?type=6">Breakfast</a></li>
-                    <li><a href="${pageContext.request.contextPath}/shop?type=7">Cake of season</a></li>
-                    <li><a href="${pageContext.request.contextPath}/shop?type=8">Cheese cake</a></li>
-                    <li><a href="${pageContext.request.contextPath}/shop?type=9">Cookies</a></li>
-                    <li><a href="${pageContext.request.contextPath}/shop?type=10">Basic cake</a></li>
+                    <li class="type_cake">
+                        <a href="${pageContext.request.contextPath}/shop?type=1">Cupcake</a>
+                        <img class="icon_cake_type" src="assets/home/cupcake.png">
+                    </li>
+                    <li class="type_cake">
+                        <a href="${pageContext.request.contextPath}/shop?type=2">Fruit cake</a>
+                        <img class="icon_cake_type" src="assets/home/fruitcake.png">
+                    </li>
+                    <li class="type_cake"><a href="${pageContext.request.contextPath}/shop?type=3">Roll cake</a>
+                        <img class="icon_cake_type" src="assets/home/rollcake.png">
+                    </li>
+                    <li class="type_cake">
+                        <a href="${pageContext.request.contextPath}/shop?type=4">Chocolate Cake</a>
+                        <img class="icon_cake_type" src="assets/home/chocolatecake.png">                   
+                    </li>
+                    <li class="type_cake">
+                        <a href="${pageContext.request.contextPath}/shop?type=5">Desert</a>
+                        <img class="icon_cake_type" src="assets/home/desert.png"> 
+                    </li>
+                    <li class="type_cake">
+                        <a href="${pageContext.request.contextPath}/shop?type=6">Breakfast</a>
+                        <img class="icon_cake_type" src="assets/home/breakfast.png">
+                    </li>
+                    <li class="type_cake">
+                        <a href="${pageContext.request.contextPath}/shop?type=7">Cake of season</a>
+                        <img class="icon_cake_type" src="assets/home/seasoncake.png">
+                    </li>
+                    <li class="type_cake">
+                        <a href="${pageContext.request.contextPath}/shop?type=8">Cheese cake</a>
+                        <img class="icon_cake_type" src="assets/home/cheesecake.png">
+                    </li>
+                    <li class="type_cake">
+                        <a href="${pageContext.request.contextPath}/shop?type=9">Cookies</a>
+                        <img class="icon_cake_type" src="assets/home/cookie.png">
+                    </li>
+                    <li class="type_cake">
+                        <a href="${pageContext.request.contextPath}/shop?type=10">Basic cake</a>
+                        <img class="icon_cake_type" src="assets/home/basicake.png">
+                    </li>
                 </ul>
             </div>
         </container>

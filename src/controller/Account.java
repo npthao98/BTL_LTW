@@ -30,18 +30,18 @@ public class Account extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession();
-		Client client = null;
-		client = (Client)session.getAttribute("user");
-		if(client == null) {
-			response.sendRedirect("/BTL_LTW/login");
-		}
-		else {
-			request.getRequestDispatcher("account.jsp").forward(request, response);
-		}
-		
-	}
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        Client client = null;
+        client = (Client)session.getAttribute("user");
+        if(client == null) {
+                response.sendRedirect("/BTL_LTW/login");
+        }
+        else {
+                request.getRequestDispatcher("account.jsp").forward(request, response);
+        }
+
+    }
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

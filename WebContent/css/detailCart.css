@@ -17,6 +17,7 @@ container thead tr th{
 container table {
     border-collapse: collapse;
     width: 80% !important;
+    margin-top: 40px !important;
 
 }
 container table *{
@@ -144,6 +145,9 @@ i{
     -ms-user-select: none; /* IE10+ */
 }
 
+.each_product{
+    transition: all 1s ease-out;
+}
 @media screen and (max-width: 1032px) {
     container table{
         width: 100%;
