@@ -71,7 +71,7 @@ container .products_list .each_product{
     align-items: center;
     justify-content: flex-end;
     width: 100%;
-    /*background-size: cover;*/
+    background-size: cover;
     background-repeat:   no-repeat;
     background-position: center center;
 }

@@ -7,14 +7,148 @@ and open the template in the editor.
     Created on : Dec 7, 2019, 12:12:09 AM
     Author     : Duck
 */
-
-table {
-  border-collapse: collapse;
-  width: 100%;
+button{
+    background: none;
+    border: none;
 }
+container thead tr th{
+    padding: 15px;
+}
+container table {
+    border-collapse: collapse;
+    width: 80% !important;
 
-th, td {
-  padding: 8px;
+}
+container table *{
+    font-family: Muli,sans-serif;
+}
+container a{
+    text-decoration: none;
+    color: inherit;
+}
+container .cake_img{
+    display: inline-block;
+    margin : 0 20px 0 20px;
+    height: 86px;
+    width: 86px;
+    background-size: cover;
+    background-repeat:   no-repeat;
+    background-position: center center;
+}
+tr {
   text-align: left;
   border-bottom: 1px solid #ddd;
+}
+container .padding-content{
+    padding: 0 10% 0 10%;
+}
+container .each_product th{
+    min-height: 110px;
+}
+container .product_info{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+.margin-content{
+    margin: 0 10% 0 10%;
+}
+
+container .quantity{
+    display: inline-block;
+    padding: 0 10px 0 10px;
+    border: 1px solid #eee;
+    height: 47px;
+    line-height: 47px;
+}
+container .quantity_product{
+    width: 22px;
+    font-size: 14px;
+    line-height: 19px;
+    padding: 0;
+    margin: 0 0 4px;
+    outline: 0;
+    border: none;
+    text-align: center;
+}
+container .delete_product{
+    background: none;
+    border: none;
+    font-size: 15px;
+    color: gray;
+}
+.pointer:hover{
+    cursor: pointer;
+}
+container .arrow:hover{ 
+    color: #bb9230;
+}
+container .quantity *{
+    font-size: 18px;
+}
+container .button_cart{
+    font-family: Muli,sans-serif;
+    font-size: 11px;
+    line-height: 2em;
+    font-weight: 600;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    outline: 0;
+    color: #fff;
+    background-color: #1f1e1e;
+    border: 1px solid transparent;
+    cursor: pointer;
+    padding: 11px 29px 11px 29px;
+    transition: color .2s ease-in-out,
+    background-color .2s ease-in-out,
+    border-color .2s ease-in-out;
+}
+container .button_cart:hover{
+    background: #bb9230;
+    color: #fff;
+}
+container .option_button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding : 20px;
+}
+container .cart_total{
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding : 20px;
+    justify-content: center;
+}
+container .product_info{
+    font-weight: 400;
+}
+container .price_text{
+    color:  #bb9230;
+}
+container .cart_total{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+container .cart_total > span{
+    font-size: 20px;
+    margin-right: 20px;
+}
+i{
+    -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+    -moz-user-select: none; /* mozilla browsers */
+    -khtml-user-select: none; /* webkit (konqueror) browsers */
+    -ms-user-select: none; /* IE10+ */
+}
+
+@media screen and (max-width: 1032px) {
+    container table{
+        width: 100%;
+    }
+    container .cake_img{
+        display: none;
+    }
 }

@@ -5,6 +5,8 @@ import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -51,6 +53,11 @@ public class ProcessSys {
     }
     
     public static void setCharacterUTF8(HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException{
+        request.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
+    }
+    
+     public static void setCharacterUTF8(ServletRequest request, ServletResponse response) throws UnsupportedEncodingException{
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
     }
