@@ -43,7 +43,7 @@ public class ManageProductController extends HttpServlet{
         
         Client user = (Client) session.getAttribute("user");
         User u = UserDAO.getByClientID(user.getID());
-        if(u.getRole() != 0){
+        if((u.getRole() != 0) || u == null){
             response.sendRedirect(request.getContextPath() + "/staff_login");
         }else{
             

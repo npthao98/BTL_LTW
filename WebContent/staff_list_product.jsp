@@ -77,6 +77,11 @@
         <div style="text-align: center;font-size: 50px; width: 100%; height: 100px;float: left; margin:30px 0px;">
 		    Danh sách đơn hàng
 		</div>
+		<div style="font-size: 25px; height: 100px;float: left;">
+		    <a href="${pageContext.request.contextPath}/StaffAddProduct" class="button">
+		    	<button style="position: relative; left: 130px; padding: 7px 10px; width: 140px;">Thêm sản phẩm</button>
+		    </a>
+		</div>
         <table border="2" cellpadding="10px">
             <tr>
                 
@@ -97,8 +102,8 @@
                 <td><%=listProduct.get(i).getName() %></td>
                 <td><%=listProduct.get(i).getPrice() %></td>
                 <td><%=listProduct.get(i).getDescription() %></td>
-                <td><a href="EditProduct?id=<%=listProduct.get(i).getID()%>">Edit</a></td>
-                <td><a href="DeleteProduct?id=<%=listProduct.get(i).getID()%>">Delete</a></td>
+                <td><a href="EditProduct?id=<%=listProduct.get(i).getID()%>"><button>Edit</button></a></td>
+                <td><a href="DeleteProduct?id=<%=listProduct.get(i).getID()%>"><button>Delete</button></a></td>
             </tr>
             	
             	
