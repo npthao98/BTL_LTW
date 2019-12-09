@@ -53,7 +53,7 @@
 	    </a>
     </div>
     <div>
-    	<a href="${pageContext.request.contextPath}/StaffListProducts">
+    	<a href="${pageContext.request.contextPath}/staff_manage/StaffListProducts">
 	        <button>Quản lí sản phẩm</button>
 	    </a>
     </div>

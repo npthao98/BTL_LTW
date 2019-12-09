@@ -81,5 +81,12 @@ public class CakeInfor implements Serializable, Comparable<CakeInfor>{
             return 1;
         return -1;
     }
+    
+    public boolean checkIsName(String name){
+        String real_name = this.getCake().getName().toLowerCase(),
+                query_name = name.toLowerCase();
+        boolean check = real_name.contains(query_name); 
+        return check;
+    }
 
 }
