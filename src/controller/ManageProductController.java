@@ -48,16 +48,9 @@ public class ManageProductController extends HttpServlet{
         }else{
             
             try {
-                ArrayList<CakeInfor> products = new ArrayList<CakeInfor>();
                 ArrayList<Cake> list = (ArrayList<Cake>) CakeDAO.getAllCake();
-                
-                for(int i = 0; i < list.size(); i++){
-                    ArrayList<ImageUrl> urls = ImageurlDAO.getByCake(list.get(i));
-                    ArrayList<Type> types = TypeDAO.getByCake(list.get(i));
-                    products.add(new CakeInfor(list.get(i), types, urls));
-                }
-                session.setAttribute("products", products);
-                RequestDispatcher dispatcher = request.getRequestDispatcher("staff_list_product");
+                request.setAttribute("products", list);
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/staff_list_product.jsp");
                 dispatcher.forward(request, response);
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(ManageProductController.class.getName()).log(Level.SEVERE, null, ex);
