@@ -1,12 +1,11 @@
 <%@page import="model.Account"%>
 
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="ISO-8859-1">
     <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -101,8 +100,8 @@
 	                </div>
 	                <div class="container--banner_content_ads_item_text container--banner_content_grid_11">
 	                    <h3>don't miss</h3>
-	                    <h1>today's special baked for you</h1>
-	                    <a href="${pageContext.request.contextPath}/login.jsp">
+	                    <h1>Don't miss your breakfast in my bakery</h1>
+	                    <a href="${pageContext.request.contextPath}/shop?type=6">
 	                        <button class="read_more">read more</button>
 	                    </a>
 	                </div>
@@ -120,9 +119,10 @@
 	                </div>
 	                <div class="container--banner_content_ads_item_text container--banner_content_grid_11">
 	                    <h3>don't miss</h3>
-	                    <h1>the finess homemade recipes</h1>
-	                    
-	                    <a href="">
+	                    <h1>Deserts cake ?
+                                </br>
+                                Why don't !</h1>
+	                    <a href="${pageContext.request.contextPath}/shop?type=5">
 	                        <button class="read_more">read more</button>
 	                    </a>
 	                </div>
@@ -134,8 +134,8 @@
 	                </div>
 	                <div class="container--banner_content_ads_item_text container--banner_content_grid_11">
 	                    <h3>don't miss</h3>
-	                    <h1>a flavor you are sure to love</h1>
-	                    <a href="#">
+	                    <h1>Your children like cookie ?</h1>
+	                    <a href="${pageContext.request.contextPath}/shop?type=9">
 	                        <button class="read_more">read more</button>
 	                    </a>
 	                </div>
@@ -159,8 +159,8 @@
 	                </div>
 	                <div class="container--banner_content_ads_item_text container--banner_content_grid_12" style="padding: 0;">
 	                    <h3>don't miss</h3>
-	                    <h1>they taste as good as they look</h1>
-	                    <a href="#">
+	                    <h1>cake for every season in year</h1>
+	                    <a href="${pageContext.request.contextPath}/shop?type=7">
 	                        <button class="read_more">read more</button>
 	                    </a>
 	                </div>
@@ -320,8 +320,10 @@
 	                <img src="assets/m-h-single-img-3.png" alt="" id="baked_with_love" class="hidden_scale">
 	            </div>
 	            <div class="container--story_story">
-	                <h3 class="title_font">TODAY'S SPECIAL BAKED FRESH FOR YOU</h3>
-	                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, ratione dicta possimus maiores ex, sapiente doloribus repellendus dolores iusto magni expedita debitis quo earum tempora voluptate id quasi, accusantium recusandae?</p>
+	                <h3 class="title_font">TODAY'S SPECIAL BAKED</br>FRESH FOR YOU</h3>
+                        <p>
+                            Mỗi ngày , chúng tôi luôn cố gắng tạo ra những chiếc bánh tuyệt vời nhất thế giới , chỉ để cho bạn thưởng thức
+                        </p>
 	                <button class="read_more">read more</button>
 	            </div>
 	        </div>
@@ -331,7 +333,7 @@
                 
                 <div class="container--our_process">
                     <h1>OUR PROCESS</h1>
-                    <p>Loremmmmmm</p>
+                    <p>Với lịch sử lâu đời trong việc làm bánh , chúng tôi luôn tự hào về sản phẩm của mình !!! Chắc chắc sản phẩm chúng tôi sẽ thuyết phục được bạn <3</p>
                     
                     <div class="container--our_process_content padding-content">
                         <div class="container--our_process_eachitem">
@@ -340,7 +342,7 @@
                                 <div class="item_year">1809</div>
                             </div>  
                             <h3>FAMILY-OWNED</h3>
-                            <p>Lorem ipsum dolor sit amet, his convenire similiqu.</p>
+                            <p>Xuất phát điểm, chúng tôi là gia đình nhỏ làm bánh</p>
                         </div>
                         
                         <div class="container--our_process_eachitem">
@@ -349,7 +351,7 @@
                                <div class="item_year">1945</div>
                            </div>
                            <h3>PASSION FOR BREAD</h3>
-                           <p>Lorem ipsum dolor sit amet, his convenire similiqu.</p>
+                           <p>Những chiếc bánh mì là thương hiệu của cửa hàng tôi trong khu vực.</p>
                         </div>
                     
                         <div class="container--our_process_eachitem">
@@ -357,8 +359,8 @@
                                 <img src="assets/home/m-h-single-img-13-1.png">
                                 <div class="item_year">2006</div>
                             </div>
-                            <h3>COFFEE TO GO</h3>
-                            <p>Lorem ipsum dolor sit amet, his convenire similiqu.</p>
+                            <h3>CREAM CAKE TO GO</h3>
+                            <p>Chúng tôi đã bắt đầu phát triển các công thức làm bánh kem mới , thật tuyệt !/p>
                         </div>
                         
                         <div class="container--our_process_eachitem">
@@ -367,7 +369,7 @@
                                 <div class="item_year">2019</div>
                             </div>
                             <h3>DELIVERY</h3>
-                            <p>Lorem ipsum dolor sit amet, his convenire similiqu.</p>
+                            <p>Giờ đây bạn có thể có được những chiếc bánh của chúng tôi, mọi lúc mọi nơi</p>
                         </div>
                     </div>
                 </div>

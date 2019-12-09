@@ -51,35 +51,42 @@ public class AddToCartAJAX extends HttpServlet {
         HttpSession session = request.getSession();
         
         // Thêm sản phẩm vào giỏ hàng
-        String IDCake = request.getParameter("idCake");
+        String IDCake = request.getParameter("idCake"),
+                soluong = request.getParameter("soluong");
+        
         int ID = Integer.valueOf(IDCake);
         System.out.println(IDCake);
         ArrayList<CakeInfor> list = (ArrayList<CakeInfor>)session.getAttribute("products"),
                              cart = (ArrayList<CakeInfor>)session.getAttribute("cart");
-        int dem = 0;
-        
+        int kt = 0;
         for(int i = 0; i < cart.size(); i++){
             if(cart.get(i).getIDCake() == ID){
-                cart.get(i).tangDem();
-                dem = cart.get(i).getDem();
+                if(soluong != null){
+                    int SL = Integer.parseInt(soluong);
+                    cart.get(i).tangDem(SL);
+                }else{
+                    cart.get(i).tangDem();
+                }
+                kt = 1;
                 break;
             }
         }
-        if(dem == 0){
+        if(kt == 0){
             for(int i = 0; i < list.size(); i++){
                 if(list.get(i).getIDCake() == ID){
-                    cart.add(list.get(i));
-                    dem = list.get(i).getDem();
+                    CakeInfor CAKE = list.get(i);
+                    if(soluong != null){
+                        int SL = Integer.parseInt(soluong);
+                        CAKE.setDem(SL);
+                        cart.add(CAKE);
+                        response.sendRedirect(request.getContextPath() + "/shop");
+                    }else{
+                        cart.add(CAKE);
+                    }
                     break;
                 }
             }
         }
-        dem = 0;
-        dem = cart.size();
-        dem *= 10;
-//        for(int i = 0; i < cart.size(); i++){
-//            dem += cart.get(i).getDem();
-//        }
         response.getWriter().write(IDCake);
     }
 
