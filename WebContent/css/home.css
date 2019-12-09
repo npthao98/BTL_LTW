@@ -244,6 +244,9 @@ container .container--story_story *{
 container .container--story h3{
     font-size: 200%;
 }
+container .container--story_story p{
+    font-size: 25px !important;
+}
 container .hidden_scale{
     transform: scale(0.1) rotate(10deg);
 }

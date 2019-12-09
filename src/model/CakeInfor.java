@@ -88,5 +88,8 @@ public class CakeInfor implements Serializable, Comparable<CakeInfor>{
         boolean check = real_name.contains(query_name); 
         return check;
     }
-
+    
+    public void tangDem(int soluong){
+        this.dem += soluong;
+    }
 }

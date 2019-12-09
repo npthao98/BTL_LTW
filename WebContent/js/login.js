@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function(){
 		/* allow letters, numbers, and underscores
 		 * min = 5, max = 15
 		 */
+                
 	    var illegalChars = /\W/; 
 	    
 	    if (username.value == ""){

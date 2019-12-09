@@ -14,6 +14,7 @@
 </head>
 <body>
 	<jsp:include page="header.jsp"/>
+        
 	<% Cake cake=(Cake)request.getAttribute("cake"); %>
 	<% List<ImageUrl> listImage = (List<ImageUrl>)request.getAttribute("listImage"); %>
 	<% List<Type> listType = (List<Type>)request.getAttribute("listType"); %>
@@ -44,7 +45,8 @@
                             <input type="text" value="1" id="quantity">
                             <span><i class='fas fa-caret-right' onclick="increase()"></i></span>
                         </div>
-                        <button class="bt-add-to-cart">ADD TO CART</button>
+                        <button class="bt-add-to-cart" id="add_to_cart" onclick="addToCart('<%=cake.getID()%>','${pageContext.request.contextPath}')">
+                            ADD TO CART</button>
                         <div class="product_meta">
                             <p class="sku_wrapper">SKU: <span class="sku">001</span></p>
                             <p class="posted_in">Category: 
@@ -62,19 +64,19 @@
         </div>
     </div>
 	<jsp:include page="footer.jsp"/>
+        <script src="js/productDetail.js"></script>
 	<script type="text/javascript">
-		const url = "http://localhost:8080/BTL_LTW/api/cake?id="+<%=cake.getID()%>;
-		console.log(url);
-		fetch(url)
-		.then (data => {return data.json()})
-		.then (res => {
-			let t;
-			console.log(res);	
-			t= res;	
-			document.getElementById("name").innerHTML = res.Name;
-			document.getElementById("price").innerHTML = res.Price;
-		})
-		console.log(t);
+            const url = "http://localhost:8080/BTL_LTW/api/cake?id="+<%=cake.getID()%>;
+            console.log(url);
+            fetch(url)
+            .then (data => {return data.json()})
+            .then (res => {
+                    let t;
+                    console.log(res);	
+                    t= res;	
+                    document.getElementById("name").innerHTML = res.Name;
+                    document.getElementById("price").innerHTML = res.Price;
+            })
 	</script>
 </body>
 </html>
