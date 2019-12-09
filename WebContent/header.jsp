@@ -444,7 +444,7 @@
         <div class="header--logo content-header">
             <div class="header--logo_large">
                 <div class="header--logo_item">
-                    <a href="">
+                    <a href="${pageContext.request.contextPath}/ListOrders">
                         <svg width="50px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 29.5" style="enable-background:new 0 0 32 29.5;" xml:space="preserve">
                             <g>
                                 <path class="st0" d="M8.7,10.1c-0.3,1.2,0.3,2.6-0.3,3.5c-1.1-0.1-3.1,0.3-3.3-1.1c0.3-0.8,0-1.5,0.2-2.3C6,9.9,7.6,10.1,8.7,10.1z
