@@ -40,7 +40,7 @@ public class StaffListOrders extends HttpServlet {
 		Client client = null;
 		client = (Client)session.getAttribute("user");
 		if(client == null) {
-			response.sendRedirect("/BTL_LTW/staff_login");
+			response.sendRedirect(request.getContextPath()+"/staff_login");
 		}
 		else {
 			List<OrderDetail> orders= new ArrayList<OrderDetail>();

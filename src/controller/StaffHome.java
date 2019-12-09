@@ -34,7 +34,7 @@ public class StaffHome extends HttpServlet {
 		Client client = null;
 		client = (Client)session.getAttribute("user");
 		if(client == null) {
-			response.sendRedirect("/BTL_LTW/staff_login");
+			response.sendRedirect(request.getContextPath()+"/staff_login");
 		}
 		else {
 			request.getRequestDispatcher("staff_home.jsp").forward(request, response);

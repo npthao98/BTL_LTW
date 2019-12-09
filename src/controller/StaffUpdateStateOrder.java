@@ -34,13 +34,13 @@ public class StaffUpdateStateOrder extends HttpServlet {
 		Client client = null;
 		client = (Client)session.getAttribute("user");
 		if(client == null) {
-			response.sendRedirect("/BTL_LTW/staff_login");
+			response.sendRedirect(request.getContextPath()+"/staff_login");
 		}
 		else {
 			int id= Integer.parseInt(request.getParameter("id"));
 			int state= Integer.parseInt(request.getParameter("state"));
 			OrderDAO.updateStateOrder(id, state);;
-			response.sendRedirect("/BTL_LTW/StaffDetailOrder?id="+id);
+			response.sendRedirect(request.getContextPath()+"/StaffDetailOrder?id="+id);
 		}
 		
 	}

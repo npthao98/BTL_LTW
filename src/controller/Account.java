@@ -35,7 +35,7 @@ public class Account extends HttpServlet {
         Client client = null;
         client = (Client)session.getAttribute("user");
         if(client == null) {
-                response.sendRedirect("/BTL_LTW/login");
+                response.sendRedirect(request.getContextPath()+"/login");
         }
         else {
                 request.getRequestDispatcher("account.jsp").forward(request, response);

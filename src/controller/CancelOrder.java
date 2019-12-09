@@ -34,12 +34,12 @@ public class CancelOrder extends HttpServlet {
 		Client client = null;
 		client = (Client)session.getAttribute("user");
 		if(client == null) {
-			response.sendRedirect("/BTL_LTW/login");
+			response.sendRedirect(request.getContextPath()+"/login");
 		}
 		else {
 			int id= Integer.parseInt(request.getParameter("id"));
 			OrderDAO.cancelOrder(id);
-			response.sendRedirect("/BTL_LTW/DetailSuccessOrder?id="+id);
+			response.sendRedirect(request.getContextPath()+"/DetailSuccessOrder?id="+id);
 		}
 		
 	}

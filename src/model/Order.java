@@ -13,6 +13,7 @@ public class Order {
 		super();
 		ID = iD;
 		Time = time;
+		Address = address;
 		Total = total;
 		State = state;
 	}

@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@page import="model.*" %>
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,98 +13,86 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<% 
+		List<CakeInfor> list=(List<CakeInfor>)request.getAttribute("list");
+		Client user=(Client)request.getAttribute("client");
+	%>
 	<jsp:include page="header.jsp"/>
     <div class="content">
         <div class="checkout">
-            <form action="#">
+            <form action="${pageContext.request.contextPath}/Checkout" method="post">
                 <div class="customer-details">
                     <div class="row">
+                    	
                         <div class="col-6 bill-details">
-                            <h3 class="customer-details-item-title">BILLING DETAILS</h3>
-                            <p class="form-row-narrow col-6">
-                                <label class="form-row-title">First name*</label>
-                                <input type="text" class="first-name" name="first-name" required>
-                            </p>
-                            <p class="form-row-narrow col-6">
-                                <label class="form-row-title last-name-title">Last name*</label>
-                                <input type="text" class="last-name" name="last-name" required>
+                            <h3 class="customer-details-item-title">CHI TIẾT ĐƠN HÀNG</h3>
+                            <p class="form-row-wide">
+                                <label class="form-row-title">Họ và tên*</label>
+                                <input type="text" class="first-name" name="first-name" value="<%=user.getName() %>" readonly>
                             </p>
                             <p class="form-row-wide">
-                                <label class="form-row-title">Street address*</label>
-                                <input type="text" class="street-address" name="street-address" required>
+                                <label label class="form-row-title">Số điện thoại*</label>
+                                <input type="text" class="last-name" name="phone" value="<%=user.getPhone() %>" readonly >
                             </p>
                             <p class="form-row-wide">
-                                <label class="form-row-title">Town/City*</label>
-                                <input type="text" class="town-city" name="town-city" required>
-                            </p>
-                            <p class="form-row-wide">
-                                <label class="form-row-title">Phone*</label>
-                                <input type="text" class="phone" name="phone" required>
+                                <label class="form-row-title">Địa chỉ*</label>
+                                <input type="text" class="street-address" name="address" value="<%=user.getAddress() %>" required>
                             </p>
                         </div>
                         <div class="col-6 add-information">
-                            <h3 class="customer-details-item-title">ADDITIONAL INFORMATION</h3>
+                            <h3 class="customer-details-item-title">Thông tin thêm</h3>
                             <p class="form-row-wide">
-                                <label class="form-row-title">Order notes(optional)</label>
+                                <label class="form-row-title">Chú ý(tùy chọn)</label>
                                 <textarea name="notes" id="" cols="5" rows="2"
-                                          placeholder="Notes about your holder, e.g. special notes for delivery"></textarea>
+                                          placeholder=""></textarea>
                             </p>
                         </div>
                     </div>
 
                 </div>
-                <h3 class="order-review-heading">YOUR ORDER</h3>
+                <h3 class="order-review-heading">Danh sách sản phẩm</h3>
                 <div class="order-review">
                     <table class="shop_table">
                         <thead>
                             <tr>
-                                <th class="product-name">Product</th>
-                                <th class="product-total">Total</th>
+                                <th class="product-name">Sản phẩm</th>
+                                <th class="product-total">Tổng tiền</th>
                             </tr>
                         </thead>
                         <tbody>
-                        <tr class="cart_item">
-                            <td class="product-name">
-                                Coffee Intense&nbsp;
-                                <strong class="product-quantity">× 1</strong>
-                            </td>
-                            <td class="product-total">
-                                <span class="woocommerce-Price-amount amount">
-                                    <span class="woocommerce-Price-currencySymbol">$</span>
-                                    40.00
-                                </span>
-                            </td>
-                        </tr>
-                        <tr class="cart_item">
-                            <td class="product-name">
-                                Roule Saucisse&nbsp;
-                                <strong class="product-quantity">× 1</strong>
-                            </td>
-                            <td class="product-total">
-                                <span class="woocommerce-Price-amount amount">
-                                    <span class="woocommerce-Price-currencySymbol">$</span>
-                                    29.00
-                                </span>
-                            </td>
-                        </tr>
+                        <% int total=0;
+                        for(int i=0; i<list.size(); i++){ 
+                        	total = total+ list.get(i).getCake().getPrice()*list.get(i).getDem();
+                        %>
+                        	
+	                        <tr class="cart_item">
+	                            <td class="product-name">
+	                                <%=list.get(i).getCake().getName() %>&nbsp;
+	                                <strong class="product-quantity">× <%=list.get(i).getDem() %></strong>
+	                            </td>
+	                            <td class="product-total">
+	                                <span class="woocommerce-Price-amount amount">
+	                                    <%=list.get(i).getCake().getPrice()*list.get(i).getDem() %>
+	                                </span>
+	                            </td>
+	                        </tr>
+                        <%} %>
                         </tbody>
                         <tfoot>
                             <tr class="cart-subtotal">
-                                <th>Subtotal</th>
+                                <th>Tổng tiền</th>
                                 <td>
                                     <span class="woocommerce-Price-amount amount">
-                                        <span class="woocommerce-Price-currencySymbol">$</span>
-                                        69.00
+                                        <%=total %>
                                     </span>
                                 </td>
                             </tr>
                             <tr class="order-total">
-                                <th>Total</th>
+                                <th>Tổng thanh toán</th>
                                 <td>
                                     <strong>
                                         <span class="woocommerce-Price-amount amount">
-                                            <span class="woocommerce-Price-currencySymbol">$</span>
-                                            69.00
+                                            <%=total %>
                                         </span>
                                     </strong>
                                 </td>
@@ -110,14 +101,8 @@
                     </table>
                 </div>
                 <div class="checkout-payment">
-                    <p>Your personal data will be used to process your order,
-                        support your experience throughout this website, and for other purposes described in our
-                        <a href="#">privacy policy.</a>
-                    </p>
-                    <br>
-                    <br>
                     <button type="submit" class="button-payment" name="woocommerce_checkout_place_order"
-                            id="place_order" value="Place order" data-value="Place order">Place order</button>
+                            id="place_order" value="Place order" data-value="Place order">Đặt đơn</button>
                 </div>
             </form>
         </div>

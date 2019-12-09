@@ -37,7 +37,7 @@ public class ChangePW extends HttpServlet {
 		client = (Client)session.getAttribute("user");
 		String alert ="";
 		if(client == null) {
-			response.sendRedirect("/BTL_LTW/login");
+			response.sendRedirect(request.getContextPath()+"/login");
 		}
 		else {
 			User user = UserDAO.getByClientID(client.getID());
@@ -57,7 +57,7 @@ public class ChangePW extends HttpServlet {
 		Client client = null;
 		client = (Client)session.getAttribute("user");
 		if(client == null) {
-			response.sendRedirect("/BTL_LTW/login");
+			response.sendRedirect(request.getContextPath()+"/login");
 		}
 		else {
 			User user = UserDAO.getByClientID(client.getID());
