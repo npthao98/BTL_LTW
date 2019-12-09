@@ -43,11 +43,12 @@
             <input type="text" name="address" id="address" onchange="checkInfor('address', this)" oninput="clearErr('address')">
             <h3>Số điện thoại :</h3>
             <h4 class="error_tele error_message"></h4>
-            <input type="number" name="phone" id="phone" onchange="checkInfor('phone', this)" oninput="clearErr('phone')">
+            <input type="text" name="phone" id="phone" onchange="checkInfor('phone', this)" oninput="clearErr('phone')">
             <h3>Email :</h3>
             <h4 class="error_email error_message"></h4>
             <input type="text" name="email" id="email" onchange="checkInfor('email', this)" oninput="clearErr('email')">
             </br>
+            <p class="error_message" id="err_button_click"></p>
             <button type="button" class="regist_button">Đăng ký </button>
         </form>
        

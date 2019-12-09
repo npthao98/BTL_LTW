@@ -28,6 +28,9 @@
         <input type="password" name="password" id="password" required>
         </br>
         <button type="button" id="submit_form">Login</button>
+        <button type="button" id="submit_form">
+            <a href="${pageContext.request.contextPath}/regist">Regist accout</a>
+        </button>
     </form>    
 
     <jsp:include page="footer.jsp"/>

@@ -10,6 +10,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+    <div class="search_cake">
+        <input type="text" id="seach_cake_query">
+            
+        </input>
+    </div>
   <div class="header">
         <div class="header--contact padding-content">
             <div class="header--contact__phone">
@@ -52,11 +57,11 @@
                                                 M19.9,26.3c0.5-0.3,1.8-0.8,1.2-1.4C21,25,21,25.3,20.8,25.4c-0.9-0.5,0.1-2.3-0.3-3C20.3,23.8,20.2,24.8,19.9,26.3z M12.8,26.5
                                                 c0.2-0.3,0.4-1.1,0.2-1.5C13.1,25.6,12.5,26.3,12.8,26.5z"></path>
                                         </svg>
-                call us 0374537192
+                call us 5555-00-444
             </div>
             <div class="header--contact__">
                 <a href="${pageContext.request.contextPath}/Account">
-                	<div class="header--contact__about">
+                    <div class="header--contact__about">
                     <svg width="16px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 48 47.5" style="enable-background:new 0 0 48 47.5;" xml:space="preserve">
                         <g>
                         <path class="st0" d="M22.3,47.7c-1.1,0.7-0.9-0.7-1.8-1.1c-0.8-0.4-1.9,0-2.6-0.4c-1.8-0.9-5.3-4.1-7-5.9C3.6,32.5-3.4,13.3,5,5
@@ -76,7 +81,7 @@
                                 C24.9,45.2,26.7,36.6,31.2,37.4z"></path>
                         </g>
                     </svg>
-                    <span>My Account</span>
+                        <span>My Account</span>
                     </div>
                 </a>
                 <a href="${pageContext.request.contextPath}/ListOrders">
@@ -235,7 +240,7 @@
                     </a>
                 </div>
                 <div class="header--logo_item">
-                    <a href="">
+                    <a href="${pageContext.request.contextPath}/map.jsp">
                         <svg width="40px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22 28" style="enable-background:new 0 0 22 28;" xml:space="preserve">
                             <g>
                                 <path class="st0" d="M19.7,11.4c1,0,1.3,1.8,1.6,2.6c0.4,1.3,0.7,2.5,0.7,3.7c0,1.3-0.4,2.5-0.9,3.6c-0.3,0.9-0.8,1.5-1.3,2.2

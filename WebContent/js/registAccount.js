@@ -12,6 +12,7 @@ const button_submit = document.querySelector('#form_regist button'),
     err_addr = document.querySelector('.error_addr'),
     err_tele = document.querySelector('.error_tele'),
     err_email = document.querySelector('.error_email'),
+    err_button = document.querySelector('#err_button_click');
     arr_check = [false, false, false, false, false, false, false];
     
 
@@ -202,7 +203,7 @@ document.addEventListener('DOMContentLoaded', function() {
     button_submit.addEventListener('click', function(){
         for(let i = 0; i < 7; i++){
             if(arr_check[i] == false){
-                console.log(i + 'WRONG !');
+                err_button.innerHTML = "Please check all information in form !!!";
                 return;
             }
         }
