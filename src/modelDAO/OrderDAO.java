@@ -26,14 +26,11 @@ public class OrderDAO {
 				ResultSet rs=ps.executeQuery();
 				while(rs.next()) {
 					int iD = rs.getInt(1);
-//					String time = rs.getString(2);
 					String time = rs.getDate(2).toString();
-//					String time = "2019/11/11";
 					int total=rs.getInt(3);
 					String address = rs.getString(4);
 					int state=rs.getInt(5);
 					Order acc = new Order(iD, time, total, address, state);
-					System.out.println(acc.toString());
 					return acc;
 				}
 			} catch (SQLException e) {
@@ -75,5 +72,33 @@ public class OrderDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	public static int insert(String time, int total, String address, int state) {
+		int id=3;
+		Connection con=DBConnect.createConnection();
+		try {
+			PreparedStatement ps=con.prepareStatement("insert into bakery.order(Time, Total, Address, State) value(?,?,?,?)");
+			ps.setString(1, time);
+			ps.setInt(2, total);
+			ps.setString(3, address);
+			ps.setInt(4, state);
+			ps.execute();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			PreparedStatement ps=con.prepareStatement("select MAX(ID) FROM bakery.order");
+			ResultSet rs=ps.executeQuery();
+			while(rs.next()) {
+				id = rs.getInt(1);
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return id;
 	}
 }

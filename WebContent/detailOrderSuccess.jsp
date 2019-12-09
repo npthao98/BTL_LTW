@@ -114,7 +114,7 @@
                             </li>
                             <li>
                                 <label>Địa chỉ: </label>
-                                <span><%=order.getAddress()%></span>
+                                <span><%=order.getAddress() %></span>
                             </li>
                             <li>
                                 <label>SDT: </label>
@@ -233,6 +233,7 @@ fetch(url)
 	document.getElementById("total2").innerHTML = res.Total;
 	document.getElementById("idOrder").innerHTML = res.ID;
 	document.getElementById("time").innerHTML = res.Time;
+	document.getElementById("address").innerHTML = res.Address;
 })
 console.log(t);
 </script>

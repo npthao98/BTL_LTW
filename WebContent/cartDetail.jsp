@@ -77,7 +77,7 @@
          
             <div class="margin-content cart_total">
                 <span>TOTAL : <span class="price_text price_format"></span><span class="price_text"> VNĐ</span></span>
-                <button class="button_cart">CHECKOUT</button>
+                <a href="${pageContext.request.contextPath}/Checkout"><button class="button_cart">CHECKOUT</button></a>
             </div>
         <container>
         <script src="js/detailCart.js"></script>

@@ -48,7 +48,7 @@ public class ListOrders extends HttpServlet {
 		Client client = null;
 		client = (Client)session.getAttribute("user");
 		if(client == null) {
-			response.sendRedirect("/BTL_LTW/login");
+			response.sendRedirect(request.getContextPath()+"/login");
 		}
 		else {
 			List<Order_Client> orderClients = OrderClientDAO.getByClientID(client.getID());

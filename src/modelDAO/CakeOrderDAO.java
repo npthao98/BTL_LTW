@@ -37,4 +37,18 @@ public class CakeOrderDAO {
 
         return null;
     }
+    public static void insert(int order_id, int cake_id, int quantity) {
+		Connection con=DBConnect.createConnection();
+		try {
+			PreparedStatement ps=con.prepareStatement("insert into cake_order(OrderID, CakeID, Quantity) value(?,?,?)");
+			ps.setInt(1, order_id);
+			ps.setInt(2, cake_id);
+			ps.setInt(3, quantity);
+			ps.execute();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }

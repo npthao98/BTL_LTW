@@ -47,11 +47,12 @@ public class DetailSuccessOrder extends HttpServlet {
 		Client client = null;
 		client = (Client)session.getAttribute("user");
 		if(client == null) {
-			response.sendRedirect("/BTL_LTW/login");
+			response.sendRedirect(request.getContextPath()+"/login");
 		}
 		else {
                     int id=Integer.parseInt(request.getParameter("id"));
                     Order order = OrderDAO.getByID(id);
+                    System.out.println(order);
                     Order_Client order_client = OrderClientDAO.getByOrderID(order.getID());
                     if(order_client.getClientID() != client.getID() || order==null) {
                             response.setContentType("text/html");

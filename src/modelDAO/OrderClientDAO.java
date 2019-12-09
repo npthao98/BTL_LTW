@@ -56,4 +56,18 @@ public class OrderClientDAO {
 
         return null;
     }
+	
+	public static void insert(int order_id, int client_id) {
+		Connection con=DBConnect.createConnection();
+		try {
+			PreparedStatement ps=con.prepareStatement("insert into order_client(OrderID, ClientID) value(?,?)");
+			ps.setInt(1, order_id);
+			ps.setInt(2, client_id);
+			ps.execute();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }

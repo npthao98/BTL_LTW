@@ -49,7 +49,7 @@ public class StaffDetailOrder extends HttpServlet {
 		Client client1 = null;
 		client1 = (Client)session.getAttribute("user");
 		if(client1 == null) {
-			response.sendRedirect("/BTL_LTW/staff_login");
+			response.sendRedirect(request.getContextPath()+"/staff_login");
 		}
 		else {
 			int id= Integer.parseInt(request.getParameter("id"));

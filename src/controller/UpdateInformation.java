@@ -38,7 +38,7 @@ public class UpdateInformation extends HttpServlet {
 		Client client = null;
 		client = (Client)session.getAttribute("user");
 		if(client == null) {
-			response.sendRedirect("/BTL_LTW/login");
+			response.sendRedirect(request.getContextPath()+"/login");
 		}
 		else {
 			request.getRequestDispatcher("updateInformation.jsp").forward(request, response);
@@ -56,7 +56,7 @@ public class UpdateInformation extends HttpServlet {
 		Client client = null;
 		client = (Client)session.getAttribute("user");
 		if(client == null) {
-			response.sendRedirect("/BTL_LTW/login");
+			response.sendRedirect(request.getContextPath()+"/login");
 		}
 		else {
                     try {
@@ -66,7 +66,7 @@ public class UpdateInformation extends HttpServlet {
                         ClientDAO.update(client.getID(), name, address);
                         Client acc=ClientDAO.getByID(client.getID());
                         session.setAttribute("user", acc);
-                        response.sendRedirect("/BTL_LTW/Account");
+                        response.sendRedirect(request.getContextPath()+"/Account");
                     } catch (SQLException ex) {
                         Logger.getLogger(UpdateInformation.class.getName()).log(Level.SEVERE, null, ex);
                     }
