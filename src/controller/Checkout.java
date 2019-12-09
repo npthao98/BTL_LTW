@@ -15,9 +15,11 @@ import javax.servlet.http.HttpSession;
 
 import model.CakeInfor;
 import model.Client;
+import model.User;
 import modelDAO.CakeOrderDAO;
 import modelDAO.OrderClientDAO;
 import modelDAO.OrderDAO;
+import modelDAO.UserDAO;
 
 /**
  * Servlet implementation class Checkout
@@ -60,26 +62,32 @@ public class Checkout extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		Client client = null;
-        client = (Client)session.getAttribute("user");
-		List<CakeInfor> list = (List<CakeInfor>) session.getAttribute("cart");
-		
-		String address = request.getParameter("address");
-		System.out.println(address);
-		Date date = new Date();
-		DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-		String date1 = df.format(date);
-		int total=0;
-		for(int i=0; i<list.size(); i++) {
-			total = total+ list.get(i).getPrice()*list.get(i).getDem();
+		client = (Client)session.getAttribute("user");
+		if(client == null) {
+			response.sendRedirect(request.getContextPath()+"/login");
 		}
-		int state = 0;
-		int order_id = OrderDAO.insert(date1, total, address, state);
-		OrderClientDAO.insert(order_id, client.getID());
-		for(int i=0; i<list.size(); i++) {
-			CakeOrderDAO.insert(order_id, list.get(i).getIDCake(), list.get(i).getDem());
+		else {
+			List<CakeInfor> list = (List<CakeInfor>) session.getAttribute("cart");
+			
+			String address = request.getParameter("address");
+			System.out.println(address);
+			Date date = new Date();
+			DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+			String date1 = df.format(date);
+			int total=0;
+			for(int i=0; i<list.size(); i++) {
+				total = total+ list.get(i).getPrice()*list.get(i).getDem();
+			}
+			int state = 0;
+			int order_id = OrderDAO.insert(date1, total, address, state);
+			OrderClientDAO.insert(order_id, client.getID());
+			for(int i=0; i<list.size(); i++) {
+				CakeOrderDAO.insert(order_id, list.get(i).getIDCake(), list.get(i).getDem());
+			}
+			
+			response.sendRedirect(request.getContextPath()+"/DetailSuccessOrder?id="+order_id);
 		}
 		
-		response.sendRedirect(request.getContextPath()+"/DetailSuccessOrder?id="+order_id);
 	}
 
 }
