@@ -75,7 +75,7 @@
 		    <a href="${pageContext.request.contextPath}/StaffLogout" class="button">ĐĂNG XUẤT</a>
 		</div>
         <div style="text-align: center;font-size: 50px; width: 100%; height: 100px;float: left; margin:30px 0px;">
-		    Danh sách đơn hàng
+		    Danh sách sản phẩm
 		</div>
 		<div style="font-size: 25px; height: 100px;float: left;">
 		    <a href="${pageContext.request.contextPath}/StaffAddProduct" class="button">
