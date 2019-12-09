@@ -29,11 +29,20 @@
             
             String sort = (String)request.getParameter("sort");
             String type = (String)request.getParameter("type");
+            String query_name = (String)request.getParameter("cakename");
             
             String url = "shop?";
             int ID_type = 0, sort_mode = 0, number_record;
-            
-            if(type != null){
+            int kt = 0;
+            if(query_name != null){
+                kt = 1;
+                for(int i = 0; i < products.size(); i++){
+                    if(products.get(i).checkIsName(query_name) == true){
+                        list.add(products.get(i));
+                    }
+                }
+            }
+            if(type != null && kt == 0){
                 try {
                     ID_type = Integer.parseInt(type);
                 } catch (NumberFormatException nfe) {
@@ -46,10 +55,11 @@
                 else
                     list = products;
             }else{
-                list = products;
+                if(kt == 0)
+                    list = products;
             }
             
-            if(sort != null){
+            if(sort != null && kt == 0){
                 try {
                     sort_mode = Integer.parseInt(sort);
                 } catch (NumberFormatException nfe) {
