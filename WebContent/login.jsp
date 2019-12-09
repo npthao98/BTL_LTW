@@ -29,7 +29,7 @@
         </br>
         <button type="button" id="submit_form">Login</button>
         <button type="button" id="submit_form">
-            <a href="${pageContext.request.contextPath}/regist">Regist accout</a>
+            <a style=" text-decoration: none; color: #fff;" href="${pageContext.request.contextPath}/regist">Regist accout</a>
         </button>
     </form>    
 
