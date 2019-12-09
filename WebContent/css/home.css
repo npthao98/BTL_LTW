@@ -386,7 +386,21 @@ container .zoom{
     }
 }
 
-  
+container .footer_container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px !important;
+    margin-bottom: 50px !important;
+    flex-wrap: wrap;
+}
+container .image_medal{
+    width: 130px;
+    height: auto;
+    margin: 10px 20px 10px 20px !important;
+}
 
  /* ! RESPONSIVE TABLET */
 @media screen and (max-width: 1032px) {

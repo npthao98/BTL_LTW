@@ -12,7 +12,7 @@
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
    <link rel="stylesheet" href="css/home.css">
-	<title>Insert title here</title>
+    <title>Home</title>
 </head>
 <body>
 	
@@ -372,6 +372,14 @@
                     </div>
                 </div>
                 
+                <div class="footer_container">
+                    <img src="assets/client/client-1.png" class="image_medal">
+                    <img src="assets/client/client-2.png" class="image_medal">
+                    <img src="assets/client/client-3.png" class="image_medal">
+                    <img src="assets/client/client-4.png" class="image_medal">
+                    <img src="assets/client/client-5.png" class="image_medal">
+                    <img src="assets/client/client-6.png" class="image_medal">
+                </div>
 	 </container>
     
      <script src="js/home.js"></script>

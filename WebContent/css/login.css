@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Cormorant&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
-
+#submit_form a{
+    text-decoration: none;
+    color: #fff;
+}
 .login--form{
     margin-top: 50px !important;
     margin-bottom: 50px !important;
